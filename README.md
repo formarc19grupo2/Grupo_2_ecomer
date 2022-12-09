@@ -5,5 +5,8 @@ Nuestro proyecto apunta a la compra de sandwitches a través de la página en la
 <p align="center">
 <img width="300" height="300" src="/src/assets/to_readme/splashhamb.gif">
 </p>
+<p align="center">
+<img width="257" height="72" src="/src/assets/to_readme/logo.png">
+</p>
 
 
