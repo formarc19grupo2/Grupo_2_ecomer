@@ -22,9 +22,9 @@ Nuestro proyecto apunta a la compra de sandwitches a través de la página en la
 
  <ul>
         <li><a href="https://www.mercadolibre.com.ar">Mercado Libre</a></li>
-        <li><a href="hwww.pedidosya.com.ar">Pedidos Ya</a></li>
-        <li><a href="www.fravega.com">Fravega</a></li>
-        <li><a href="www.subway.com">Subway</a></li>
+        <li><a href="https://www.pedidosya.com.ar">Pedidos Ya</a></li>
+        <li><a href="https://www.fravega.com">Fravega</a></li>
+        <li><a href="https://www.subway.com/es-AR">Subway</a></li>
       </ul>
 </div>
 
