@@ -21,7 +21,7 @@ Nuestro proyecto apunta a la compra de sandwitches a través de la página en la
 <p>Páginas en las cuales encontramos inspiración para el proyecto. Las elegimos porque son referencias en ecommerce:    </p>
 
  <ul>
-        <li><a href="[www.mercadolibre.com](https://www.mercadolibre.com.ar)">Mercado Libre</a></li>
+        <li><a href="https://www.mercadolibre.com.ar">Mercado Libre</a></li>
         <li><a href="hwww.pedidosya.com.ar">Pedidos Ya</a></li>
         <li><a href="www.fravega.com">Fravega</a></li>
         <li><a href="www.subway.com">Subway</a></li>
