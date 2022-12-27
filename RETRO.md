@@ -43,7 +43,7 @@ Lunes, miercoles, Viernes.</p>
         <br/>
         <li>5. Dejar de hacer.</li>
         <br/>
-        <p>Procastinar :) </p>
+        <p>- Procastinar :) </p>
         <br/>
       </ul>
 </div>
