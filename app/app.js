@@ -25,4 +25,3 @@ app.get("/register", (req, res) => {
 app.listen(3030, () => {
   console.log("server online on localhost:3030");
 });
-
