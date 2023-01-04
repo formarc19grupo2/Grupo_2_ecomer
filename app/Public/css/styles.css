@@ -26,6 +26,7 @@ footer {
 footer section div.menuFooter ul{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 footer section div.menuFooter ul li {
     background-color: var(--gris-claro);
@@ -87,11 +88,11 @@ footer section div.qrFooter i {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 360px) {
+@media (min-width: 768px) {
+
     footer section div.menuFooter ul {
        flex-direction: row;
        justify-content: center;
-       
     }
 
     footer section div.redes {
