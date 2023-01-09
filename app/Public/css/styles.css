@@ -6,7 +6,6 @@
     --gris-oscuro: #666;
     --gris-claro: #ebebeb;
     --verde: #B5FE83;
-    
 }
 
 /* General*/
@@ -15,7 +14,7 @@ ul {
     list-style: none;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -23,11 +22,13 @@ ul {
 footer {
     background-color: var(--amarillo);
 }
-footer section div.menuFooter ul{
+
+footer section div.menuFooter ul {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 footer section div.menuFooter ul li {
     background-color: var(--gris-claro);
     width: 150px;
@@ -36,10 +37,10 @@ footer section div.menuFooter ul li {
     padding-top: 10px;
     text-align: center;
     border: 1px solid black;
-    box-shadow : 1px 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-div.menuFooter ul li:hover{
+div.menuFooter ul li:hover {
     border-bottom: 2px solid rgb(123, 124, 123);
     transform: scale(1.1);
     transition: all 0.5s ease;
@@ -47,27 +48,30 @@ div.menuFooter ul li:hover{
 
 footer section div.redes {
     text-align: center;
-    border-top: 1.5px solid black ;
+    border-top: 1.5px solid black;
     border-bottom: 1.5px solid black;
     padding: 25px;
     width: 98%;
     margin: auto;
 }
+
 footer section div.redes i {
     color: grey;
     font-size: 40px;
     width: 3rem;
 
 }
-footer section div.redes i:hover{
+
+footer section div.redes i:hover {
     transform: scale(1.2);
     transition: all 0.5s ease;
 }
 
-footer section div.copy h4{
+footer section div.copy h4 {
     color: grey;
     padding: 5px;
 }
+
 footer section div.descripcion h5 {
     text-align: center;
     color: grey;
@@ -76,7 +80,7 @@ footer section div.descripcion h5 {
 
 footer section div.logoFooter {
     display: flex;
-    justify-content: center
+    justify-content: center;;
 }
 
 footer section div.qrFooter i {
@@ -91,22 +95,24 @@ footer section div.qrFooter i {
 @media (min-width: 768px) {
 
     footer section div.menuFooter ul {
-       flex-direction: row;
-       justify-content: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     footer section div.redes {
         width: 80%;
     }
-    footer section div.copy h4{
-         color: grey;
+
+    footer section div.copy h4 {
+        color: grey;
         padding-left: 10%;
     }
+
     footer section div.copy i {
         font-size: 1.5rem;
     }
+
     footer section div.qrFooter i {
         padding-right: 10%;
     }
 }
-

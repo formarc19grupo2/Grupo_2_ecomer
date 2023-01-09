@@ -1,0 +1,19 @@
+{
+  "name": "grupo_2_ecomer",
+  "version": "1.0.0",
+  "description": "<h2>Sobre nosotros:</h2><div>   <p align=\"center\">\r <img width=\"257\" height=\"72\" src=\"/src/assets/to_readme/logo.png\">\r </p>\r Nuestro proyecto apunta a la compra de sandwitches a través de la página en la cual usuario va a poder armar su pedido de la forma que el quiera de manera interactiva. El pedido se podrá adquirir mediante retiro en una locación en especial y también se podrá solicitar el envio mediante delivery. La página apunta al público que quiera comer algo rápido y no tarde mucho en poder disfrutarlo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formarc19grupo2/Grupo_2_ecomer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/formarc19grupo2/Grupo_2_ecomer/issues"
+  },
+  "homepage": "https://github.com/formarc19grupo2/Grupo_2_ecomer#readme"
+}

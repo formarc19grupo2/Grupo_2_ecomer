@@ -1,4 +1,33 @@
-header{
-    background-color: var(--amarillo);
+@import url('styles.css');
+
+.boton__crea {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem auto;
+    height: 70px;
+    width: 70%;
+
+    background: var(--amarillo);
+    border-radius: 10%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+
+
+.boton__crea h2 {
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.boton__utiles {
+    color: white;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: var(--amarillo);
+    border-radius: 10%;
+}
+
+.seccion__productos--home {
+    color: white;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: var(--amarillo);
+}
