@@ -31,3 +31,23 @@
     text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: var(--amarillo);
 }
+
+
+/* Navbar */
+header{
+    background-color: var(--amarillo);
+}
+
+header .logo{
+    display: flex;
+    justify-content: center;
+}
+
+
+header input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 30%;
+}
