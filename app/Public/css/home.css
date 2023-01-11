@@ -1,33 +1,47 @@
 @import url('styles.css');
 
 .boton__crea {
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem auto;
-    height: 70px;
-    width: 70%;
 
+    height: 70px;
+    width: 50%;
     background: var(--amarillo);
+    padding: 1rem;
+    color: white;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
     border-radius: 10%;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-
-
 .boton__crea h2 {
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .boton__utiles {
-    color: white;
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    height: 110px;
+    width: 75%;
     background-color: var(--amarillo);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
     border-radius: 10%;
+    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .seccion__productos--home {
     color: white;
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: var(--amarillo);
 }
+
+
+/* slider*/
+
