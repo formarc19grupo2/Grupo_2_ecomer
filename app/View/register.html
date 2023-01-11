@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
      
     <title>Registro</title>
     <link rel="stylesheet" href="/css/register.css">
@@ -11,41 +12,7 @@
 <body>
     
     <div class="container" >
-        <a class="links" id="paracadastro"></a>
-        <a class="links" id="paralogin"></a>
-        
-        <div class="content">      
-          <!--FORMULÁRIO DE LOGIN-->
-          <div id="login">
-            <form method="post" action=""> 
-              <h1>Login</h1> 
-              <p> 
-                <label for="email_login"> e-mail</label>
-                <input id="email_login" name="email_login" required="required" type="text" placeholder="su-mail"/>
-              </p>
-              
-              <p> 
-                <label for="senha_login">Su Clave</label>
-                <input id="senha_login" name="senha_login" required="required" type="password" placeholder="1234" /> 
-              </p>
-              
-              <p> 
-                <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-                <label for="manterlogado">Mantenerme logado</label>
-              </p>
-              
-              <p> 
-                <input type="submit" value="Logar" /> 
-              </p>
-              
-              <p class="link">
-                todavia no tenes Cuenta ?
-                <a href="#paracadastro">Registrarse</a>
-              </p>
-            </form>
-          </div>
-    
-          <!--FORMULÁRIO DE CADASTRO-->
+                  
           <div id="cadastro">
             <form method="post" action=""> 
               <h1>Registro</h1> 
@@ -76,7 +43,45 @@
             </form>
           </div>
         </div>
+        
       </div> 
+      <footer>
+        <section>
+            <div class="menuFooter">
+                <ul>
+                    <li>
+                        Nuestra Historia
+                    </li>
+                    <li>
+                        Legales
+                    </li>
+                    <li>
+                        Contactos
+                    </li>
+                </ul>
+            </div>
+            <div class="redes">
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            <div class="copy">
+                <h4>Copyright <i class="fa-solid fa-copyright"></i></h4>
+            </div>
+            <div class="descripcion">
+                <h5>2022 TusanGuche S.R.L. Calle falsa 123mo, 143 Ciudad,
+                    Argentina</h5>
+            </div>
+            <div class="logoFooter">
+                <img src="/images/logo.png" alt="logo ecomer">
+            </div>
+            <div class="qrFooter">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+        </section>
+    </footer>
+      
 
 </body>
 </html>
