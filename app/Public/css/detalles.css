@@ -1,7 +1,7 @@
 @import url("styles.css");
 
 body { 
-    background-color:var(--gris-claro);
+    background: linear-gradient(var(--amarillo), var(--verde));   ;
 }
 /* GENERAL */
 * {
