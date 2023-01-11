@@ -1,3 +1,10 @@
+@import url('styles.css');
+@import url('detalles.css');
+@import url('home.css');
+
+
+
+
 /* CSS reset */
 *, *:before, *:after { 
   margin:0;
@@ -7,15 +14,9 @@
 
 
 
-:root {
-  /*Variables de colores*/
-  --amarillo: #FFE61B;
-  --gris-oscuro: #666;
-  --gris-claro: #ebebeb;
-  --verde: #B5FE83;
-}
 
 
+ 
 body{
   margin:10px;
 }
@@ -120,121 +121,4 @@ input[type="submit"]:hover{
 }
 
 /*marcando os links para mudar de um formulário para outro */
-.link{
-  position: absolute;
-  background: #e1eaeb;
-  color: #7f7c7c;
-  left: 0px;
-  height: 20px;
-  width: 440px;
-  padding: 17px 30px 20px 30px;
-  font-size: 16px;
-  text-align: right;
-  border-top: 1px solid #dbe5e8;
 
-  -webkit-border-radius: 0 0  5px 5px;
-  border-radius: 0 0  5px 5px;
-}
-.link a {
-  font-weight: bold;
-  background: #f7f8f1;
-  padding: 6px;
-  color: rgb(29, 162, 193);
-  margin-left: 10px;
-  border: 1px solid #cbd518;
-
-  -webkit-border-radius: 4px;
-  border-radius: 4px;  
-
-  -webkit-transition: all 0.4s linear;
-  transition: all 0.4s  linear;
-}
-.link a:hover {
-  color: #39bfd7;
-  background: #f7f7f7;
-  border: 1px solid #4ab3c6;
-}
-
-/* estilos para para ambos os formulários */
-#cadastro, 
-#login{
-  position: absolute;
-  top: 0px;
-  width: 88%; 
-  padding: 18px 6% 60px 6%;
-  margin: 0 0 35px 0;
-  background: var(--amarillo);
-  border: 1px solid rgba(147, 184, 189,0.8);
-  
-  -webkit-box-shadow: 5px;
-  border-radius: 5px;
-  
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-}
-
-#paracadastro:target ~ .content #cadastro,
-#paralogin:target ~ .content #login{
-  z-index: 2;
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-
-  -webkit-animation-delay: .1s;
-  animation-delay: .1s;
-}
-#registro:target ~ .content #login,
-#paralogin:target ~ .content #cadastro{
-  -webkit-animation-name: fadeOutLeft;
-  animation-name: fadeOutLeft;
-}
-
-/*fadeInLeft*/
-@-webkit-keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/*fadeOutLeft*/
-@-webkit-keyframes fadeOutLeft {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateX(-20px);
-  }
-}
-
-@keyframes fadeOutLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-}
