@@ -1,7 +1,6 @@
 @import url('styles.css');
 
-.boton__crea {
-
+.btn__crea {
     height: 70px;
     width: 50%;
     background: var(--amarillo);
@@ -18,11 +17,11 @@
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.boton__crea h2 {
+.btn__crea h2 {
     text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.boton__utiles {
+.btn__utiles {
     height: 110px;
     width: 75%;
     background-color: var(--amarillo);
@@ -42,6 +41,10 @@
     background-color: var(--amarillo);
 }
 
+/*Links Utiles*/
+.btn__utiles {
+    color: white;
+}
+
 
 /* slider*/
-
