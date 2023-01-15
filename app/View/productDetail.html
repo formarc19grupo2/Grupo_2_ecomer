@@ -5,8 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de producto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/detalles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+
 </head>
 <body>
-    
+    <main>
+    <section class="detalle__producto--imagen">
+    <img src="/images/Ingredientes/e98bca.jpg" alt="">
+    </section>
+    <section class="img__miniatura">
+        <div class="ingredientes"><img src="/images/Ingredientes/huevoF.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button>
+</div>
+        <div class="ingredientes"><img src="/images/Ingredientes/jamon.png" alt="">
+            <button type="reset" class="btn btn-reset">
+                <i class="fa-solid fa-trash-can"></i></button></div>
+        <div class="ingredientes"><img src="/images/Ingredientes/lechuga.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button></div>
+        <div class="ingredientes"><img src="/images/Ingredientes/cebolla.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button></div>
+        <div class="ingredientes"><img src="/images/Ingredientes/panFrances.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button></div>
+    </section>
+    <section class="detalles__producto--compra">
+        <h2>Sandwich--</h2>
+        <h3>$00000</h3>
+        <h4>Elegir medio de pago</h4>
+        <ul class="medios__pago">
+            <li><a href=""><i class="fa-solid fa-money-bill-1"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-credit-card"></i></a></li>
+            <li><a href=""><i class="fa-solid fa-qrcode"></i></a></li>
+        </ul>
+        <div class="ubicacion">
+            <i class="fa-solid fa-motorcycle"></i>
+            <button> cargar ubicacion</button>
+        </div>
+        <div class="input-container">
+            <select name="unidades" class="unidades__compra">
+                <option value="" hidden selected>Unidades</option>
+                <option value="1">1 unidad</option>
+                <option value="2">2 unidades</option>
+                <option value="3">3 unidades</option>
+                <option value="4">4 unidades</option>
+                <option value="5">5 unidades</option>
+            </select>
+         </div>
+        <div class="detalle__producto--descripcion">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id enim dignissimos saepe minima! Aliquid vitae doloremque laboriosam placeat ullam laudantium!</p>
+        </div>
+        <div class="agragarCompra">
+            <button type="submit">Agregar al carrito</button>
+        </div>
+    </section>
+    <section class="continuar">
+        <h4>Combos similares</h4>
+    </section>
+    <section class="combos">
+        <div><img src="/images/Ingredientes/jamon.png" alt=""></div>
+        <div><img src="/images/Ingredientes/lechuga.png" alt=""></div>
+        <div><img src="/images/Ingredientes/cebolla.png" alt=""></div>
+    </section>
+    <section class="seguirComprando">
+        <button> SEGUIR COMPRANDO </button>
+    </section>
+    </main>
+
+
+    <footer>
+        <section>
+            <div class="menuFooter">
+                <ul>
+                    <li>
+                        Nuestra Historia
+                    </li>
+                    <li>
+                        Legales
+                    </li>
+                    <li>
+                        Contactos
+                    </li>
+                </ul>
+            </div>
+            <div class="redes">
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            <div class="copy">
+                <h4>Copyright <i class="fa-solid fa-copyright"></i></h4>
+            </div>
+            <div class="descripcion">
+                <h5>2022 TusanGuche S.R.L. Calle falsa 123mo, 143 Ciudad,
+                    Argentina</h5>
+            </div>
+            <div class="logoFooter">
+                <img src="/images/logo.png" alt="logo ecomer">
+            </div>
+            <div class="qrFooter">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+        </section>
+    </footer>
+
 </body>
 </html>
