@@ -1,5 +1,4 @@
 @import url('styles.css');
-@import url('detalles.css');
 @import url('home.css');
 
 
@@ -13,22 +12,12 @@
 }
 
 
-<<<<<<< HEAD
-:root {
-  /*Variables de colores*/
-  --amarillo: #FFE61B;
-  --gris-oscuro: #666;
-  --gris-claro: #ebebeb;
-  --verde: #B5FE83;
-}
-=======
-
->>>>>>> 79bd694c6ad30794c32c9e04a03482ee92465e6a
 
 
  
 body{
   margin:10px;
+  background-color: var(--amarillo);
 }
 
 a{
@@ -130,5 +119,5 @@ input[type="submit"]:hover{
   background: #4ab3c6;
 }
 
-/*marcando os links para mudar de um formulário para outro */
+
 
