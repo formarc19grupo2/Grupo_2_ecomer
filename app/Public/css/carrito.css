@@ -1,0 +1,30 @@
+body{
+    background-color: var(--amarillo) ;
+}
+
+table{
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+
+.carrito{
+    /* display: -ms-flex;
+    display: -webkit-flex; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.carrito > div{
+    width: 50%;
+    padding: 10px;
+}
+
+.carrito > div:first-child{
+    margin-right: 20px;
+}
+
+.pagar{
+    background-color: blueviolet;
+}
