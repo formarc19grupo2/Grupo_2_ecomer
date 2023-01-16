@@ -18,64 +18,8 @@ ul {
     box-sizing: border-box;
 }
 
-/* Header */
-header{
-    background-color: var(--amarillo);
-}
 
-header.main-header ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-    padding-bottom: 35px;
-}
 
-header.main-header .logo {
-    width: 180px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-}
-
-.logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .main-header .logo img{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 30px;
-    margin-right: 25px;
-    color: white;
-}
-
-header .main-header .logo ul li{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.navegacion{
-    background-color: var(--amarillo);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 30px;
-    margin-right: 25px;
-    color: white;
-    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
-    font-size: 25px;
-}
 
 
 
@@ -152,13 +96,8 @@ footer section div.qrFooter i {
 
 /* MEDIA QUERIES */
 
-@media(min-width: 468px){
-   
-}
 
 @media (min-width: 768px) {
-
-  
 
 
     footer section div.menuFooter ul {
