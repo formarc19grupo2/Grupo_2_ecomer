@@ -18,8 +18,13 @@ body{
 
 .productosElegidos{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 3px solid black;
+    margin-right: 20px;
+}
+
+.productosElegidos tbody td{
+    padding-left: 15px;
 }
 
 .total{
@@ -30,4 +35,9 @@ body{
 
 .total{
    font-size: 50px;
+}
+
+.productosElegidos td img{
+    width: 100px;
+    height: 100px;
 }
