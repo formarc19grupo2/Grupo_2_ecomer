@@ -46,8 +46,11 @@ main .seccion__productos--home{
 }
 
 main section img{
-    height: 10rem;
+    height: 80%;;
     width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
