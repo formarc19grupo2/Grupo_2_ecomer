@@ -46,9 +46,10 @@
     align-items: center;
     justify-items: center;
     width: 100%;
-    height: 11rem;
+    height: 11.5rem;
     border: 5px solid var(--amarillo);
     margin-bottom: 0.8rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 /*main*/
@@ -56,70 +57,64 @@
 section div.productosImportantes {
     display: flex;
     flex-wrap: wrap;
-    padding: 2rem 1rem;
-    margin-bottom:1rem ;
-}
-
-section div.productosImportantes article.ttaProducto {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--amarillo);
-    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     padding: 1rem 0.5rem;
-    margin: 0.5rem 0.5rem;
+    margin-top: 1rem;
     max-width: 250px;
 }
 
-article.ttaProducto{
+article.ttaProducto {
     background-color: var(--amarillo);
     margin-top: 1rem;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
-article.ttaProducto h2 {
+article.ttaProducto h2.relevanciaProducto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
-    background-color: var(--amarillo);
     padding: 0.3rem;
     margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 section div.productosImportantes article.ttaProducto div.imgContainer {
-    width: 100%;
+    width: 90vw;
     height: 150px;
-    margin-bottom: 0.1rem;
-    box-shadow: -4px 9px 2px rgba(0, 0, 0, 0.3);
 }
 
 div.imgContainer img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: var(--amarillo) solid 2px;
+    height: 180%;
     border-radius: 15px;
+    margin-bottom: 1rem;
 }
 
 article.ttaProducto h3.tituloProducto {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: white;
     border-top: 1px solid white;
-    ;
     border-bottom: 1px solid white;
     padding-bottom: 0.3rem;
     padding-top: 0.3rem;
     margin-bottom: 0.5rem;
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 article.ttaProducto p.precio {
     color: white;
-    text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
     border-top: 1px solid white;
-    ;
     border-bottom: 1px solid white;
     padding-bottom: 0.3rem;
     padding-top: 0.3rem;
@@ -127,27 +122,32 @@ article.ttaProducto p.precio {
 
 article.ttaProducto p.descripcionProducto {
     color: white;
-    text-shadow: -3px 3px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: -2px 5px 5px rgba(0, 0, 0, 0.3);
     font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 article.ttaProducto a.btn {
-    background-color: rgb(67, 6, 104);
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verde);
+    color: var(--gris-oscuro);
     text-transform: uppercase;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
     border: 2px solid orange;
     border-radius: 5px;
     transition: all 1s ease;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0,0.5);
 }
 
 article.ttaProducto a.btn:hover {
     background-color: white;
     color: orange;
-    border: 2px solid rgb(67, 6, 104);
+    border: 2px solid var(--verde);
 }
 
 /* Header */
