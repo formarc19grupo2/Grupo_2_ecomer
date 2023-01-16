@@ -18,13 +18,6 @@ ul {
     box-sizing: border-box;
 }
 
-li{
-    list-style: none;
-}
-
-
-
-
 /* FOOTER */
 footer {
     background-color: var(--amarillo);
