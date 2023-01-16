@@ -1,1 +1,13 @@
+
+@import url('styles.css');
 @import url('register.css');
+
+
+
+  
+  
+  
+  body{
+    margin:10px;
+    background-color: var(--amarillo);
+  }
