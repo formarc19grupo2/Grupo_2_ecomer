@@ -23,11 +23,20 @@ header{
     background-color: var(--amarillo);
 }
 
-header.main-header {
+header.main-header ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+header.main-header ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 125px;
+    
 }
 
 header.main-header .logo {
