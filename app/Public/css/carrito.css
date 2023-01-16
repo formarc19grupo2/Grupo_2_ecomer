@@ -1,30 +1,33 @@
+
 body{
     background-color: var(--amarillo) ;
 }
 
-table{
-    box-sizing: border-box;
-    border: 5px solid black;
-}
-
-.carrito{
-    /* display: -ms-flex;
-    display: -webkit-flex; */
+.contenedor{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.contenedor .productosElegidos{
     width: 50%;
 }
 
-.carrito > div{
-    width: 50%;
-    padding: 10px;
+
+
+.productosElegidos{
+    display:flex;
+    flex-direction: row;
+    border: 3px solid black;
 }
 
-.carrito > div:first-child{
-    margin-right: 20px;
-}
+.total{
+    display:flex;
+    flex-direction: column;
+    border: 3px solid black;
+} */
 
-.pagar{
-    background-color: blueviolet;
+.total{
+   font-size: 50px;
 }
