@@ -3,13 +3,13 @@
 .btn__crea {
     height: 70%;
     width: 50vw;
-    background: var(--amarillo);
+    background-color: var(--amarillo);
     padding: 1rem;
     color: white;
     font-size: 5rem;
     text-transform: uppercase;
-    text-align: center;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     margin: 1rem auto;
@@ -22,27 +22,39 @@
 }
 
 .btn__utiles {
-    height: 110px;
-    width: 75vw;
+    height: 140px;
+    width: 85vw;
     background-color: var(--amarillo);
+    font-size: 1rem;
+    color: white;
     font-size: 1rem;
     text-transform: uppercase;
     display: flex;
+    flex: row;
     align-items: center;
+    justify-content: space-between;
+   
     margin: 1rem auto;
     border-radius: 10%;
     text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*main*/
+
+main .seccion__productos--home{
+    align-content: center;
+}
+
+main section img{
+    height: 10rem;
+    width: 80vw;
+
 }
 
 .seccion__productos--home {
     color: white;
     text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: var(--amarillo);
-}
-
-/*Links Utiles*/
-.btn__utiles {
-    color: white;
 }
 
 /* Header */
