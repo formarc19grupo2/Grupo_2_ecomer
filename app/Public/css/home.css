@@ -1,12 +1,12 @@
 @import url('styles.css');
 
 .btn__crea {
-    height: 70px;
-    width: 50%;
+    height: 70%;
+    width: 50vw;
     background: var(--amarillo);
     padding: 1rem;
     color: white;
-    font-size: 10px;
+    font-size: 5rem;
     text-transform: uppercase;
     text-align: center;
     display: flex;
@@ -23,11 +23,10 @@
 
 .btn__utiles {
     height: 110px;
-    width: 75%;
+    width: 75vw;
     background-color: var(--amarillo);
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
-
     display: flex;
     align-items: center;
     margin: 1rem auto;
