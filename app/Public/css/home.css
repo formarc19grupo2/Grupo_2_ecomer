@@ -34,23 +34,22 @@
     margin: 1rem auto;
     border-radius: 5%;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
-    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);    
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.link__icon{
-    width: 15vw;
+.link__icon {
+    width: 11vw;
 }
 
-.carousel-inner{
-    display: flex;  
-    align-items: center;  
-    justify-items: center;  
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-items: center;
     width: 100%;
-    height: 12rem;
+    height: 11rem;
     border: 5px solid var(--amarillo);
     margin-bottom: 0.8rem;
 }
-
 
 /*main*/
 
@@ -58,6 +57,7 @@ section div.productosImportantes {
     display: flex;
     flex-wrap: wrap;
     padding: 2rem 1rem;
+    margin-bottom:1rem ;
 }
 
 section div.productosImportantes article.ttaProducto {
@@ -72,18 +72,23 @@ section div.productosImportantes article.ttaProducto {
     max-width: 250px;
 }
 
-article.ttaProducto h2{
+article.ttaProducto{
+    background-color: var(--amarillo);
+    margin-top: 1rem;
+}
+
+article.ttaProducto h2 {
     color: white;
-    text-shadow: -2px 2px 2px rgba(0,0,0,0.3);
-    box-shadow: -2px 2px 2px rgba(0,0,0,0.3);
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
     background-color: var(--amarillo);
     padding: 0.3rem;
-    margin-bottom: 0.5rem;    
+    margin-bottom: 0.5rem;
 }
 
 section div.productosImportantes article.ttaProducto div.imgContainer {
     width: 100%;
-    height: 150px;    
+    height: 150px;
     margin-bottom: 0.1rem;
     box-shadow: -4px 9px 2px rgba(0, 0, 0, 0.3);
 }
@@ -99,11 +104,12 @@ div.imgContainer img {
 article.ttaProducto h3.tituloProducto {
     font-size: 1rem;
     color: white;
-    border-top: 1px solid white;;
+    border-top: 1px solid white;
+    ;
     border-bottom: 1px solid white;
     padding-bottom: 0.3rem;
     padding-top: 0.3rem;
-    margin-bottom: 0.5rem;    
+    margin-bottom: 0.5rem;
 }
 
 article.ttaProducto p.precio {
@@ -112,7 +118,8 @@ article.ttaProducto p.precio {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    border-top: 1px solid white;;
+    border-top: 1px solid white;
+    ;
     border-bottom: 1px solid white;
     padding-bottom: 0.3rem;
     padding-top: 0.3rem;
@@ -145,11 +152,11 @@ article.ttaProducto a.btn:hover {
 
 /* Header */
 
-header{
+header {
     background-color: var(--amarillo);
 }
 
-header.main-header ul{
+header.main-header ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -160,7 +167,7 @@ header.main-header ul{
     padding-bottom: 35px;
 }
 
-header.main-header input{
+header.main-header input {
     border-radius: 30px;
     width: -60%;
 }
@@ -204,14 +211,14 @@ header.main-header .logo {
     color: white;
 } */
 
-header .main-header .logo ul li{
+header .main-header .logo ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 20px;
 }
 
-.navegacion{
+.navegacion {
     background-color: var(--amarillo);
     display: flex;
     justify-content: space-around;
@@ -225,7 +232,7 @@ header .main-header .logo ul li{
     font-size: 35px;
 }
 
-.navegacion li{
+.navegacion li {
     display: flex;
     /* justify-content: space-around; */
     align-items: center;
@@ -238,21 +245,21 @@ header .main-header .logo ul li{
     font-size: 15px;
 }
 
-@media(min-width:268px) and (max-width:468px){
-    .navegacion li{
+@media(min-width:268px) and (max-width:468px) {
+    .navegacion li {
         display: none;
     }
 
-    
-    
+
+
 }
 
-@media(min-width:468px) and (max-width:768px){
-    .navegacion li{
+@media(min-width:468px) and (max-width:768px) {
+    .navegacion li {
         display: none;
     }
 
-    header.main-header ul{
+    header.main-header ul {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -263,15 +270,15 @@ header .main-header .logo ul li{
         padding-bottom: 15px;
     }
 
-    
-    
-    header.main-header input{
+
+
+    header.main-header input {
         border-radius: 30px;
         width: -60%;
         font-size: 15px;
     }
 
-    .main-icon{
+    .main-icon {
         font-size: 25px;
     }
 }
