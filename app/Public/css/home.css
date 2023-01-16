@@ -1,8 +1,10 @@
 @import url('styles.css');
 
+/*body*/
+
 .btn__crea {
     height: 70%;
-    width: 50vw;
+    width: 70vw;
     background-color: var(--amarillo);
     padding: 1rem;
     color: white;
@@ -32,30 +34,41 @@
     display: flex;
     flex: row;
     align-items: center;
-    justify-content: space-between;
-   
+    justify-content: space-between;   
     margin: 1rem auto;
     border-radius: 10%;
-    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);    
+}
+
+.link__icon{
+    width: 15vw;
+}
+
+.carousel img{    
+    height: 15rem;
+    max-width: 100vw;
+    border: 5px solid var(--amarillo);
 }
 
 /*main*/
 
-main .seccion__productos--home{
+.seccion__productos--hm {
     align-content: center;
-}
-
-main section img{
-    height: 10rem;
-    width: 80vw;
-
-}
-
-.seccion__productos--home {
     color: white;
     text-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: var(--amarillo);
 }
+
+.img__hm{
+    height: 80%;
+    max-width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
 
 /* Header */
 header{
