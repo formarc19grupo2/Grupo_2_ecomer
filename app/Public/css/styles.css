@@ -19,6 +19,22 @@ ul {
 }
 
 /* Header */
+header{
+    background-color: var(--amarillo);
+}
+
+header.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header.main-header .logo {
+    width: 180px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
 
 .logo{
     display: flex;
@@ -138,6 +154,8 @@ footer section div.qrFooter i {
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
+
+
 
     footer section div.menuFooter ul {
         flex-direction: row;
