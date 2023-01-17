@@ -18,6 +18,11 @@ Ofrece un formulario de registro para acceder a descuentos exclusivos y novedade
 
 <br/>
 
+ <h2>Link para tablero :</h2>
+ <ul>
+        <li><a href="https://trello.com/b/fcYKDrSJ/grupo-2-c19">Grupo 2 C19</a></li>
+ </ul>
+ 
 <br/>
 <h2>Sitios de Referencia:</h2>
 <div>

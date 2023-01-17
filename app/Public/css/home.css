@@ -66,6 +66,7 @@ section div.productosImportantes {
 }
 
 article.ttaProducto {
+    width: 100vw;
     background-color: var(--amarillo);
     margin-top: 1rem;
     padding: 0.5rem;
@@ -87,7 +88,7 @@ article.ttaProducto h2.relevanciaProducto {
 
 section div.productosImportantes article.ttaProducto div.imgContainer {
     width: 90vw;
-    height: 150px;
+    height: 100px;
 }
 
 div.imgContainer img {
@@ -100,10 +101,8 @@ div.imgContainer img {
 article.ttaProducto h3.tituloProducto {
     font-size: 1.1rem;
     color: white;
-    border-top: 1px solid white;
     border-bottom: 1px solid white;
-    padding-bottom: 0.3rem;
-    padding-top: 0.3rem;
+    padding-bottom: 1rem;
     margin-bottom: 0.5rem;
     text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
 }
@@ -114,15 +113,14 @@ article.ttaProducto p.precio {
     font-weight: 600;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-    border-top: 1px solid white;
     border-bottom: 1px solid white;
-    padding-bottom: 0.3rem;
+    padding-bottom: 1rem;
     padding-top: 0.3rem;
 }
 
 article.ttaProducto p.descripcionProducto {
     color: white;
-    text-shadow: -2px 5px 5px rgba(0, 0, 0, 0.3);
+    text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.3);
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 1rem;
