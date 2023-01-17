@@ -6,7 +6,10 @@ body{
 .contenedor{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+       
     flex-wrap: wrap;
+
 
 }
 
@@ -15,16 +18,27 @@ body{
 }
 
 
+h2{
+    display: flex;
+    justify-content: center;
+
+}
+
 
 .productosElegidos{
     display:flex;
     flex-direction: column;
-    border: 3px solid black;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid beige;
     margin-right: 20px;
+    margin-left: 50px;
+    padding-top: 15px;
 }
 
 .productosElegidos tbody td{
     padding-left: 15px;
+    
 }
 
 .total{
@@ -40,4 +54,102 @@ body{
 .productosElegidos td img{
     width: 100px;
     height: 100px;
+}
+
+.total{
+    padding-top: 15px;
+}
+
+.total button{
+    padding-top: 25px;
+}
+
+.cupon{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 40px;
+    
+}
+
+.cupon input{
+    width: -70px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.cupon button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.total h3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 60px;
+    
+}
+
+
+
+
+@media(min-width: 768px){
+    .contenedor{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .cupon input{
+        height: 30px;
+        margin-bottom: 10px;
+        width: 113px;
+        margin-left: 13px;
+    }
+
+    .cupon button{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 50px;
+        margin-bottom: 10px;
+        margin-left: 13px;
+    }
+
+    .productosElegidos{
+        display: flex;
+        flex-direction: column;
+        border: none;
+        margin-right: 20px;
+        margin-left: 50px;
+        margin-top: 25px;
+        width: 100%;
+        
+    }
+
+    .productosElegidos tbody td input{
+        width: -50%;
+    }
+
+    .total{
+        display: flex;
+        flex-direction: column;
+        border: 3px solid black;
+        margin-right: 20px;
+        margin-left: 50px;
+        margin-top: 25px;
+        
+    }
+
+    .pago h3{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        
+    }
+    
 }

@@ -249,10 +249,20 @@ header .main-header .logo ul li {
     font-size: 15px;
 }
 
-@media(min-width:268px) and (max-width:468px) {
+@media(min-width:360px) and (max-width:468px){
     .navegacion li {
         display: none;
     }
+<<<<<<< HEAD
+=======
+
+    header.main-header ul{
+        width: 100%;
+    }
+
+
+
+>>>>>>> cdacbde9eadfda92d5dba90f31d725c9f9b2e6e7
 }
 
 @media(min-width:468px) and (max-width:768px) {
@@ -280,4 +290,50 @@ header .main-header .logo ul li {
     .main-icon {
         font-size: 25px;
     }
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+    
+
+    header.main-header ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+}
+
+@media(min-width:1024px) and (max-width:1440px) {
+
+    
+    .navegacion li {
+        width: 100%;
+    }
+
+    header.main-header ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    header.main-header input {
+        border-radius: 30px;
+        width: -60%;
+        font-size: 15px;
+    }
+
+    .main-icon {
+        font-size: 25px;
+    }
+}
+    
 }
