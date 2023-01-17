@@ -98,6 +98,12 @@ div.imgContainer img {
     margin-bottom: 1rem;
 }
 
+article.ttaProducto .tituloYprecio{
+    display: flex;
+    justify-items: row;
+    justify-content: space-around;
+}
+
 article.ttaProducto h3.tituloProducto {
     font-size: 1.1rem;
     color: white;
@@ -247,9 +253,6 @@ header .main-header .logo ul li {
     .navegacion li {
         display: none;
     }
-
-
-
 }
 
 @media(min-width:468px) and (max-width:768px) {
@@ -267,8 +270,6 @@ header .main-header .logo ul li {
         width: 100%;
         padding-bottom: 15px;
     }
-
-
 
     header.main-header input {
         border-radius: 30px;
