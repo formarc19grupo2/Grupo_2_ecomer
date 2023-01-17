@@ -24,14 +24,14 @@ a.links{
 }
 
 
-/* content que contem os formulários */
+/* content formulários */
 .content{
   width: 500px;
   margin: 0px auto;
   position: relative; 
 }
 
-/* formatando o cabeçalho dos formulários */
+
 h1{
   font-size: 48px;
   color: var(--gris-oscuro);
@@ -84,7 +84,7 @@ input:not([type="checkbox"]){
   transition: all 0.2s linear;
 }
 
-/*estilo do botão submit */
+/*style submit */
 input[type="submit"]{
   width: 100%!important;
   cursor: pointer;  
