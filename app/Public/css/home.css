@@ -1,6 +1,5 @@
 @import url('styles.css');
 
-/*body*/
 
 .btn__crea {
     width: 70vw;
@@ -20,16 +19,16 @@
 }
 
 .btn__utiles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 90vw;
     background-color: var(--amarillo);
     font-size: 0.8rem;
     color: white;
     font-size: 1rem;
     text-transform: uppercase;
-    display: flex;
     flex: row;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem;
     margin: 1rem auto;
     border-radius: 5%;
@@ -51,8 +50,6 @@
     margin-bottom: 0.8rem;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
-
-/*main*/
 
 section div.productosImportantes {
     display: flex;
@@ -98,7 +95,7 @@ div.imgContainer img {
     margin-bottom: 1rem;
 }
 
-article.ttaProducto .tituloYprecio{
+article.ttaProducto .tituloYprecio {
     display: flex;
     justify-items: row;
     justify-content: space-around;
@@ -145,7 +142,7 @@ article.ttaProducto a.btn {
     border: 2px solid orange;
     border-radius: 5px;
     transition: all 1s ease;
-    box-shadow: -2px 2px 2px rgba(0, 0, 0,0.5);
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 article.ttaProducto a.btn:hover {

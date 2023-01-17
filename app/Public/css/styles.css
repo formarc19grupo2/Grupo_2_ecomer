@@ -114,7 +114,7 @@ header .main-header .logo ul li {
     font-size: 15px;
 }
 
-@media(min-width:360px) and (max-width:468px){
+@media(min-width:360px) and (max-width:468px) {
     .navegacion li {
         display: none;
     }
@@ -251,7 +251,8 @@ footer section div.descripcion h5 {
 
 footer section div.logoFooter {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    ;
 }
 
 footer section div.qrFooter i {
