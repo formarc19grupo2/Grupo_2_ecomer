@@ -71,6 +71,7 @@ body section.detalles__producto--compra {
 }
 body section.detalles__producto--compra h2 {
     padding: 15px;
+    font-family: var(--roboto);
 }
 
 body section.detalles__producto--compra h4 {
@@ -78,6 +79,7 @@ body section.detalles__producto--compra h4 {
     color:rgb(15, 15, 15);
     font-size: 20px;
     text-transform: uppercase;
+    font-family: var(--roboto);
 }
 
 body section.detalles__producto--compra ul {
@@ -190,18 +192,15 @@ body section.seguirComprando button {
     body section.img__miniatura {
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 100px;
         position: absolute;
-        top: 50px;
+        top: 80px;
+        margin: 150px 70px 0px 100px;
     }
 
 }
 
 @media (min-width: 1024px) {
-    /* main div.aa2 {
-        margin: 0;
-        border: 0px;   
-    } */
+    
 
     body main div.container-gral {
         display: flex;
@@ -222,7 +221,7 @@ body section.seguirComprando button {
     }
 
     body section.img__miniatura {
-        margin-left: -959px;
+        margin-left: -890px;
     }
 
     /* body section.img__miniatura div img {
@@ -238,7 +237,8 @@ body section.seguirComprando button {
 
     body section.continuar h4 { 
         text-align: start;
-        margin-top: 200px;
+        margin-top: 25px;
+        font-family: var(--montserrat);
     }
 
     /* body section.combos {
