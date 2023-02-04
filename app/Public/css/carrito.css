@@ -3,24 +3,98 @@ body{
     background-color: var(--amarillo) ;
 }
 
+.titulo{
+     display: flex;
+     justify-content: center;
+     text-decoration: overline;
+}
+
+
+table{
+    
+    width: 60%;
+}
+
+table th{
+    display: flex;
+    justify-content: center;
+}
+
 .contenedor{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    margin-left: 15px;
+}
+
+.total{
+    border: 1px solid black;
+}
+
+.caja{
+    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-       
-    flex-wrap: wrap;
-
-
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    font-size: 15px;
 }
 
-.contenedor .productosElegidos{
+.caja td{
+    padding-left: 70px;
+    padding-right: 10px;
+}
+
+.caja td i{
+    cursor: pointer;
+}
+
+
+
+.caja img{
+    width: 75px;
+    height: 75px;
+}
+
+
+table tr td{
+    display: inline;
+    justify-content: space-between;
+    
+}
+
+/* table thead{
     width: 50%;
-}
-
-
-h2{
+    border: 1px solid red;
     display: flex;
     justify-content: center;
+} */
+
+/* .contenedor .productosElegidos{
+    width: 46%;
+    border: 1px solid red;
+} */
+
+tbody td{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* h2{
+    display: flex;
+    justify-content: center;
+
+} */
+
+/* .contador{
+    text-align: center;
+    font-size: 20px;
+} */
+
+/* .count{
 
 }
 
@@ -34,9 +108,9 @@ h2{
     margin-right: 20px;
     margin-left: 50px;
     padding-top: 15px;
-}
+} */
 
-.productosElegidos tbody td{
+/* .productosElegidos tbody td{
     padding-left: 15px;
     
 }
@@ -47,7 +121,7 @@ h2{
     border: 3px solid black;
 } */
 
-.total{
+/* .total{
    font-size: 50px;
 }
 
@@ -58,11 +132,11 @@ h2{
 
 .total{
     padding-top: 15px;
-}
+} */
 
-.total button{
+/* .total button{
     padding-top: 25px;
-}
+} 
 
 .cupon{
     display: flex;
@@ -84,20 +158,20 @@ h2{
     align-items: flex-end;
     width: 50px;
     margin-bottom: 10px;
-}
+} */
 
-.total h3{
+/* .total h3{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 60px;
     
 }
+ */
 
 
 
-
-@media(min-width: 768px){
+/* @media(min-width: 768px){
     .contenedor{
         display: flex;
         flex-direction: column;
@@ -152,4 +226,4 @@ h2{
         
     }
     
-}
+} */
