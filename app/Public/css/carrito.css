@@ -1,4 +1,4 @@
-
+@import url("styles.css");
 
 .titulo{
      display: flex;
@@ -6,6 +6,9 @@
      padding-top: 70px  ;
 }
 
+body{
+    background-color: var(--);
+}
 
 table{
     width: 67vw;
@@ -106,8 +109,34 @@ tbody td{
 
 .total button{
     margin-top: 10px;
-    
+    margin-left: 86px;
 }
+
+.total h2{
+    font-size: 31px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-end;
+    padding-right: 24px;
+}
+
+.total-parcial{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 15px;
+
+}
+
+.checkout button{
+    display: flex;
+    justify-content: center;
+    width: 10vw;
+    margin-left: 56px;
+}
+
+
 
 
 
