@@ -14,5 +14,5 @@ const indexRouter = require("./src/routes");
 app.use("/", indexRouter);
 
 app.listen(3030, () => {
-  console.log("server online on localhost:3030");
+  console.log("server online on http://localhost:3030/");
 });
