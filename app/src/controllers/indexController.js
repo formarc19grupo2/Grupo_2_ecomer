@@ -1,11 +1,13 @@
 const path = require("path")
+const products = require("../database/productsDataBase.json")
+
 
 module.exports = {
 
-
-
     index: (req, res) => {
-        return res.render("home")
+        return res.render("home",{
+            products,
+        })
     },
 
     detail: (req, res) => {

@@ -62,7 +62,7 @@
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-main.home__productos1{
+main.home__productos{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
