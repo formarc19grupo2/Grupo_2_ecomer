@@ -43,14 +43,5 @@
         "category": "destacado",
         "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.",
         "image": "/images/Sanguches/Paninis/Panini con salchichas.jpg"
-    },
-    {
-        "id": 6,
-        "name": "Pebete de Jamon y Queso",
-        "price": 72999,
-        "discount": 0,
-        "category": "destacado",
-        "description": "Exquisitos cortes del mas maravilloso Jamon, con exclusivas laminas del mejor queso italiano.",
-        "image": "/images/Sanguches/Pebetes/Pebete de Jamon y Queso.jpeg"
     }
 ]

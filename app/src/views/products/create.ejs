@@ -6,12 +6,19 @@
 	<!-- Header -->
 	<%-include('../partials/header') %> 
 	<!-- /Header -->
-	<form action="/home/" method="POST">
-	<section class="form-register">
+	<form action="/" method="POST" class="form-register">
 		<h4>Nuevo Producto</h4>
-		<input class="controls" type="text" name="name" id="name" placeholder="Nombre">
-		<input class="controls" type="text" name="price" id="price" placeholder="precio">
+		<div><label for="name" class="form-label"></label>
+			<input class="controls" type="text" name="name" id="name" placeholder="Nombre">
+		</div>
+		<div>
+			<label for="price" class="form-label"></label>
+			<input class="controls" type="text" name="price" id="price" placeholder="precio">
+		</div>
+		<div>
+			<label for="discount" class="form-label"></label>
 		<input class="controls" type="text" name="discount" id="discount" placeholder="descueto">
+		</div>
 		<div class="controls">
 			<label for="category" class="form-label">Categoría:</label>
 			<select name="category" id="category" class="form-input">
@@ -25,8 +32,6 @@
 			<textarea name="description" id="description" class="form-input"></textarea>
 		</div>
 		<input class="botons" type="submit" value="GUARDAR">
-		
-	  </section>
 	</form>
 	<!-- /todos los productos -->
 

@@ -59,6 +59,42 @@ module.exports = {
 		res.redirect("/home/");
     },
     edit: (req, res) => {
-        return res.render("products/edit")
+        let productId = Number(req.params.id);
+
+		let productToEdit = products.find(product => product.id === productId);
+
+		return res.render("products/edit",{
+            productToEdit,
+        })
+    },
+    update: (req, res) => {
+		let productId = Number(req.params.id);
+
+        products.forEach(element => {
+            if(element.id === productId){
+                element.name = req.body.name;
+                element.price = req.body.price;
+                element.discount = req.body.discount;
+                element.category = req.body.category;
+                element.description = req.body.description;
+            }
+        });
+
+		writeJson(products);
+
+        res.send("Producto modificado con exito");
+	},
+    delete: (req, res)=>{
+            let productId = Number(req.params.id);
+    
+            products.forEach(product => {
+                if(product.id === productId){
+                    let productToDestroy = products.indexOf(product)
+                    products.splice(productToDestroy, 1);
+                }
+            });
+            writeJson(products)
+    
+            res.send("Producto eliminado correctamente")
     }
 }
