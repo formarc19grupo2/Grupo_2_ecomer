@@ -82,7 +82,7 @@
                                     <h3 class="tituloProducto"><%- product.name %></h3>
                                     <p class="precio">$<%- product.price - (product.price * product.discount / 100) %></p>
                                     <% if (product.discount> 0) { %>
-                                    <span><%- product.discount %>% OFF</span>
+                                    <span class = "priceOff"><%- product.discount %>% OFF</span>
                                     <% } %>
                                 </div>
                                 <p class="descripcionProducto"><%- product.description %></p>
@@ -91,8 +91,7 @@
                                 <a href="/productDetail/<%- product.id %>" class="btn btnComprar">Comprar</a>
                             </article>
                             <% }) %>
-                    </section>
-                   
+                    </section>                   
             </main>
 
             <!--Boostrap-->
