@@ -141,6 +141,7 @@ input[placeholder="ingrese cupon"]{
     justify-content: center;
     width: 10vw;
     margin-left: 56px;
+    padding-top: 10px;
 }
 
 
