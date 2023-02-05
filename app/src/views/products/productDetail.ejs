@@ -64,7 +64,7 @@
     <main>
         <div class="container-gral">
     <section class="detalle__producto--imagen">
-    <img src="/images/Ingredientes/e98bca.jpg" alt="">
+    <img src="<%- product.image %> " alt="">
     </section>
     <section class="img__miniatura">
         <div class="ingredientes"><img src="/images/Ingredientes/huevoF.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button>
@@ -77,8 +77,8 @@
         <div class="ingredientes"><img src="/images/Ingredientes/panFrances.png" alt=""><button type="reset" class="btn btn-reset"><i class="fa-solid fa-trash-can"></i></button></div>
     </section>
     <section class="detalles__producto--compra">
-        <h2>Sandwich--</h2>
-        <h3>$00000</h3>
+        <h2><%- product.name %></h2>
+        <h3><%- product.price %></h3>
         <h4>Elegir medio de pago</h4>
         <ul class="medios__pago">
             <li><a href=""><i class="fa-solid fa-money-bill-1"></i></a></li>
@@ -100,11 +100,15 @@
             </select>
          </div>
         <div class="detalle__producto--descripcion">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id enim dignissimos saepe minima! Aliquid vitae doloremque laboriosam placeat ullam laudantium!</p>
+            <p><%- product.description %></p>
         </div>
         <div class="agragarCompra">
             <button type="submit">Agregar al carrito</button>
         </div>
+         <a href="" class="action-button edit">EDITAR</a>
+		    <form action="" method="POST" style="display: inline-flex">
+		        <button type="submit" class="action-button delete">ELIMINAR</button>
+		    </form>
     </section>
     </div>
     <section class="continuar">
@@ -117,6 +121,7 @@
     </section>
     <section class="seguirComprando">
         <button> SEGUIR COMPRANDO </button>
+        
     </section>
     </main>
 

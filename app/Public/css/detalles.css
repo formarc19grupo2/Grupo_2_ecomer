@@ -173,6 +173,26 @@ body section.seguirComprando button {
     border-radius: 9px;
     
 }
+.action-button {
+    border: none;
+    width: 100px;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    margin-top: -10px;
+
+  }
+  
+  .action-button.edit {
+    background-color: rgb(30, 138, 210);
+  }
+  .action-button.delete {
+    background-color: rgb(240, 65, 35);
+  }
 
 /*  MEDIA QUERIES */
 @media (min-width: 768px) {

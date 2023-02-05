@@ -50,6 +50,10 @@
     text-align: center;
 }
 
+a p {
+    color: white;
+    
+}
 
 .carousel-inner {
     display: flex;

@@ -9,7 +9,7 @@
             <!-- /Header -->
 
             <section class="btn__crea">
-                <p>Creá tu e-sandwich</p>
+                <a href="/create"><p>Creá tu e-sandwich</p></a>
             </section>
 
             <div class="btn__utiles">
@@ -73,10 +73,10 @@
                     <section class="contenedorDeProductos">
                         <% products.forEach((product)=> { %>
                             <article class="ttaProducto">
-                                <a href="/products/detail/<%- product.id %>"></a>
+                                
                                 <div class="imgContainer">
                                     <h2 class="relevanciaProducto"><%- product.category %></h2>
-                                    <img src="/images/Sanguches/Medialunas/<%- product.image %>" alt="">
+                                    <img src="<%- product.image %>" alt="">
                                 </div>
                                 <div class="tituloYprecio">
                                     <h3 class="tituloProducto"><%- product.name %></h3>
@@ -86,9 +86,9 @@
                                     <% } %>
                                 </div>
                                 <p class="descripcionProducto"><%- product.description %></p>
-                                <a href="http://localhost:3030/productDetail" class="btn btnDetalle">Detalle</a>
+                                <a href="/productDetail/<%- product.id %>" class="btn btnDetalle">Detalle</a>
                                 <br>
-                                <a href="http://localhost:3030/productCart" class="btn btnComprar">Comprar</a>
+                                <a href="/productDetail/<%- product.id %>" class="btn btnComprar">Comprar</a>
                             </article>
                             <% }) %>
                     </section>
