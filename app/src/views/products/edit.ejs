@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%-include('../partials/head') %> 
+<body>
+	<!-- Header -->
+	<%-include('../partials/header') %> 
+	<!-- /Header -->
+
+	<section class="form-register">
+		<h4>Edicion de productos</h4>
+		<input class="controls" type="text" name="name" id="name" placeholder="Nombre">
+		<input class="controls" type="number" name="price" id="price" placeholder="precio">
+		<input class="controls" type="number" name="discount" id="discount" placeholder="descueto">
+		<div class="controls">
+			<label for="category" class="form-label">Categoría:</label>
+			<select name="category" id="category" class="form-input">
+				<option value="">Elegí</option>
+				<option value="in-sale">En oferta</option>
+				<option value="visited">Últimos agregados</option>
+			</select>
+		</div>
+		<div class="controls">
+			<label for="description" class="form-label">Descripcion</label>
+			<textarea name="description" id="description" class="form-input"></textarea>
+		</div>
+		<input class="botons" type="submit" value="GUARDAR">
+		
+	  </section>
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%-include('../partials/footer') %> 
+	<!-- /footer -->
+</body>	
+</html>

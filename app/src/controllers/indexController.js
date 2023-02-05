@@ -11,18 +11,24 @@ module.exports = {
     },
 
     detail: (req, res) => {
-        return res.render("productDetail")
+        return res.render("products/productDetail")
     },
 
     cart: (req, res) => {
-        return res.render("productCart")
+        return res.render("products/productCart")
     },
 
     login: (req, res) => {
-        return res.render("login")
+        return res.render("users/login")
     },
 
     register: (req, res) => {
-        return res.render("register")
+        return res.render("users/register")
+    },
+    create: (req, res) => {
+        return res.render("products/create")
+    },
+    edit: (req, res) => {
+        return res.render("products/edit")
     }
 }
