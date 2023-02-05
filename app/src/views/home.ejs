@@ -76,13 +76,13 @@
                                 <a href="/products/detail/<%- product.id %>"></a>
                                 <div class="imgContainer">
                                     <h2 class="relevanciaProducto"><%- product.category %></h2>
-                                    <img src="/images/Sanguches/Medialunas/<%- product.image %>" alt="">
+                                    <img src="<%- product.image %>" alt="">
                                 </div>
                                 <div class="tituloYprecio">
                                     <h3 class="tituloProducto"><%- product.name %></h3>
                                     <p class="precio">$<%- product.price - (product.price * product.discount / 100) %></p>
                                     <% if (product.discount> 0) { %>
-                                    <span><%- product.discount %>% OFF</span>
+                                    <span class = "priceOff"><%- product.discount %>% OFF</span>
                                     <% } %>
                                 </div>
                                 <p class="descripcionProducto"><%- product.description %></p>
@@ -91,8 +91,7 @@
                                 <a href="http://localhost:3030/productCart" class="btn btnComprar">Comprar</a>
                             </article>
                             <% }) %>
-                    </section>
-                   
+                    </section>                   
             </main>
 
             <!--Boostrap-->
