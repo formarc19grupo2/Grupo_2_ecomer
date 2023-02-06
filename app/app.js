@@ -1,3 +1,9 @@
+
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+
+
 const express = require('express');
 const app = express();
 const methodOverride =  require('method-override');
@@ -6,6 +12,13 @@ const path = require('path');
 
 app.use(express.static('public'));
 app.set ("view engine", "ejs");
+
+
+app.use(express.urlencoded({ extended: false }));
+app.use(logger('dev'));
+app.use(express.json());
+app.use(cookieParser());
+
 app.set('views', path.join(__dirname, './src/views'));
 app.use(methodOverride('_method'));
 

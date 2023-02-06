@@ -40,7 +40,8 @@ module.exports = {
         return res.render("products/create")
     },
     store: (req, res) =>{
-        let lastId = products[products.length -1].id;
+
+       let lastId = products[products.length -1].id;
 		
 
 		let newProduct = {
@@ -53,10 +54,11 @@ module.exports = {
 			image: "default-image.png",
 		}
 		products.push(newProduct);
+        console.log(newProduct);
 
 		writeJson(products); //escribe el JSON - y persiste 
 		
-		res.redirect("/home/");
+		res.send("home");
     },
     edit: (req, res) => {
         let productId = Number(req.params.id);
