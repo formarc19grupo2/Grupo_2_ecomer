@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Medialuna con Roquefort",
+        "price": 1500,
+        "discount": 50,
+        "category": "oferta",
+        "description": "Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.",
+        "image": "/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Tostado de Salchichas",
+        "price": 500,
+        "discount": 3,
+        "category": "oferta",
+        "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.",
+        "image": "/images/Sanguches/Paninis/Panini con salchichas.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Pebete de Jamon y Queso2",
+        "price": "72999",
+        "discount": "25",
+        "category": "",
+        "description": "Exquisitos cortes del mas maravilloso Jamon, con exclusivas laminas del mejor queso italiano. ",
+        "image": "/images/Sanguches/Pebetes/Pebete de Jamon y Queso.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Medialuna con Roquefort",
+        "price": 1500,
+        "discount": 20,
+        "category": "destacado",
+        "description": "Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.",
+        "image": "/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Tostado de Salchichas",
+        "price": 500,
+        "discount": 5,
+        "category": "destacado",
+        "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.",
+        "image": "/images/Sanguches/Paninis/Panini con salchichas.jpg"
+    },
+    {
+        "id": 6,
+        "name": "LUCAS",
+        "price": "500",
+        "discount": "20",
+        "category": "",
+        "description": "adadawdadd",
+        "image": "default-image.png"
+    },
+    {
+        "id": 7,
+        "name": "Grupo 2 C19",
+        "price": "51515151",
+        "discount": "20",
+        "category": "in-sale",
+        "description": "sefsefsef",
+        "image": "default-image.png"
+    },
+    {
+        "id": 8,
+        "name": "LUCASdawopindoai",
+        "price": "515151",
+        "discount": "20",
+        "category": "in-sale",
+        "description": "awdawdawd",
+        "image": "default-image.png"
+    },
+    {
+        "id": 9,
+        "name": "media luna2",
+        "price": "53",
+        "discount": "15",
+        "category": "in-sale",
+        "description": "sabrosa",
+        "image": "default-image.png"
+    },
+    {
+        "id": 10,
+        "name": "LUCAS FRANCISCO MONSORES",
+        "price": "500",
+        "discount": "10",
+        "category": "in-sale",
+        "description": "dawdada",
+        "image": "default-image.png"
+    }
+]
