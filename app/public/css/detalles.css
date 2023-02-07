@@ -27,12 +27,12 @@ section.detalle__producto--imagen {
     margin-top: 50px;
 }
 section.detalle__producto--imagen img {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: auto;
     border: 1px solid var(--gris-oscuro);
 }
 
-body section.img__miniatura {
+/* body section.img__miniatura {
     display: flex;
     justify-content: space-around;
     padding: 30px 0 30px 0px;
@@ -60,7 +60,7 @@ body section.img__miniatura div.ingredientes i {
 body section.img__miniatura div img {
     width: 50px;
     height: 50px;   
-}
+} */
 
 
 body section.detalles__producto--compra {
@@ -123,7 +123,7 @@ body section.detalles__producto--compra div.detalle__producto--descripcion {
     column-count: 2;
     column-gap: 20px;
     text-align: left;
-    margin: 20px;
+    margin: 5px;
 }    
 
 
@@ -131,12 +131,12 @@ body section.detalles__producto--compra div.agragarCompra {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
+    height: 33px;
     margin: 20px;
 }
 
 body section.detalles__producto--compra div.agragarCompra button {
-    width: 50%;
+    width: 70%;
     height: 30px;
     
 }
@@ -205,17 +205,21 @@ body section.seguirComprando button {
     }
 
     section.detalle__producto--imagen img {
-        height: 400px;
-        width: 400px;
+        height: auto;
+        width: 600px;
     }
-
-    body section.img__miniatura {
+    body section.detalles__producto--compra div.agragarCompra button {
+        width: 50%;
+        
+        
+    }
+    /* body section.img__miniatura {
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
         top: 80px;
         margin: 150px 70px 0px 100px;
-    }
+    } */
 
 }
 
@@ -235,24 +239,25 @@ body section.seguirComprando button {
     }
 
     section.detalle__producto--imagen img {
-        height: 550px;
-        width: 550px;
+        height: auto;
+        width: 600px;
         
     }
 
-    body section.img__miniatura {
+    /* body section.img__miniatura {
         margin-left: -890px;
-    }
-
-    /* body section.img__miniatura div img {
-        width: 50px;
-        height: 50px;   
     } */
+
+    body section.detalles__producto--compra div.agragarCompra button {
+        width: 60%;
+       
+        
+    }
 
     body section.detalles__producto--compra {
        max-width: 300px;
        max-height: 600px;
-      
+       margin: 5px;
     }
 
     body section.continuar h4 { 
