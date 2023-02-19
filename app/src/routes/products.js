@@ -1,6 +1,5 @@
 const express = require("express");
 const routes = express.Router();
-const indexcontroller = require("../controllers/indexController");
 const productscontroller = require("../controllers/productsController");
 
 
@@ -13,7 +12,6 @@ routes.get("/productCart", productscontroller.cart);
 routes.get("/create", productscontroller.create);
 routes.post("/", productscontroller.store);  
 
-// routes.post('/', controller.store); 
 routes.get("/edit/:id", productscontroller.edit);
 routes.put("/edit/:id", productscontroller.update);
 routes.delete("/delete/:id", productscontroller.delete);

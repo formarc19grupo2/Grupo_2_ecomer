@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "Medialuna con Roquefort",
-        "price": "1500",
+        "price": "1701",
         "discount": "50",
         "category": "",
-        "description": "Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor. ",
+        "description": "Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.      ",
         "image": "/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"
     },
     {
         "id": 2,
         "name": "Tostado de Salchichas",
-        "price": 500,
-        "discount": 3,
-        "category": "oferta",
-        "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.",
+        "price": "61222",
+        "discount": "3",
+        "category": "",
+        "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.             ",
         "image": "/images/Sanguches/Paninis/Panini con salchichas.jpg"
     },
     {

@@ -28,7 +28,7 @@ const productsRouter = require("./src/routes/products");
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
-app.use('/products', productsRouter);
+app.use("/products", productsRouter);
 
 
 app.listen(3030, () => {
