@@ -4,7 +4,7 @@
         "name": "Medialuna con Roquefort",
         "price": "1701",
         "discount": "50",
-        "category": "",
+        "category": "destacado",
         "description": "Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.      ",
         "image": "/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"
     },
@@ -13,7 +13,7 @@
         "name": "Tostado de Salchichas",
         "price": "61222",
         "discount": "3",
-        "category": "",
+        "category": "destacado",
         "description": "Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.             ",
         "image": "/images/Sanguches/Paninis/Panini con salchichas.jpg"
     },
@@ -22,7 +22,7 @@
         "name": "Pebete de Jamon y Queso2",
         "price": "72999",
         "discount": "25",
-        "category": "",
+        "category": "destacado",
         "description": "Exquisitos cortes del mas maravilloso Jamon, con exclusivas laminas del mejor queso italiano. ",
         "image": "/images/Sanguches/Pebetes/Pebete de Jamon y Queso.jpeg"
     },
