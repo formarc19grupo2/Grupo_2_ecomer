@@ -53,8 +53,8 @@ module.exports = {
 
 		writeJson(products); //escribe el JSON - y persiste 
 
-		res.send(newProduct)
-		//res.redirect("/");
+		//res.send(newProduct)
+		res.redirect("/");
     },
     edit: (req, res) => {
         let productId = Number(req.params.id);
