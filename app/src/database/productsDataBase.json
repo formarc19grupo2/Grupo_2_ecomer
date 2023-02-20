@@ -1,1 +1,56 @@
-[{"id":1,"name":"Medialuna con Roquefort","price":"1701","discount":"50","category":"destacado","description":"Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.      ","image":"/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"},{"id":2,"name":"Tostado de Salchichas","price":"61222","discount":"3","category":"destacado","description":"Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.             ","image":"/images/Sanguches/Paninis/Panini con salchichas.jpg"},{"id":3,"name":"Pebete de Jamon y Queso2","price":"72999","discount":"25","category":"destacado","description":"Exquisitos cortes del mas maravilloso Jamon, con exclusivas laminas del mejor queso italiano. ","image":"/images/Sanguches/Pebetes/Pebete de Jamon y Queso.jpeg"},{"id":4,"name":"Medialuna con Roquefort","price":1500,"discount":20,"category":"destacado","description":"Sutil queso azul, remolacha de nuestra huerta y rucula frsca, envueltas en fina medialuna de autor.","image":"/images/Sanguches/Medialunas/Medialuna con roquefort.jpg"},{"id":5,"name":"Tostado de Salchichas","price":500,"discount":5,"category":"destacado","description":"Delicado envuelto de salchicas y hortalizas de la huerta en refinado pan tostado.","image":"/images/Sanguches/Paninis/Panini con salchichas.jpg"},{"id":7,"name":"uno","price":"1111","discount":"1","category":"visited","description":"asd","image":"default-image.png"},{"id":8,"name":"Julio cesar","price":"111111","discount":"3","category":"visited","description":"asdasd","image":"default-image.png"},{"id":9,"image":"default-image.png"},{"id":10,"name":"Julio cesar","price":"111111","discount":"30","category":"visited","description":"aa","image":"default-image.png"},{"id":11,"name":"Julio cesar","price":"111111","discount":"30","category":"visited","description":"aa","image":"default-image.png"}]
+[
+    {
+        "id": 1,
+        "name": "Sandwich1",
+        "price": "123123",
+        "discount": "10",
+        "category": "visited",
+        "description": "asdasd",
+        "image": "1676908843087_products_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sandwich de mortadela",
+        "price": "111",
+        "discount": "1",
+        "category": "visited",
+        "description": "aaa",
+        "image": "1676911870519_products_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sandwich2",
+        "price": "3000",
+        "discount": "10",
+        "category": "visited",
+        "description": "RICO RICO",
+        "image": "1676913107562_products_.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Sandwich 5",
+        "price": "2000",
+        "discount": "5",
+        "category": "Destacado",
+        "description": "Prueba",
+        "image": "1676913227916_products_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sandwich 73",
+        "price": "3000",
+        "discount": "5",
+        "category": "Destacado",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
+        "image": "1676913343032_products_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Sandwich de Panini",
+        "price": "1000",
+        "discount": "0",
+        "category": "Destacado",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
+        "image": "1676913384970_products_.jpg"
+    }
+]

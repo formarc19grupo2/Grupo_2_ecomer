@@ -46,13 +46,13 @@ module.exports = {
 			discount: req.body.discount,
 			category: req.body.category,
 			description: req.body.description,
-			image: "default-image.png",
+			image: req.file.filename ,
 		}
 		products.push(newProduct);
         console.log(newProduct);
 
 		writeJson(products); //escribe el JSON - y persiste 
-        
+
 		res.send(newProduct)
 		//res.redirect("/");
     },
