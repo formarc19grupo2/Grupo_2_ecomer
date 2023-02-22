@@ -13,7 +13,7 @@ routes.get("/create", productscontroller.create);
 routes.post("/", upload.single('image'), productscontroller.store);  
 
 routes.get("/edit/:id", productscontroller.edit);
-routes.put("/edit/:id", productscontroller.update);
+routes.put("/edit/:id", upload.single('image'), productscontroller.update);
 routes.delete("/delete/:id", productscontroller.delete);
 
 module.exports = routes;

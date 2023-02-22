@@ -1,83 +1,74 @@
 [
-  {
-    "id": 1,
-    "name": "Sandwich1",
-    "price": "123123",
-    "discount": "10",
-    "category": "En Oferta",
-    "description": "asdasd ",
-    "image": "1676908843087_products_.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Sandwich de mortadela",
-    "price": "111",
-    "discount": "1",
-    "category": "En Oferta",
-    "description": "aaa ",
-    "image": "1676911870519_products_.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Sandwich2",
-    "price": "3000",
-    "discount": "10",
-    "category": "En Oferta",
-    "description": "RICO RICO ",
-    "image": "1676913107562_products_.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Sandwich 5",
-    "price": "2000",
-    "discount": "5",
-    "category": "Destacado",
-    "description": "Prueba",
-    "image": "1676913227916_products_.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Sandwich 73",
-    "price": "3000",
-    "discount": "5",
-    "category": "Destacado",
-    "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
-    "image": "1676913343032_products_.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Sandwich de Panini",
-    "price": "1000",
-    "discount": "0",
-    "category": "Destacado",
-    "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
-    "image": "1676913384970_products_.jpg"
-  },
-  {
-    "id": 7,
-    "name": "Sandwich 90 infantil",
-    "price": "4000",
-    "discount": "20",
-    "category": "Destacado",
-    "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
-    "image": "1676913636145_products_.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Sandwich 90 infantil",
-    "price": "4000",
-    "discount": "20",
-    "category": "Destacado",
-    "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
-    "image": "1676913647286_products_.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Sandwich 944",
-    "price": "4000",
-    "discount": "20",
-    "category": "Destacado",
-    "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
-    "image": "1676913667215_products_.jpg"
-  }
+    {
+        "id": 1,
+        "name": "Sandwich1",
+        "price": "123123",
+        "discount": "10",
+        "category": "En Oferta",
+        "description": "asdasd ",
+        "image": "1676908843087_products_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Sandwich de mortadela",
+        "price": "111",
+        "discount": "1",
+        "category": "En Oferta",
+        "description": "aaa ",
+        "image": "1676911870519_products_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sandwich2",
+        "price": "3000",
+        "discount": "10",
+        "category": "En Oferta",
+        "description": "RICO RICO ",
+        "image": "1676913107562_products_.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Sandwich 5",
+        "price": "2000",
+        "discount": "5",
+        "category": "Destacado",
+        "description": "Prueba",
+        "image": "1676913227916_products_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sandwich 73",
+        "price": "3000",
+        "discount": "5",
+        "category": "Destacado",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
+        "image": "1676913343032_products_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Sandwich de Panini",
+        "price": "1000",
+        "discount": "0",
+        "category": "Destacado",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
+        "image": "1676913384970_products_.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Sandwich 90 infantil",
+        "price": "4000",
+        "discount": "20",
+        "category": "Destacado",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
+        "image": "1676913636145_products_.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Sandwich 90 infantil",
+        "price": "4000",
+        "discount": "20",
+        "category": "",
+        "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, ",
+        "image": "1676913647286_products_.jpg"
+    }
 ]
