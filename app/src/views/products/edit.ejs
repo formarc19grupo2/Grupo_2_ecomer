@@ -7,7 +7,7 @@
 	<%-include('../partials/header') %> 
 	<!-- /Header -->
 
-		<form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="form-register">
+		<form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
 		<h4>Edicion de productos</h4>
 		<div>
 			<label for="name" class="form-label"></label>
@@ -26,7 +26,7 @@
 			<select name="category" id="category" class="form-input">
 				<option value="">Elegí</option>
 				<option value="En Oferta"  <%= productToEdit.category === "is-sale" && "selected" %>>En oferta</option>
-				<option value="visited" <%= productToEdit.category === "visited" && "selected" %>>Destacado</option>
+				<option value="Destacado" <%= productToEdit.category === "visited" && "selected" %>>Destacado</option>
 			</select>
 		</div>
 		<div class="controls">
