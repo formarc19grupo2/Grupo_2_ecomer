@@ -34,13 +34,10 @@ const uploadUser = multer({
 
 
 module.exports = {
-    uploadUser
+    uploadUser, upload
  }
 
 
-module.exports = {
-    upload
- }
 
 
 //  const multer = require('multer');
