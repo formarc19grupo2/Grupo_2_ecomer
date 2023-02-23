@@ -116,8 +116,7 @@ Para esto es necesario no dejar pasar el tiempo. </p>
  <ul>
         <li>1 .Comenzar a hacer.</li>
         <br/>
-        <p>- Darle prioridad al Sprint por sobre el PG o cualquier otra actividad. 
-Para esto es necesario no dejar pasar el tiempo. </p>
+        <p>- comenzar a usar el grupo para tener comunicación activa de las actividades que vamos realizando</p>
         <br/>
         <li>2. Hacer más.</li>
         <br/>
@@ -125,7 +124,7 @@ Para esto es necesario no dejar pasar el tiempo. </p>
         <br/>
         <li>3. Continuar haciendo.</li>
         <br/>
-        <p>- Continuar haciendo las dailys.</p>
+        <p>- Seguir avanzando con las funcionalidades antes de que sean pedidas</p>
         <br/>
         <li>4. Hacer menos.</li>
         <br/>
