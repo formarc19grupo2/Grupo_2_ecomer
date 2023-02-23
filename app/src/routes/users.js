@@ -17,3 +17,4 @@ routes.put("/edit/:id", upload.single('image'), userscontroller.update);
 routes.delete("/delete/:id", userscontroller.delete);
 
 module.exports = routes;
+

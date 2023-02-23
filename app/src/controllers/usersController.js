@@ -29,7 +29,7 @@ module.exports = {
     
 
     create: (req, res) => {
-        return res.render("../users/register")
+        return res.render("./users/register")
     },
     store: (req, res) =>{
 
