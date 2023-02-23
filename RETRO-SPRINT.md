@@ -110,7 +110,7 @@ Para esto es necesario no dejar pasar el tiempo. </p>
 </div>
 
 <br/>
-<h2>Principales conclusiones de la retro del sprint 4</h2>
+<h2>Principales conclusiones de la retro del sprint 4 </h2>
 <div>
 
  <ul>
