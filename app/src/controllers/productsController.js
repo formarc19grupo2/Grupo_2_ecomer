@@ -51,9 +51,9 @@ module.exports = {
 			image: req.file.filename ,
 		}
 		products.push(newProduct);
-        console.log(newProduct);
+    
 
-		writeJson(products); //escribe el JSON - y persiste 
+		writeJson("productsDataBase.json",products); //escribe el JSON - y persiste 
 
 		//res.send(newProduct)
 		res.redirect("/");
@@ -154,8 +154,8 @@ module.exports = {
                     products.splice(productToDestroy, 1);
                 }
             });
-            writeJson(products)
+            writeJson("productsDataBase.json",products)
     
-            res.send("Producto eliminado correctamente")
+            res.redirect("/")
     }
 }

@@ -61,14 +61,5 @@
       "category": "Destacado",
       "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
       "image": "1676913636145_products_.jpg"
-   },
-   {
-      "id": 8,
-      "name": "Sandwich 90 infantil",
-      "price": "4000",
-      "discount": "20",
-      "category": "",
-      "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, ",
-      "image": "1676913647286_products_.jpg"
    }
 ]
