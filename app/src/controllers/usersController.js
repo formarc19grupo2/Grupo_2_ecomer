@@ -20,7 +20,7 @@ module.exports = {
         let userId = req.params.id;
         let user = users.find(user => user.id == userId);
 
-        res.render("user/userDetail", {
+        res.render("users/userDetail", {
             user
         })
     },
