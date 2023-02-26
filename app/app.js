@@ -26,11 +26,13 @@ app.use(methodOverride('_method'));
 const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
 const usersRouter = require("./src/routes/users")
+const footerRouter = require("./src/routes/footer");
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter)
+app.use("/institucional", footerRouter);
 
 
 app.listen(3030, () => {
