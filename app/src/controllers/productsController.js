@@ -140,6 +140,6 @@ module.exports = {
             });
             writeJson("productsDataBase.json",products)
     
-            res.redirect("/")
+            res.redirect("/products/products")
     }
 }

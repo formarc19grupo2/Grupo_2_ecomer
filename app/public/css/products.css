@@ -3,17 +3,20 @@
     text-decoration: none;
     color: black;
  }
-
+ h2.products-title {
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px black;
+ }
 .products-wrapper {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    display: flex;
   }
-  
+
   .products-title {
     font-size: 2.4em;
     font-weight: 400;
   }
-  
+
   .product-box {
     background-color: rgb(246, 247, 228);
     border-radius: 5px;
@@ -22,22 +25,27 @@
     transition: 300ms;
     margin: 20px 0;
   }
-  
-  
+  .col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 
   .product-box a {
     display: block;
   }
-  
+
   .product-box_image {
-    height: 300px;
+    height: 250px;
     display: flex;
     align-items: center;
   }
 
   img.tarjet {
-    width: 300px;
-    
+    width: 275px;
+    margin: 0 auto;
+
   }
   .product-box_data {
     padding: 15px;
@@ -46,20 +54,20 @@
     align-items: center;
     flex-wrap: wrap;
   }
-  
+
   .product-box_data h2 {
     font-size: 2.4em;
     font-weight: 300;
     margin: 0;
   }
-  
+
   .product-box_data span {
     font-size: 1.5em;
     font-weight: 300;
     color: var(--green);
     margin: 0 0 0 10px;
   }
-  
+
   .product-box_data p {
     font-size: 1.5em;
     width: 100%;
@@ -69,20 +77,54 @@
     transition: 300ms;
     overflow: hidden;
   }
-  
 
-  
+
+
   .product-box:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
-  
+
   .product-box:hover p {
     height: 40px;
     margin-top: 15px;
   }
-  
+
   .product-box:hover i {
     transform: rotate(360deg);
     box-shadow: 0 0 5px var(--green);
   }
-  
+
+  /*====== Media-Queries ======*/
+  @media (min-width: 768px){
+    .product-box {
+        width: 330px;
+      }
+
+  }
+  @media (min-width: 990px){
+    .product-box {
+        width: 230px;
+      }
+      img.tarjet {
+        width: 200px;
+        
+    
+      }
+  }
+
+
+  @media (min-width: 1440px) {
+    .product-box {
+            width: 300px;
+        }
+
+    img.tarjet {
+        width: 300px;
+        margin: 0 auto;
+
+    }
+    .product-box_image {
+        height: 300px;
+    }
+
+  }
