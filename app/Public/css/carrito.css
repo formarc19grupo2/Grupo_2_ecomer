@@ -37,6 +37,7 @@ table th {
   justify-content: space-evenly;
   margin-top: 37px;
   flex-wrap: wrap;
+  border: 1px solid blueviolet;
 }
 
 .caja {
