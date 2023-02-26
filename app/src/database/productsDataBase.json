@@ -20,18 +20,18 @@
    {
       "id": 3,
       "name": "Sandwich2",
-      "price": "3000",
-      "discount": "10",
-      "category": "En Oferta",
-      "description": "RICO RICO ",
+      "price": 300,
+      "discount": 10,
+      "category": "",
+      "description": "RICO RICO rico",
       "image": "1676913107562_products_.jpg"
    },
    {
       "id": 4,
       "name": "Sandwich 5",
-      "price": "2000",
-      "discount": "5",
-      "category": "Destacado",
+      "price": 2000,
+      "discount": 5,
+      "category": "",
       "description": "Prueba",
       "image": "1676913227916_products_.jpg"
    },
@@ -64,10 +64,10 @@
    },
    {
       "id": 9,
-      "name": "Sandwich Nuevo ",
-      "price": "3900",
-      "discount": "10",
-      "category": "En Oferta",
+      "name": "Sandwich Nuevo",
+      "price": 390,
+      "discount": 10,
+      "category": "",
       "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
       "image": "1677412089377_products_.jpg"
    }
