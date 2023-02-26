@@ -25,7 +25,7 @@ app.use(methodOverride('_method'));
 /* Routers */
 const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
-const usersRouter = require("./src/routes/users")
+const usersRouter = require("./src/routes/user")
 const footerRouter = require("./src/routes/footer");
 
 /* Routes Middlewares */
