@@ -67,11 +67,17 @@ div.buscador input::placeholder {
     text-align: center;
 }
 
+header.main-header div.buscador button {
+    position: absolute;
+    right: 10px;
+    
+}
+
 header.main-header div.buscador i {
     position: absolute;
     height: 20px;
-    right: 1px;
-    top: 30%;
+    right: -5px;
+    top: 4px;
     color: grey;
 }
 

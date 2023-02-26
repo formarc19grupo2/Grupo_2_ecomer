@@ -64,10 +64,15 @@ body section.img__miniatura div img {
 
 
 body section.detalles__producto--compra {
-    border: 1px solid ;
-    border-radius: 10px;
+    /* border: 1px solid ;
+    border-radius: 10px; */
     text-align: center;
     margin: 20px;
+    padding: 3px 10px;
+    border: rgb(39, 39, 37) 5px double;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
 }
 body section.detalles__producto--compra h2 {
     padding: 15px;
@@ -131,14 +136,20 @@ body section.detalles__producto--compra div.agragarCompra {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 33px;
+    height: 100px;
     margin: 20px;
+
 }
 
 body section.detalles__producto--compra div.agragarCompra button {
     width: 70%;
     height: 30px;
-    
+    color: white;
+    font-weight: 600;
+    background-color: rgb(235, 221, 16);
+    border: 1px solid #383636;
+    font-family: var(--roboto);
+    text-shadow: 1px 1px 2px rgb(20, 20, 20);
 }
 body section.continuar {
     margin: 50px;
@@ -182,8 +193,8 @@ body section.seguirComprando button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px;
-    margin-top: -10px;
+    padding: 20px 60px;
+    margin-top: 50px;
 
   }
   

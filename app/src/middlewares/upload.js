@@ -15,9 +15,29 @@ const upload = multer({
     storage : storeImageProduct
 })
 
- module.exports = {
-    upload
+
+
+
+
+const storeImageUser = multer.diskStorage({
+    destination : function (req,file, callback) {
+        callback(null, 'public/images' )
+    },
+    filename : function (req, file, callback) {
+        callback(null, `${Date.now()}_users_${path.extname(file.originalname)}`)
+    }
+});
+
+const uploadUser = multer({
+    storage : storeImageUser
+})
+
+
+module.exports = {
+    uploadUser, upload
  }
+
+
 
 
 //  const multer = require('multer');
