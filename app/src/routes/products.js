@@ -4,6 +4,7 @@ const productscontroller = require("../controllers/productsController");
 const {upload } = require('../middlewares/upload');
 
 
+routes.get("/products",productscontroller.index);
 
 routes.get("/productDetail/:id",productscontroller.detail);
 routes.get("/productCart", productscontroller.cart);

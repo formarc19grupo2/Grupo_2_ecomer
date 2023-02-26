@@ -1,5 +1,17 @@
 [
    {
+<<<<<<< HEAD
+=======
+      "id": 1,
+      "name": "Sandwich1 Mac",
+      "price": 2000,
+      "discount": 10,
+      "category": "",
+      "description": "asdasd  Mac Mac",
+      "image": "1677412318679_products_.jpg"
+   },
+   {
+>>>>>>> main
       "id": 2,
       "name": "Sandwich de mortadela",
       "price": "111",
@@ -52,5 +64,14 @@
       "category": "Destacado",
       "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
       "image": "1676913636145_products_.jpg"
+   },
+   {
+      "id": 9,
+      "name": "Sandwich Nuevo ",
+      "price": "3900",
+      "discount": "10",
+      "category": "En Oferta",
+      "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
+      "image": "1677412089377_products_.jpg"
    }
 ]
