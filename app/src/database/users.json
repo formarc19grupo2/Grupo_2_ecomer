@@ -82,6 +82,19 @@
     "postal_code": "",
     "province": "",
     "city": ""
+  },
+  {
+    "id": 7,
+    "name": "Lucas",
+    "last_name": "monsores",
+    "email": "lucasfmonsores1@gmail.com",
+    "pass": "123456",
+    "avatar": "1677450274160_avatar_.jpg",
+    "rol": "USER",
+    "tel": "",
+    "address": "",
+    "postal_code": "",
+    "province": "",
+    "city": ""
   }
-  
 ]
