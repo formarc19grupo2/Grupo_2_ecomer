@@ -14,9 +14,7 @@ module.exports = {
         return res.render("home",{
             products,
         })
-    },
-
-    
+    },    
 
     login: (req, res) => {
         return res.render("users/login")
@@ -24,5 +22,5 @@ module.exports = {
 
     register: (req, res) => {
         return res.render("users/register")
-    },
+    }
 }

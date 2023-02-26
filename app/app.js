@@ -25,10 +25,12 @@ app.use(methodOverride('_method'));
 /* Routers */
 const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
+const footerRouter = require("./src/routes/footer");
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
+app.use("/institucional", footerRouter);
 
 
 app.listen(3030, () => {

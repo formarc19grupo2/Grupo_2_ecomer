@@ -176,7 +176,13 @@ footer section div.menuFooter ul li {
     padding-top: 10px;
     text-align: center;
     border: 1px solid black;
-    box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px 5px 10px var(--gris-oscuro);
+    border-radius: 5px;
+}
+
+div.menuFooter ul li a{
+    text-decoration: none;
+    color: black;
 }
 
 div.menuFooter ul li:hover {
