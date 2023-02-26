@@ -5,16 +5,14 @@ const { readJSON, writeJson } = require("../database");
 
 const productsFilePath = path.join(__dirname,"../database/productsDataBase.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-// const writeJson = (products) => {
-// 	fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})
-// }
+
 
 
 module.exports = {
 
     index: (req, res) => {
-        return res.render("home",{
-            products,
+        return res.render("products/products",{
+             products,
         })
     },
 
@@ -56,7 +54,7 @@ module.exports = {
 		writeJson("productsDataBase.json",products); //escribe el JSON - y persiste 
 
 		//res.send(newProduct)
-		res.redirect("/");
+		res.redirect("/products/products");
     },
     edit: (req, res) => {
         let productId = Number(req.params.id);
@@ -68,21 +66,7 @@ module.exports = {
         })
     },
     update: (req, res) => {
-		// let productId = Number(req.params.id);
-
-        // products.forEach(element => {
-        //     if(element.id === productId){
-        //         element.name = req.body.name;
-        //         element.price = req.body.price;
-        //         element.discount = req.body.discount;
-        //         element.category = req.body.category;
-        //         element.description = req.body.description;
-        //     }
-        // });
-
-		// writeJson(products);
-
-        // res.redirect("/");
+		
         const errors = validationResult(req);
 
     if(req.fileValidatorError){
@@ -123,7 +107,7 @@ module.exports = {
 
       writeJson("productsDataBase.json", newProductsModify);
 
-      return res.redirect("/");
+      return res.redirect("/products/products");
       
     } else {
       const products = readJSON("productsDataBase.json");
