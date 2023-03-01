@@ -58,11 +58,21 @@ header.main-header div.buscador {
 div.buscador input::placeholder {
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+header.main-header div.buscador button {
+    position: absolute;
+    right: 10px;
+    
+}
+
+>>>>>>> 994b18505842b696be54dea36ca6132a019b308b
 header.main-header div.buscador i {
     position: absolute;
     height: 20px;
-    right: 1px;
-    top: 30%;
+    right: -5px;
+    top: 4px;
     color: grey;
 }
 header.main-header div.buscador input.main-icon{
@@ -84,9 +94,18 @@ ul.menu-usuario-carrito-burger li{
 nav.main-nav ul.navegacion {
     display: none;
 }
+<<<<<<< HEAD
 nav.main-nav ul.navegacion li img:hover {
     transform: rotateZ(360deg) scale(1.1);
     transition: all 0.5s ease;
+=======
+
+
+nav.main-nav ul.navegacion li:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ;
+    cursor: pointer;
+>>>>>>> 994b18505842b696be54dea36ca6132a019b308b
 }
 
 /* QUEARIES HEADER */

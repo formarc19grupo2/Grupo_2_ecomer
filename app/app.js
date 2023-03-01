@@ -12,24 +12,26 @@ const path = require('path');
 
 app.use(express.static('public'));
 app.set ("view engine", "ejs");
-
+app.set("views", "./src/views");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
-app.set('views', path.join(__dirname, './src/views'));
+
 app.use(methodOverride('_method'));
 
 /* Routers */
 const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
+const usersRouter = require("./src/routes/user")
 const footerRouter = require("./src/routes/footer");
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
+app.use("/users", usersRouter)
 app.use("/institucional", footerRouter);
 
 

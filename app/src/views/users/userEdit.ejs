@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%-include('../partials/head') %> 
+<body>
+	<!-- Header -->
+	<%-include('../partials/header') %> 
+	<!-- /Header -->
+
+		<form action="/users/edit/<%= userToEdit.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
+		<h4>Edicion de productos</h4>
+		<div>
+			<label for="name" class="form-label"></label>
+			<input class="controls" type="text" name="name" id="name" value="<%= productToEdit.name %>" placeholder="Nombre">
+		</div>
+		<div>
+			<label for="price" class="form-label"></label>
+			<input class="controls" type="text" name="price" id="price" value="<%= productToEdit.price %>" placeholder="precio">
+		</div>
+		<div>
+			<label for="discount" class="form-label"></label>
+			<input class="controls" type="text" name="discount" id="discount" value="<%= productToEdit.discount %>" placeholder="descueto">
+		</div>
+			<div class="controls">
+			<label for="category" class="form-label">Categoría:</label>
+			<select name="category" id="category" class="form-input">
+				<option value="">Elegí</option>
+				<option value="En Oferta"  <%= productToEdit.category === "is-sale" && "selected" %>>En oferta</option>
+				<option value="Destacado" <%= productToEdit.category === "visited" && "selected" %>>Destacado</option>
+			</select>
+		</div>
+		<div class="controls">
+			<label for="description" class="form-label">Descripcion</label>
+			<textarea name="description" id="description" class="form-input"><%= productToEdit.description %> </textarea>
+		</div>
+		<div >
+			<input type="file" name="image" id="image" accept="image/*"
+				class="form-control%>">
+		</div>
+		<input class="botons" type="submit" value="GUARDAR">
+		</form>
+	 
+	<!-- /todos los productos -->
+
+	<!-- footer -->
+	<%-include('../partials/footer') %> 
+	<!-- /footer -->
+</body>	
+</html>

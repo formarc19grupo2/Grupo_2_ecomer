@@ -28,14 +28,65 @@
 
 
     <div class="container" >
-                  
-          <div id="cadastro">
-            <form class="formulario" method="post" action=""> 
+      <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-ad" >
+        <div class="form-ad-input">
+            <input type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
+            <% if (locals.errors && errors.name) { %>
+                <small class="text-danger"><%= errors.name.msg %> </small>
+            <% } %>
+        </div>
+        <div class="form-ad-input">
+            <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
+            <% if (locals.errors && errors.last_name) { %>
+                <small class="text-danger"><%= errors.last_name.msg %> </small>
+            <% } %>
+        </div>
+        <div class="form-ad-input">
+            <input type="email" name="email" placeholder="Ingresá tu email" >
+            <% if (locals.errors && errors.email) { %>
+                <small class="text-danger"><%= errors.email.msg %> </small>
+            <% } %>
+        </div>
+        <div class="form-ad-input">
+            <input type="password" name="pass1" placeholder="Contraseña">
+            <% if (locals.errors && errors.pass1) { %>
+                <small class="text-danger"><%= errors.pass1.msg %> </small>
+            <% } %>
+        </div>
+        <div class="form-ad-input">
+            <input type="password" name="pass2" placeholder="Repetir contraseña">
+            <% if (locals.errors && errors.pass2) { %>
+                <small class="text-danger"><%= errors.pass2.msg %> </small>
+            <% } %>
+        </div>
+        <div class="input-file">
+            <p>Agregar foto</p>
+            <input type="file" name="avatar">
+        </div>
+        <div class="form-ad-input_check">
+            <input type="checkbox" name="terms" id="check">
+            <label for="check">Acepto los términos y condiciones</label>
+            <% if (locals.errors && errors.terms) { %>
+                <small class="text-danger"><%= errors.terms.msg %> </small>
+            <% } %>
+        </div>
+        <input type="submit" class="btn btn-ad-primary" value="Registrar">
+      
+        </input>
+        <a href="/users/login" class="userLink">Ya tengo cuenta</a>
+    </form>
+         <!-- <div id="cadastro">
+            <form class="formulario" action="/users" method="post" enctype="multipart/form-data"> 
               <h1>Registro</h1> 
               
               <p> 
                 <label for="nome_cad">Nombre</label>
-                <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Su Nombre " />
+                <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Su nombre " />
+              </p>
+              
+              <p> 
+                <label for="apellido_cad">Apellido</label>
+                <input id="apellido_cad" name="apellido_cad" required="required" type="text" placeholder="Su apellido " />
               </p>
               
               <p> 
@@ -56,7 +107,7 @@
                 <a href="http://localhost:3030/login"> Ir para Login </a>
               </p>
             </form>
-          </div>
+          </div> -->
     </div>
    <!-- footer -->
 	<%-include('../partials/footer') %> 
