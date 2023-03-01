@@ -13,14 +13,12 @@
     --gris-oscuro: #666;
     --gris-claro: #ebebeb;
     --verde: #B5FE83;
+    --naranja: darkorange;
     /*Fuentes*/
     --roboto: 'Roboto', sans-serif;
     --montserrat:'Montserrat';
     --inter: 'Inter';
 }
-
-
-
 
 
 /* General*/
@@ -44,29 +42,22 @@ hr {
     margin: 0 auto;
 }
 
-
 header.main-header div.contenedor-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--amarillo);
-    
 }
-
-
 header.main-header div.logo img {
     width: 100px;
     margin: 10px 10px;
 }
 header.main-header div.buscador {
-   position: relative;
-   
+   position: relative;   
 }
-
 div.buscador input::placeholder {
     text-align: center;
 }
-
 header.main-header div.buscador i {
     position: absolute;
     height: 20px;
@@ -74,37 +65,30 @@ header.main-header div.buscador i {
     top: 30%;
     color: grey;
 }
-
 header.main-header div.buscador input.main-icon{
     width: 120px;
     border: 0px;
     border-radius: 5px;
     height: 25px;
 }
-
 ul.menu-usuario-carrito-burger{
     display: flex;
     margin: 10px 1px;
     padding: 3px;
 }
-
-
 ul.menu-usuario-carrito-burger li{
-    margin:0px 2px 0px;
-    font-size: 20px;
-    
+        margin:0px 2px 0px;
+    font-size: 20px;    
     color: var(--gris-claro);
 }
-
 nav.main-nav ul.navegacion {
     display: none;
 }
-
-
-nav.main-nav ul.navegacion li:hover {
-    transform: scale(1.1);
-    transition: all 0.5s ;
+nav.main-nav ul.navegacion li img:hover {
+    transform: rotateZ(360deg) scale(1.1);
+    transition: all 0.5s ease;
 }
+
 /* QUEARIES HEADER */
 @media (min-width: 768px) {
 
@@ -124,7 +108,7 @@ nav.main-nav ul.navegacion li:hover {
     }
     nav.main-nav ul.navegacion {
         display:flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         color: white;
         font-size: 20px;
         font-weight: bold;
@@ -132,8 +116,7 @@ nav.main-nav ul.navegacion li:hover {
     }
     nav.main-nav ul.navegacion li {
         display:grid;
-        text-shadow: 1px 1px 2px black;
-        
+        text-shadow: 1px 1px 2px black;        
     }
 }
 
@@ -150,8 +133,10 @@ nav.main-nav ul.navegacion li:hover {
         margin: 10px 2px 10px -100px;
     }
     nav.main-nav ul.navegacion li {
-        display:flex;   
-        align-items:center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;        
     }
 }
 
