@@ -1,0 +1,322 @@
+@import url("styles.css");
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+body {
+  background-color: var(--amarillo);
+}
+
+table {
+  width: 67vw;
+  height: 50vh;
+}
+
+.colspan {
+  box-shadow: 10px 5px 5px black;
+}
+
+table th {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  padding-top: 15px;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  margin-top: 37px;
+  flex-wrap: wrap;
+  border: 1px solid blueviolet;
+}
+
+.caja {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 25px;
+  font-size: 15px;
+}
+
+.caja td {
+  padding-left: 68px;
+  padding-right: 17px;
+  font-size: 15px;
+}
+
+.caja td i {
+  cursor: pointer;
+}
+
+.caja img {
+  width: 75px;
+  height: 75px;
+}
+
+table tr td {
+  display: inline;
+}
+
+tbody td {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productosElegidos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid beige;
+  margin-right: 20px;
+  margin-left: 50px;
+  padding-top: 15px;
+}
+
+.total {
+  border: 1px solid black;
+  width: 18%;
+  height: 80vh;
+  margin-right: 40px;
+}
+
+.cupon {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 34px;
+  padding-right: 11px;
+  padding-left: 2em;
+  padding-right: -7px;
+  flex-direction: column;
+}
+
+input[placeholder="ingrese cupon"] {
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+
+.total button {
+  margin-top: 10px;
+  margin-left: 86px;
+}
+
+.total h2 {
+  font-size: 31px;
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
+  padding-right: 24px;
+}
+
+.total-parcial {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 15px;
+}
+
+.checkout button {
+  display: flex;
+  justify-content: center;
+  width: 10vw;
+  margin-left: 56px;
+  padding-top: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .titulo {
+    font-size: 15px;
+  }
+
+
+
+  .caja {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .caja td {
+    padding-left: 38px;
+    padding-right: 11px;
+    font-size: 15px;
+  }
+
+  .caja img {
+    width: 47px;
+    height: 53px;
+  }
+
+  table {
+    width: 67vw;
+    height: 50vh;
+    margin-left: 46px;
+  }
+
+  table th {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .total {
+    width: 75%;
+    height: 80vh;
+    margin-left: 84px;
+  }
+
+  .cupon{
+    padding-top: 10px;
+    padding-bottom: 12%;
+    padding-right: 11px;
+  }
+
+  .total button {
+    margin-top: 10px;
+    margin-left: 86px;
+  } 
+
+  .checkout button {
+    width: 48vw;
+    margin-left: 49px;
+    padding-top: 10px;
+    margin-top: 29px;
+    padding-top: 9px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .titulo {
+    font-size: 15px;
+  }
+
+
+
+  .caja {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .caja td {
+    padding-left: 38px;
+    padding-right: 11px;
+    font-size: 15px;
+  }
+
+  .caja img {
+    width: 47px;
+    height: 53px;
+  }
+
+  table {
+    width: 67vw;
+    height: 50vh;
+    margin-left: 46px;
+  }
+
+  table th {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .total {
+    width: 75%;
+    height: 80vh;
+    margin-left: 84px;
+  }
+
+  .cupon{
+    padding-top: 10px;
+    padding-bottom: 12%;
+    padding-right: 11px;
+  }
+
+  .total button {
+    margin-top: 10px;
+    margin-left: 86px;
+  } 
+
+  .checkout button {
+    width: 48vw;
+    margin-left: 49px;
+    padding-top: 10px;
+    margin-top: 29px;
+    padding-top: 9px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+  .titulo {
+    font-size: 15px;
+  }
+
+
+  .caja {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .caja td {
+    padding-left: 38px;
+    padding-right: 11px;
+    font-size: 15px;
+  }
+
+  .caja img {
+    width: 47px;
+    height: 53px;
+  }
+
+  table {
+    width: 67vw;
+    height: 50vh;
+    margin-left: 46px;
+  }
+
+  table th {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .total {
+    width: 75%;
+    height: 80vh;
+    margin-left: 84px;
+  }
+
+  .cupon{
+    padding-top: 10px;
+    padding-bottom: 12%;
+    padding-right: 11px;
+  }
+
+  .total button {
+    margin-top: 10px;
+    margin-left: 86px;
+  } 
+
+  .checkout button {
+    width: 48vw;
+    margin-left: 49px;
+    padding-top: 10px;
+    margin-top: 29px;
+    padding-top: 9px;
+  }
+}
