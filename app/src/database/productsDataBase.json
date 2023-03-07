@@ -69,14 +69,5 @@
       "category": "En Oferta",
       "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
       "image": "1677412089377_products_.jpg"
-   },
-   {
-      "id": 10,
-      "name": "eddsd",
-      "price": 555,
-      "discount": 20,
-      "category": "Destacado",
-      "description": "ffff",
-      "image": "1677800670002_products_.jpeg"
    }
 ]
