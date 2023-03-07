@@ -35,6 +35,10 @@ module.exports = {
         return res.render("products/create")
     },
     store: (req, res) =>{
+      let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+        
 
        let lastId = products[products.length -1].id;
 		
@@ -55,7 +59,12 @@ module.exports = {
 
 		//res.send(newProduct)
 		res.redirect("/products/products");
-    },
+    }else{
+      res.render("products/create", {
+        errors: errors.mapped(),
+        old: req.body
+      })
+    }},
     edit: (req, res) => {
         let productId = Number(req.params.id);
 
