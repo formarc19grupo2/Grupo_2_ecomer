@@ -22,5 +22,15 @@ module.exports = {
 
     register: (req, res) => {
         return res.render("users/register")
-    }
-}
+    },
+
+    search: (req, res) => {
+        const { keywords } = req.query
+        const results = products.filter(product => product.name == keywords)
+       // res.send(keywords)
+        res.render("products/results", {
+            keywords,
+            results,
+        })
+    },
+};
