@@ -1,50 +1,55 @@
 <header class="main-header">
     <div class="contenedor-header">
         <div class="logo">
-            <a href="http://localhost:3030/"><img class="main-icon" src="/images/iconos/img-isologo.png" alt="Isologotipo">
+            <a href="http://localhost:3030/"><img class="main-icon" src="/images/iconos/img-isologo.png"
+                    alt="Isologotipo">
             </a>
         </div>
+        
         <div class="buscador">
-            <input class="main-icon" type="search" placeholder="¿Qué queres comer?" />
-            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" name="keywords" class="main-icon" placeholder="¿Qué queres comer?" id="search">
+                <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
+
         <div class="nav-menu">
-            <nav >
+            <nav>
                 <ul class="menu-usuario-carrito-burger">
                     <li><a href="/login "><i class="fa-solid fa-user"></i></a></li>
-                    <li><a href="http://localhost:3030/products/productCart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="/products/productCart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
                     <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
                 </ul>
             </nav>
         </div>
-        
+
     </div>
-        <nav class="main-nav">
-            <ul class="navegacion">
-                <li>
-                    <img src="/images/iconos/img-sandwich.png" alt="Sandwiches">
-                    Sandwich
-                </li>
-                <li>
-                    <img src="/images/iconos/img-infantiles.png" alt="Infantiles">
-                    Infantiles
-                </li>
-                <li>
-                    <img src="/images/iconos/img-xxl.png" alt="XXL">
-                    XXL
-                </li>
-                <li>
-                    <img src="/images/iconos/image142.png" alt="guarnicion">
-                    Guarniciones
-                </li>
-                <li>
-                    <img src="/images/iconos/img-bebidas.png" alt="Bebidas">
-                    Bebidas
-                </li>
-                <li>
-                    <img src="/images/iconos/img-postres.png" alt="Postres">
-                    Postres
-                </li>
-            </ul>
-        </nav>    
+    <nav class="main-nav">
+        <ul class="navegacion">
+            <li>
+                <a href="/products/products"><img src="/images/iconos/img-sandwich.png" alt="Sandwiches"></a>
+                Sandwich
+            </li>
+            <li>
+                <img src="/images/iconos/img-infantiles.png" alt="Infantiles">
+                Infantiles
+            </li>
+            <li>
+                <img src="/images/iconos/img-xxl.png" alt="XXL">
+                XXL
+            </li>
+            <li>
+                <img src="/images/iconos/image142.png" alt="guarnicion">
+                Guarniciones
+            </li>
+            <li>
+                <img src="/images/iconos/img-bebidas.png" alt="Bebidas">
+                Bebidas
+            </li>
+            <li>
+                <img src="/images/iconos/img-postres.png" alt="Postres">
+                Postres
+            </li>
+        </ul>
+    </nav>
 </header>

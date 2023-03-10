@@ -1,36 +1,26 @@
 [
    {
-      "id": 1,
-      "name": "Sandwich1 Mac",
-      "price": 2000,
-      "discount": 10,
-      "category": "Destacado",
-      "description": "asdasd  Mac Mac",
-      "image": "1677094731539_products_.jpg"
-   },
-   {
       "id": 2,
       "name": "Sandwich de mortadela",
       "price": "111",
       "discount": "1",
       "category": "En Oferta",
-      "description": "aaa ",
       "image": "1676911870519_products_.jpg"
    },
    {
       "id": 3,
       "name": "Sandwich2",
-      "price": "3000",
-      "discount": "10",
-      "category": "En Oferta",
-      "description": "RICO RICO ",
+      "price": 300,
+      "discount": 12,
+      "category": "",
+      "description": "RICO RICO rico",
       "image": "1676913107562_products_.jpg"
    },
    {
       "id": 4,
       "name": "Sandwich 5",
-      "price": "2000",
-      "discount": "5",
+      "price": 2000,
+      "discount": 5,
       "category": "Destacado",
       "description": "Prueba",
       "image": "1676913227916_products_.jpg"
@@ -38,8 +28,8 @@
    {
       "id": 5,
       "name": "Sandwich 73",
-      "price": "3000",
-      "discount": "5",
+      "price": 3000,
+      "discount": 5,
       "category": "Destacado",
       "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, tomate, lechuga y huevos, además se le puede agregar condimentos, salsa y aderezos",
       "image": "1676913343032_products_.jpg"
@@ -63,12 +53,12 @@
       "image": "1676913636145_products_.jpg"
    },
    {
-      "id": 8,
-      "name": "Sandwich 90 infantil",
-      "price": "4000",
-      "discount": "20",
-      "category": "",
-      "description": "Los ingredientes de esta preparación pueden ser muy variados y de acuerdo con el gusto de cada persona, sin embargo, los ingredientes más utilizados para los sándwiches son queso, jamón, ",
-      "image": "1676913647286_products_.jpg"
+      "id": 9,
+      "name": "Sandwich Nuevo",
+      "price": 390,
+      "discount": 10,
+      "category": "En Oferta",
+      "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
+      "image": "1677412089377_products_.jpg"
    }
 ]
