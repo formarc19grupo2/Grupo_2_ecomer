@@ -34,12 +34,20 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            res.send('usuario logueado')
+            let user = users.find(user => user.email === req.body.email);
+
+            req.session.user = {
+                name: user.name,
+                pass: user.pass,
+                rol: user.rol
+            }
+
+            res.locals.user = req.session.user
         } else {
            return res.render("login", {
                 errors: errors.mapped(),
            })
-        }
+        }   
     },
 
     processRegister: (req, res) => {
