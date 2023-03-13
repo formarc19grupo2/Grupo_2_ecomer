@@ -18,16 +18,30 @@ module.exports = {
         let user = users.find(user => user.id == userId);
 
         res.render("users/userDetail", {
-            user
+            
         })
     },
 
     login: (req, res) => {
         res.render("users/login")
     },
+
     register: (req, res) => {
         res.render("users/register")
     },
+
+    processLogin:(req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            res.send('usuario logueado')
+        } else {
+           return res.render("login", {
+                errors: errors.mapped(),
+           })
+        }
+    },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
 

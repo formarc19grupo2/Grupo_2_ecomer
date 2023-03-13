@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main class="home__productos">
+                <section class="contenedorDeProductos">
+                    <div>
+                        <h2 class="products-title">Resultados de la busqueda: <%= keywords %>
+                        </h2>
+                    </div>
+                    <% if (results.length !=0) { %>
+                        <% results.forEach((product)=> { %>
+                            <article class="ttaProducto">
+                                <div class="imgContainer">
+                                    <h2 class="relevanciaProducto"><%- product.category %></h2>
+                                    <img src="/images/<%- product.image %>" alt="">
+                                </div>
+                                <div class="tituloYprecio">
+                                    <h3 class="tituloProducto"><%- product.name %></h3>
+                                    <p class="precio">$<%- product.price - (product.price * product.discount / 100) %>
+                                    </p>
+                                    <% if (product.discount> 0) { %>
+                                        <span class="priceOff"><%- product.discount %>% OFF</span>
+                                        <% } %>
+                                </div>
+                                <p class="descripcionProducto"><%- product.description %></p>
+                                <a href="/products/productDetail/<%- product.id %>" class="btn btnDetalle">Detalle</a>
+                                <br>
+                                <a href="/products/productDetail/<%- product.id %>" class="btn btnComprar">Comprar</a>
+                            </article>
+                            <% }) %>
+                                <% } else { %>
+                                    <div class="col-12">
+                                        <h2 class="products-title" style="color: tomato;">No hay productos que coincidan
+                                            con esa búsqueda</h2>
+                                    </div>
+                                    <% } %>
+                </section>
+            </main>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
