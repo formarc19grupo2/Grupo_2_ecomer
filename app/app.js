@@ -2,6 +2,7 @@
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require("express-session")
 
 
 const express = require('express');
@@ -18,6 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(session({
+  secret: "ecomer",
+  resave: false,
+  saveUnitialized:true,
+}))
 
 
 app.use(methodOverride('_method'));

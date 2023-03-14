@@ -99,11 +99,33 @@
   },
   {
     "id": 8,
+<<<<<<< HEAD
     "name": "lucas2",
     "last_name": "monsores2",
     "email": "lucas2@gmail.com",
     "pass": "$2a$12$pB.C.GJxWy3K9Aw9leAAJ.TgpQUSR6JFiR0NcDoUtgoxj8xKko/Xe",
     "avatar": "1678572385851_avatar_.jpg",
+=======
+    "name": "Lionel",
+    "last_name": "Messi",
+    "email": "leiteuwibitti-7892@yopmail.com",
+    "pass": "1234567",
+    "avatar": "default-image.png",
+    "rol": "USER",
+    "tel": "",
+    "address": "",
+    "postal_code": "",
+    "province": "",
+    "city": ""
+  },
+  {
+    "id": 9,
+    "name": "Julian",
+    "last_name": "Alvarez",
+    "email": "mail@yopmail.com",
+    "pass": "1234567",
+    "avatar": "default-image.png",
+>>>>>>> Edu
     "rol": "USER",
     "tel": "",
     "address": "",

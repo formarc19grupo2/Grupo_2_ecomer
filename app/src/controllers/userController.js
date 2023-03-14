@@ -2,10 +2,15 @@ const path = require("path");
 const fs = require('fs');
 const { users, writeUsersJson } = require("../database");
 const { validationResult } = require("express-validator");
+<<<<<<< HEAD
 const bcrypt = require("bcryptjs");
 
 
+=======
+>>>>>>> Edu
 const usersFilePath = path.join(__dirname,"../database/userDataBase.json");
+
+
 
 
 
@@ -19,16 +24,57 @@ module.exports = {
         let user = users.find(user => user.id == userId);
 
         res.render("users/userDetail", {
-            user
+            
         })
     },
 
     login: (req, res) => {
-        res.render("users/login")
+        res.render("users/login", { session: req.session})
     },
+
     register: (req, res) => {
         res.render("users/register")
     },
+
+    processLogin:(req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let user = users.find(user => user.email === req.body.email);
+
+            req.session.user = {
+                name: user.name,
+                pass: user.pass,
+                rol: user.rol
+            }
+
+            res.locals.user = req.session.user
+
+            if (req.body.remember) {
+                //*********Guarar Cookie con tiempo de expiracion 1 hora************
+                let duracionSesion = new Date(Date.now() + 90000);
+                res.cookie("user", req.session.user, 
+                { 
+                    expires: duracionSesion, httpOnly: true 
+                });
+            }
+
+            res.redirect("/")
+        }
+
+        return res.render("users/login", {
+            errors: errors.mapped(),
+            old: req.body,
+            session: req.session,
+         });
+
+        
+       
+
+
+
+    },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
 
