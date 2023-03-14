@@ -110,5 +110,19 @@
     "postal_code": "",
     "province": "",
     "city": ""
+  },
+  {
+    "id": 9,
+    "name": "Julian",
+    "last_name": "Alvarez",
+    "email": "mail@yopmail.com",
+    "pass": "1234567",
+    "avatar": "default-image.png",
+    "rol": "USER",
+    "tel": "",
+    "address": "",
+    "postal_code": "",
+    "province": "",
+    "city": ""
   }
 ]

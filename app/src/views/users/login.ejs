@@ -38,7 +38,7 @@
               <label for="clave_login">Clave</label>
               <input id="clave_login" name="clave_login" required="required" type="password" placeholder="1234" /> 
               <% if (locals.errors && errors.password) { %>
-                <small class="text-danger"><%= errors.email.msg %></small>
+                <small class="text-danger"><%= errors.password.msg %></small>
                 <% } %>
             </p>
             

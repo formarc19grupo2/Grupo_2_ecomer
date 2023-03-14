@@ -2,9 +2,9 @@ const path = require("path");
 const fs = require('fs');
 const { users, writeUsersJson } = require("../database");
 const { validationResult } = require("express-validator");
-
-
 const usersFilePath = path.join(__dirname,"../database/userDataBase.json");
+
+
 
 
 
@@ -23,7 +23,7 @@ module.exports = {
     },
 
     login: (req, res) => {
-        res.render("users/login")
+        res.render("users/login", { session: req.session})
     },
 
     register: (req, res) => {
@@ -43,11 +43,30 @@ module.exports = {
             }
 
             res.locals.user = req.session.user
-        } else {
-           return res.render("login", {
-                errors: errors.mapped(),
-           })
-        }   
+
+            if (req.body.remember) {
+                //*********Guarar Cookie con tiempo de expiracion 1 hora************
+                let duracionSesion = new Date(Date.now() + 90000);
+                res.cookie("user", req.session.user, 
+                { 
+                    expires: duracionSesion, httpOnly: true 
+                });
+            }
+
+            res.redirect("/")
+        }
+
+        return res.render("users/login", {
+            errors: errors.mapped(),
+            old: req.body,
+            session: req.session,
+         });
+
+        
+       
+
+
+
     },
 
     processRegister: (req, res) => {

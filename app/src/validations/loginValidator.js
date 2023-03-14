@@ -5,7 +5,7 @@ module.exports = [
 
     check("email")
     .notEmpty()
-    .withMessage("El email es obligatorio").bail()
+    .withMessage("Email es obligatorio").bail()
     .isEmail()
     .withMessage("Email inválido"),
 
@@ -19,7 +19,7 @@ module.exports = [
 
     check('password')
     .notEmpty()
-    .withMessage('La contraseña es obligatoria'),
+    .withMessage('Contraseña es obligatoria'),
 
     body("password")
     .custom((value, {req}) => {
