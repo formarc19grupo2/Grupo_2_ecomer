@@ -1,5 +1,5 @@
-const { check, body } = require("express-validator");
-const { users } = require("../database");
+const {check, body} = require("express-validator");
+const {users} = require("../database");
 
 module.exports = [
     check("name")
@@ -20,7 +20,12 @@ module.exports = [
     .custom((value) => {
         let user = users.find(user => user.email === value);
 
-        return user === undefined;
+        return user === undefined;        
+        /*if(user === undefined) {
+            return true;
+        } else {
+             return false;
+        }*/
     })
     .withMessage("Email ya registrado"),
 
@@ -28,9 +33,9 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir tu contraseña').bail()
     .isLength({
-        min: 6
+        min: 6,
     })
-    .withMessage('La contraseña debe tener como mínimo 6 caracteres'),
+    .withMessage('La contraseña debe tener 6 caracteres'),
 
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)

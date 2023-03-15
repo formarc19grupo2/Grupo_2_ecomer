@@ -1,13 +1,13 @@
 const { check, body } = require("express-validator");
 const { users } = require("../database");
+const bcrypt = require("bcryptjs");
 
-module.exports = [  
-
+module.exports = [
     check("email")
     .notEmpty()
     .withMessage("Email es obligatorio").bail()
     .isEmail()
-    .withMessage("Email inválido"),
+    .withMessage("Credenciales invalidas"),
 
     body("email")
     .custom(value => {
@@ -15,17 +15,17 @@ module.exports = [
 
         return user !== undefined;
     })
-    .withMessage("Email invalido"),
+    .withMessage ("Email no registrado"),
 
-    check('password')
+    check('pass')
     .notEmpty()
     .withMessage('Contraseña es obligatoria'),
 
-    body("password")
-    .custom((value, {req}) => {
+    body("pass")
+    .custom((value, { req }) => {
         let user = users.find(user => user.email === req.body.email)
 
-        return user.pass === value;
+        return bcrypt.compareSync(value, user.pass);
     })
-   .withMessage("Contraseña invalida")
+    .withMessage("Credenciales invalidas")
 ]

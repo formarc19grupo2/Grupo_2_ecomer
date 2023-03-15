@@ -1,13 +1,13 @@
 const express = require("express");
-const routes = express.Router();
+const router = express.Router();
 const indexcontroller = require("../controllers/indexController");
+const cookieCheck = require("../middlewares/cookieCheck");
 
+router.get("/", cookieCheck, indexcontroller.index);
+router.get("/login", indexcontroller.login);
+router.get("/register", indexcontroller.register);
 
-routes.get("/", indexcontroller.index);
-routes.get("/login", indexcontroller.login);
-routes.get("/register", indexcontroller.register);
-
-routes.get("/search", indexcontroller.search);
+router.get("/search", indexcontroller.search);
 
 
 // RUTAS LISTAS 
@@ -18,7 +18,7 @@ routes.get("/search", indexcontroller.search);
 
 // routes.get("/edit", productscontroller.edit);
 // routes.put("/edit/:id",productscontroller.update);
-module.exports = routes;
+module.exports = router;
 
 
 

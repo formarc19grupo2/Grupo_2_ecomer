@@ -3,45 +3,59 @@
 
         <div class="nav-hamburguesa">
             <ul class="nav nav-tabs">
-               
+
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="fa-solid fa-bars" id="menu-hamburguesa"></i>Menu</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="products/products">Sandwich</a></li>
-                    <li><a class="dropdown-item" href="#">Infantiles</a></li>
-                    <li><a class="dropdown-item" href="#">XXL</a></li>
-                    <li><a class="dropdown-item" href="#">Guarniciones</a></li>
-                    <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                    <li><a class="dropdown-item" href="#">Postres</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#"></a></li>
-                  </ul>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false"><i class="fa-solid fa-bars" id="menu-hamburguesa"></i>Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="products/products">Sandwich</a></li>
+                        <li><a class="dropdown-item" href="#">Infantiles</a></li>
+                        <li><a class="dropdown-item" href="#">XXL</a></li>
+                        <li><a class="dropdown-item" href="#">Guarniciones</a></li>
+                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                        <li><a class="dropdown-item" href="#">Postres</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
                 </li>
-               
-              </ul>
+
+            </ul>
         </div>
 
         <div class="logo">
-            <a href="/"><img class="main-icon" src="/images/iconos/img-isologo.png"
-                    alt="Isologotipo">
+            <a href="/"><img class="main-icon" src="/images/iconos/img-isologo.png" alt="Isologotipo">
             </a>
         </div>
-        
+
         <div class="buscador">
             <form action="/search" method="GET" class="search-form">
                 <input type="text" name="keywords" class="main-icon" placeholder="¿Qué queres comer?" id="search">
                 <button type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
-        
-            <nav>
-                <ul class="menu-usuario-carrito-burger">
-                    <li><a href="/login "><i class="fa-solid fa-user"></i></a></li>
-                    <li><a href="/products/productCart"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                    
-                </ul>
-            </nav>
-        </div>
+
+        <nav>
+            <ul class="menu-usuario-carrito-burger">
+                <div class="user">
+                    <% if (typeof session.user !="undefined" ) { %>
+                        <i class="fas fa-user"></i><span class="session"></span>
+                        <div class="menu-user">
+                            <a href="/users/userDetail">Mis datos</a>
+                            <a href="/users/logout">Cerrar sesión</a>
+                            <% if (session.user.rol==="ADMIN" ) { %>
+                                <a href="/admin/index">ADMIN</a>
+                            <% } %>
+                        </div>
+                        <% } else {%>
+                            <a href="/users/login"><i class="fas fa-user"></i></a>
+                        <% } %>
+                </div>
+                <a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </ul>
+        </nav>
+    </div>
 
     </div>
     <nav class="main-nav">

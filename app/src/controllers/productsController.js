@@ -11,8 +11,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 module.exports = {
 
     index: (req, res) => {
-        return res.render("products/products",{
+        return res.render("products/products", {
              products,
+             session: req.session
         })
     },
 
@@ -21,27 +22,29 @@ module.exports = {
         let product = products.find(product => product.id == productId);
 
         res.render("products/productDetail", {
-            product
+            product,
+            session: req.session
         })
     },
 
     cart: (req, res) => {
-        return res.render("products/productCart")
-    },
-
-    
+        return res.render("products/productCart", {
+          session: req.session
+        })
+    },    
 
     create: (req, res) => {
-        return res.render("products/create")
+        return res.render("products/create", {
+          session: req.session
+        })
     },
+
     store: (req, res) =>{
       let errors = validationResult(req);
 
-        if(errors.isEmpty()) {
-        
+      if(errors.isEmpty()) {
 
        let lastId = products[products.length -1].id;
-		
 
 		let newProduct = {
 			id: lastId + 1,
@@ -55,14 +58,15 @@ module.exports = {
 		products.push(newProduct);
     
 
-		writeJson("productsDataBase.json",products); //escribe el JSON - y persiste 
+		writeJson("productsDataBase.json",products); 
 
 		//res.send(newProduct)
 		res.redirect("/products/products");
     }else{
       res.render("products/create", {
         errors: errors.mapped(),
-        old: req.body
+        old: req.body,
+        session: req.session
       })
     }},
     edit: (req, res) => {
@@ -72,6 +76,7 @@ module.exports = {
 
 		return res.render("products/edit",{
             productToEdit,
+            session: req.session
         })
     },
     update: (req, res) => {
@@ -134,6 +139,7 @@ module.exports = {
         categories,
         errors: errors.mapped(),
         old: req.body,
+        session: req.session
       });
     }
   
@@ -147,7 +153,7 @@ module.exports = {
                     products.splice(productToDestroy, 1);
                 }
             });
-            writeJson("productsDataBase.json",products)
+            writeJson("productsDataBase.json", products)
     
             res.redirect("/products/products")
     }

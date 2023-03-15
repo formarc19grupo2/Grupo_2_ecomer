@@ -13,15 +13,20 @@ module.exports = {
     index: (req, res) => {
         return res.render("home",{
             products,
+            session: req.session
         })
     },    
 
     login: (req, res) => {
-        return res.render("users/login")
+        return res.render("users/login", {
+            session: req.session
+        })
     },
 
     register: (req, res) => {
-        return res.render("users/register")
+        return res.render("users/register", {
+            session: req.session
+        })
     },
 
     search: (req, res) => {

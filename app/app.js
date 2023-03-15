@@ -1,46 +1,45 @@
-
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const session = require("express-session")
-
-
 const express = require('express');
 const app = express();
-const methodOverride =  require('method-override');
-
+const PORT = 3030;
 const path = require('path');
+const methodOverride =  require('method-override');
+const session = require("express-session");
+const cookieParser = require('cookie-parser');
 
-app.use(express.static('public'));
-app.set ("view engine", "ejs");
+/*template engines config */
+app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
-app.use(express.urlencoded({ extended: false }));
-app.use(logger('dev'));
+/*Middlewares*/
+app.use(express.static('public'));
 app.use(express.json());
-app.use(cookieParser());
-app.use(session({
-  secret: "ecomer",
-  resave: false,
-  saveUnitialized:true,
-}))
-
-
+app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: "eComer",
+  resave: false,
+  saveUnitialized: true
+}));
+app.use(cookieParser());
+
 
 /* Routers */
 const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
-const usersRouter = require("./src/routes/user")
+const usersRouter = require("./src/routes/user");
 const footerRouter = require("./src/routes/footer");
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
-app.use("/users", usersRouter)
+app.use("/users", usersRouter);
 app.use("/institucional", footerRouter);
+app.use("/login", usersRouter);
 
+app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
 
-app.listen(3030, () => {
-  console.log("server online on http://localhost:3030/");
-});
+/*
+const logger = require('morgan');
+const createError = require('http-errors');
+app.use(logger('dev'));
+*/
