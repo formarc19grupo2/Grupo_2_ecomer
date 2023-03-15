@@ -4,9 +4,6 @@ const indexcontroller = require("../controllers/indexController");
 const cookieCheck = require("../middlewares/cookieCheck");
 
 router.get("/", cookieCheck, indexcontroller.index);
-router.get("/login", indexcontroller.login);
-router.get("/register", indexcontroller.register);
-
 router.get("/search", indexcontroller.search);
 
 

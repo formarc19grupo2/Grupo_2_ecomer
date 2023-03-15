@@ -34,7 +34,7 @@ app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/institucional", footerRouter);
-app.use("/login", usersRouter);
+
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
 
