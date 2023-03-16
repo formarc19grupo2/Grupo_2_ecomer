@@ -28,13 +28,14 @@ const indexRouter = require("./src/routes/index");
 const productsRouter = require("./src/routes/products");
 const usersRouter = require("./src/routes/user");
 const footerRouter = require("./src/routes/footer");
+const adminRouter = require("./src/routes/admin")
 
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/institucional", footerRouter);
-
+app.use("/admin", adminRouter);
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
 

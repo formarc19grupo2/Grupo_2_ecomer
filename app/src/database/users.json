@@ -20,7 +20,7 @@
         "email": "german@gmail.com",
         "pass": "$2a$12$d13vxl34yyECTLpsnQsP4ewXMb4/8t2ZUJvP8b35d7023IGspseS.",
         "avatar": "default-image.png",
-        "rol": "USER",
+        "rol": "ADMIN",
         "tel": "",
         "address": "",
         "postal_code": "",
