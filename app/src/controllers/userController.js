@@ -100,6 +100,16 @@ module.exports = {
         }
 
         res.redirect("/");
+    },
+    profile: (req, res) => {
+        let userInSessionId = req.session.user.id;
+
+        let userInSession = users.find(user => user.id === userInSessionId);
+
+        res.render("users/userProfile", {
+            user: userInSession,
+            session: req.session
+        })
     }
 
     /*
