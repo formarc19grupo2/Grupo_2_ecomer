@@ -60,5 +60,14 @@
       "category": "En Oferta",
       "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
       "image": "1677412089377_products_.jpg"
+   },
+   {
+      "id": 10,
+      "name": "Sandwich de mortadela",
+      "price": "111111",
+      "discount": "3",
+      "category": "En Oferta",
+      "description": "asdasd",
+      "image": "1679417478166_products_.jpg"
    }
 ]
