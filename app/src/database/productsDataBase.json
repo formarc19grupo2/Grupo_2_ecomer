@@ -67,7 +67,49 @@
       "price": "111111",
       "discount": "3",
       "category": "En Oferta",
-      "description": "asdasd",
-      "image": "1679417478166_products_.jpg"
+      "description": "aaaa",
+      "image": [
+         "default-image.png"
+      ]
+   },
+   {
+      "id": 11,
+      "name": "Sandwich de mortadela",
+      "price": "111111",
+      "discount": "3",
+      "category": "En Oferta",
+      "description": "aa",
+      "image": [
+         "default-image.png"
+      ]
+   },
+   {
+      "id": 12,
+      "name": "Sandwich de mortadela",
+      "price": "111111",
+      "discount": "3",
+      "category": "En Oferta",
+      "description": "aaa",
+      "image": "1679418285490_products_.png"
+   },
+   {
+      "id": 13,
+      "name": "NUEVO",
+      "price": "2000",
+      "discount": "20",
+      "category": "En Oferta",
+      "description": "SIN IMAGEN",
+      "image": [
+         "default-image.png"
+      ]
+   },
+   {
+      "id": 14,
+      "name": "Sandwich de mortadela NUEVO",
+      "price": "2000",
+      "discount": "20",
+      "category": "En Oferta",
+      "description": "CON IMAGEN",
+      "image": "1679418757905_products_.png"
    }
 ]
