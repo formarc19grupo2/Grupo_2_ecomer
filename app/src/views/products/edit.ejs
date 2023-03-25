@@ -18,12 +18,14 @@
 				<% } %>
 		</div>
 		<div>
-			<label for="price" class="form-label"></label>
-			<input class="controls" type="text" name="price" id="price" value="<%= product.price %>" placeholder="precio">
+			<label for="price" class="form-label "></label>
+			<input class="controls <%= locals.errors && errors.price ? 'is-invalid' : null%>" type="text" name="price" id="price" value="<%= locals.old && old.price ? old.price : product.price %>" placeholder="precio">
+			<small class="text-danger ms-2"><%= locals.errors && errors.price ? errors.price.msg : null%></small>
 		</div>
 		<div>
 			<label for="discount" class="form-label"></label>
-			<input class="controls" type="text" name="discount" id="discount" value="<%= product.discount %>" placeholder="descueto">
+			<input class="controls <%= locals.errors && errors.discount ? 'is-invalid' : null%>" type="text" name="discount" id="discount" value="<%= locals.old && old.discount ? old.discount : product.discount %>" placeholder="descueto">
+			<small class="text-danger ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null%></small>
 		</div>
 			<div class="controls">
 			<label for="category" class="form-label">Categoría:</label>
@@ -35,7 +37,7 @@
 		</div>
 		<div class="controls">
 			<label for="description" class="form-label">Descripcion</label>
-			<textarea name="description" id="description" class="form-input <%= (locals.errors && errors.description) && 'is-invalid'%>"
+			<textarea cols="30" rows="3" name="description" id="description" class="form-input <%= (locals.errors && errors.description) && 'is-invalid'%>"
 				><%= locals.old && old.description ? old.description : product.description %> </textarea>
 			<small class="text-danger ms-2"><%= locals.errors && errors.description ? errors.description.msg : null%></small>
 		</div>

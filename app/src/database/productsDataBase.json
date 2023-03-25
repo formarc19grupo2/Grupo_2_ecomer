@@ -57,7 +57,7 @@
       "id": 9,
       "name": "Sandwich N",
       "price": 390,
-      "discount": 10,
+      "discount": 12,
       "category": "En Oferta",
       "description": "Cargamos nuevo sándwich para ver la carga y redirección a vista productos",
       "image": "1677412089377_products_.jpg"
@@ -65,10 +65,10 @@
    {
       "id": 14,
       "name": "Sandwich de mortadel",
-      "price": 2000,
+      "price": 2,
       "discount": 10,
       "category": "En Oferta",
-      "description": "CON IMAGEN   sdfvgdsfgdfevbdfdfvdfvdfvdfvdfvfdfdvdfv",
+      "description": "sándwiches de mortadela del Mercado de San Pablo, en Brasil. Los ingredientes pueden variar pero su característica principal son las capas de mortadela",
       "image": "1679418757905_products_.png"
    }
 ]
