@@ -24,7 +24,7 @@
 		</div>
 		<div>
 			<label for="discount" class="form-label"></label>
-		<input class="controls" type="text" name="discount" id="discount" placeholder="descueto" value="<%= locals.old && old.discount %>">
+		<input class="controls" type="text" name="discount" id="discount" placeholder="descuento" value="<%= locals.old && old.discount %>">
 		<% if (locals.errors && errors.discount) { %>
 			<small class="text-danger"><%= errors.discount.msg %></small>
 			<% } %>>
@@ -32,14 +32,15 @@
 		<div class="controls">
 			<label for="category" class="form-label">Categoría:</label>
 			<select name="category" id="category" class="form-input">
-				<option value="">Elegí</option>
+				
 				<option value="En Oferta">En oferta</option>
-				<option value="Destacado">Destacado</option>
+				<option value="Destacado" selected>Destacado</option>
 			</select>
 		</div>
 		<div class="controls">
 			<label for="description" class="form-label">Descripcion</label>
-			<textarea name="description" id="description" class="form-input"  ></textarea>
+			<textarea name="description" id="description" class="form-input <%= (locals.errors && errors.description) && 'is-invalid'%>"  ><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
+			<small class="text-danger ms-2"><%= locals.errors && errors.description? errors.description.msg : null%></small>
 		</div>
 		<div >
 			<input type="file" name="image" id="image" accept="image/*"

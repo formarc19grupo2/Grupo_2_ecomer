@@ -11,7 +11,7 @@ router.get("/productDetail/:id",productscontroller.detail);
 router.get("/productCart", productscontroller.cart);
 
 
-router.get("/create", checkUserInSession,productscontroller.create);
+router.get("/create", checkUserInSession,productsValidator, productscontroller.create);
 router.post("/", upload.single('image'),productsValidator, productscontroller.store);  
 
 router.get("/edit/:id", productscontroller.edit);

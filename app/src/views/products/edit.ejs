@@ -24,7 +24,7 @@
 			<div class="controls">
 			<label for="category" class="form-label">Categoría:</label>
 			<select name="category" id="category" class="form-input">
-				<option value="">Elegí</option>
+				<option value="<%= productToEdit.category %>">Elegí</option>
 				<option value="En Oferta"  <%= productToEdit.category === "is-sale" && "selected" %>>En oferta</option>
 				<option value="Destacado" <%= productToEdit.category === "visited" && "selected" %>>Destacado</option>
 			</select>

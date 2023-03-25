@@ -104,7 +104,6 @@ module.exports = {
             price: +price,
             discount: +discount,
             category,
-            brand,
             description: description.trim(),
             image: req.file ? req.file.filename : product.image,
           };
@@ -135,8 +134,8 @@ module.exports = {
 
       return res.render("edit", {
         ...product,
-        brands,
-        categories,
+        
+        
         errors: errors.mapped(),
         old: req.body,
         session: req.session

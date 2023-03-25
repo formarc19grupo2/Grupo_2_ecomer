@@ -15,10 +15,10 @@ module.exports = [
     .withMessage("El discuento es obligatorio"),
 
 
-    check('category')
+   /* check('category')
     .notEmpty()
     .withMessage('Debes seleccionar una categoria')
-    ,
+    ,*/
 
     check('description')
     .notEmpty()
