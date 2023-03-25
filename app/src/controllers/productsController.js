@@ -2,9 +2,9 @@ const path = require("path");
 const fs = require('fs');
 const { validationResult } = require("express-validator");
 const { readJSON, writeJson } = require("../database");
-
+const products = readJSON("productsDataBase.json");
 const productsFilePath = path.join(__dirname,"../database/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 
 
@@ -72,10 +72,10 @@ module.exports = {
     edit: (req, res) => {
         let productId = Number(req.params.id);
 
-		let productToEdit = products.find(product => product.id === productId);
+		const product = products.find(product => product.id === productId);
 
 		return res.render("products/edit",{
-            productToEdit,
+            product,
             session: req.session
         })
     },
@@ -93,7 +93,7 @@ module.exports = {
     }
 
     if (errors.isEmpty()) {
-      const { name, price, category, description, discount, brand } = req.body;
+      const { name, price, category, description, discount } = req.body;
       const products = readJSON("productsDataBase.json");
 
       const newProductsModify = products.map((product) => {
@@ -131,11 +131,9 @@ module.exports = {
         fs.existsSync(`./public/images/${req.file.filename}`) &&
           fs.unlinkSync(`./public/images/${req.file.filename}`);
       }
-
-      return res.render("edit", {
-        ...product,
-        
-        
+      
+      return res.render("./products/edit",{
+       product,
         errors: errors.mapped(),
         old: req.body,
         session: req.session

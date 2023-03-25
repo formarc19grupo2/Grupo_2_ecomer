@@ -7,31 +7,37 @@
 	<%-include('../partials/header') %> 
 	<!-- /Header -->
 
-		<form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
+		<form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" class="form-register" enctype="multipart/form-data">
 		<h4>Edicion de productos</h4>
 		<div>
 			<label for="name" class="form-label"></label>
-			<input class="controls" type="text" name="name" id="name" value="<%= productToEdit.name %>" placeholder="Nombre">
+			<input type="text" name="name" id="name" placeholder="Nombre" 
+			 class="controls <%= locals.errors && errors.name ? 'is-invalid' : null%> " value="<%= product.name %>">
+			<% if (locals.errors && errors.name) { %>
+				<small class="text-danger"><%= errors.name.msg %></small>
+				<% } %>
 		</div>
 		<div>
 			<label for="price" class="form-label"></label>
-			<input class="controls" type="text" name="price" id="price" value="<%= productToEdit.price %>" placeholder="precio">
+			<input class="controls" type="text" name="price" id="price" value="<%= product.price %>" placeholder="precio">
 		</div>
 		<div>
 			<label for="discount" class="form-label"></label>
-			<input class="controls" type="text" name="discount" id="discount" value="<%= productToEdit.discount %>" placeholder="descueto">
+			<input class="controls" type="text" name="discount" id="discount" value="<%= product.discount %>" placeholder="descueto">
 		</div>
 			<div class="controls">
 			<label for="category" class="form-label">Categoría:</label>
 			<select name="category" id="category" class="form-input">
-				<option value="<%= productToEdit.category %>">Elegí</option>
-				<option value="En Oferta"  <%= productToEdit.category === "is-sale" && "selected" %>>En oferta</option>
-				<option value="Destacado" <%= productToEdit.category === "visited" && "selected" %>>Destacado</option>
+				<option value="<%= product.category %>">Elegí</option>
+				<option value="En Oferta"  <%= product.category === "is-sale" && "selected" %>>En oferta</option>
+				<option value="Destacado" <%= product.category === "visited" && "selected" %>>Destacado</option>
 			</select>
 		</div>
 		<div class="controls">
 			<label for="description" class="form-label">Descripcion</label>
-			<textarea name="description" id="description" class="form-input"><%= productToEdit.description %> </textarea>
+			<textarea name="description" id="description" class="form-input <%= (locals.errors && errors.description) && 'is-invalid'%>"
+				><%= locals.old && old.description ? old.description : product.description %> </textarea>
+			<small class="text-danger ms-2"><%= locals.errors && errors.description ? errors.description.msg : null%></small>
 		</div>
 		<div >
 			<input type="file" name="image" id="image" accept="image/*"

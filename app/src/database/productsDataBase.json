@@ -55,7 +55,7 @@
    },
    {
       "id": 9,
-      "name": "Sandwich Nuevo",
+      "name": "Sandwich N",
       "price": 390,
       "discount": 10,
       "category": "En Oferta",
@@ -63,21 +63,12 @@
       "image": "1677412089377_products_.jpg"
    },
    {
-      "id": 12,
-      "name": "Sandwich de mortadela",
-      "price": 10000,
-      "discount": 3,
-      "category": "Destacado",
-      "description": "aaa",
-      "image": "1679418285490_products_.png"
-   },
-   {
       "id": 14,
-      "name": "Sandwich de mortadela NUEVO",
-      "price": "2000",
-      "discount": "20",
+      "name": "Sandwich de mortadel",
+      "price": 2000,
+      "discount": 10,
       "category": "En Oferta",
-      "description": "CON IMAGEN",
+      "description": "CON IMAGEN   sdfvgdsfgdfevbdfdfvdfvdfvdfvdfvfdfdvdfv",
       "image": "1679418757905_products_.png"
    }
 ]
