@@ -27,6 +27,7 @@ module.exports = {
             }
 
             let cookieLife = new Date(Date.now() + 60000);
+           
 
             if(req.body.remember){
                 res.cookie(
