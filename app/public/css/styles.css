@@ -108,10 +108,34 @@ nav.main-nav ul.navegacion li img:hover {
     right: 0px;
 }
 
+/* ARREGLANDO HEADER */
+.logo-buscador-container {
+    position: relative;
+    height: 100px;
+  }
+.buscador {
+    position: absolute;
+    width: 100%;
+    top: 62px;
+    left: -93px;
+  }
+  .logo {
+    position: absolute;
+    top: 0;
+    left: -100px;
+  }
 
+  .main-icon-img{
+    width: 170px;
+  }
+  .buscador-button-input{
+    display: flex;
+  }
 
-
-
+    button.lupa i{
+    background-color: #007bff;
+     color: #fff;
+    }   
 
 
 
@@ -123,9 +147,27 @@ nav.main-nav ul.navegacion li img:hover {
         margin-bottom: 30px;
     }
 
-    header.main-header div.buscador input.main-icon{
+    /* header.main-header div.buscador input.main-icon{
         width: 350px;
-    }
+    } */
+    .logo-buscador-container {
+        height: 100px;
+      }
+    .buscador {
+        width: 100%;
+        top: 62px;
+        left: 300px;
+      }
+      .logo {
+        top: 12px;
+        left: 30px;
+      }
+      .buscador-button-input{
+        margin: auto;
+        
+      }
+    
+   
     ul.menu-usuario-carrito-burger li{
         margin: 0px 12px;
     }
@@ -173,6 +215,10 @@ nav.main-nav ul.navegacion li img:hover {
         display: none;
     }
 
+/* BUSCADOR */
+.buscador {
+        left: 450px;
+      }
    
 
     /*-------------*/
@@ -184,6 +230,19 @@ nav.main-nav ul.navegacion li img:hover {
     }
 }
 
+
+@media (min-width: 1440px){
+    .buscador {
+        left: 630px;
+      }
+
+}
+@media (min-width: 1880px){
+    .buscador {
+        left: 830px;
+      }
+
+}
 
 /* FOOTER */
 
