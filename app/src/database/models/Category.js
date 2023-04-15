@@ -12,10 +12,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(45),
             allowNull: false,
         },
-        banner: {
-            type: dataTypes.STRING(45),
-            allowNull: false,
-        },
     }
 
     const config = {
@@ -25,11 +21,19 @@ module.exports = (sequelize, dataTypes) => {
 
     const CATEGORY = sequelize.define(alias, cols, config);
 
-    CATEGORY.associate = (models) => {
-        CATEGORY.hasMany(models.Subcategory, {
-            as: "subcategories",
-            foreignKey: "category_id"
-        })
+    
+
+    //AUN NO TENENMOS SUBCATEGORIAS
+     CATEGORY.associate = (models) => {
+    //     CATEGORY.hasMany(models.Subcategory, {
+    //         as: "subcategories",
+    //         foreignKey: "category_id"
+    //     });
+
+            CATEGORY.hasMany(models.Product,{
+                as: "porduct",
+                foreignKey: "category_id"
+            })
     }
 
     return CATEGORY;
