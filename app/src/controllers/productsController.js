@@ -3,8 +3,8 @@ const fs = require('fs');
 const { validationResult } = require("express-validator");
 const { readJSON, writeJson } = require("../database");
 const products = readJSON("productsDataBase.json");
-const productsFilePath = path.join(__dirname,"../database/productsDataBase.json");
-
+//const productsFilePath = path.join(__dirname,"../database/productsDataBase.json");
+const { Product, category } = require("../database/models")
 
 
 
@@ -15,6 +15,21 @@ module.exports = {
              products,
              session: req.session
         })
+    },
+    //lectura y enviar datos a vista de administrador
+    products:(req, res) => {
+      Product.findAll({
+        include: [{
+          association: "category",
+        }]
+      })
+      .then((products)=>{
+        return res.render("admin/adminIndex", {
+          session: req.session,
+          products
+        })
+      })
+
     },
 
     detail: (req, res) => {
