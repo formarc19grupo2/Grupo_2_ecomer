@@ -1,0 +1,17 @@
+[
+  {
+    "id": 7,
+    "name": "pruebaHash",
+    "last_name": "uno",
+    "email": "hash@mail.com",
+    "pass": "$2a$12$0E5iygX0oukJZOPsynRlbuvW9zuRkHRLDNSBT1uOlTYIoH8ofy8W2",
+    "avatar": "default-image.png",
+    "rol": "USER",
+    "tel": "",
+    "address": "",
+    "postal_code": "",
+    "province": "",
+    "city": ""
+  }
+
+]
