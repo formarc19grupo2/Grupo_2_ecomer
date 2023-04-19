@@ -3,7 +3,7 @@ module.exports = {
     "username": "root",
     "password": null,
     "database": "ecommer",
-    "port": "3300",
+    "port": "3306",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
