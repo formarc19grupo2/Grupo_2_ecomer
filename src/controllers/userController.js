@@ -101,15 +101,18 @@ module.exports = {
         })
         .catch(error => console.log(error))
     },
+
     editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
-        let userInSession = users.find(user => user.id === userInSessionId);
-
-        res.render("user/userProfileEdit", {
-            user: userInSession,
+        User.findByPk(userInSessionId)
+        .then((user) => {
+            res.render("user/userProfileEdit", {
+            user,
             session: req.session
         })
+        })
+        .catch(error => console.log(error))
     },
     updateProfile: (req, res) => {
         let errors = validationResult(req);

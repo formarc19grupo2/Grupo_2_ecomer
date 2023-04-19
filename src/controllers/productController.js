@@ -1,10 +1,13 @@
 //const { products, categories } = require("../old_database");
-const { Product, Category, Sequelize } = require("../database/models");
+const { Product, Category, Sequelize, ProductImage } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
   detail: (req, res) => {
     let productId = Number(req.params.id);
+
+    const productimg = ProductImage.findOne({
+      where: { product_id: productId}});
 
     const PRODUCT_PROMISE = Product.findByPk(productId, {
       include: [{ association: "images" }],
@@ -19,13 +22,16 @@ module.exports = {
       include: [{ association: "images" }],
     });
 
-    Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
-      .then(([product, sliderProducts]) => {
+    Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE,productimg])
+      .then(([product, sliderProducts,productoimage]) => {
+        console.log(productoimage.image)
         res.render("productDetail", {
           sliderTitle: "Productos en oferta",
           sliderProducts,
           product,
+          productoimage,
           session: req.session,
+          
         });
       })
       .catch((error) => console.log(error));
