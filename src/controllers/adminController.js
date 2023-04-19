@@ -79,7 +79,7 @@ module.exports = {
         discount,
         subcategory_id: subcategory,
       };
-
+console.log(subcategory)
       Product.create(newProduct)
         .then((product) => {
           if (req.files.length === 0) {
@@ -108,6 +108,7 @@ module.exports = {
 
       Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
         .then(([categories, subcategories]) => {
+        
           return res.render("admin/adminProductCreateForm", {
             session: req.session,
             categories,
@@ -127,9 +128,9 @@ module.exports = {
 
 Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product, categories, subcategories]) {
   res.render("admin/adminProductEditForm", {
-    categories,
-    subcategories,
-    product,
+    categories:categories,
+    subcategories:subcategories,
+    product:product,
     session: req.session,
   });
 })
@@ -144,14 +145,14 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
 
       let { name, price, discount, category, subcategory, description } =
         req.body;
-
-      Product.update({
-            name: name,
-            price: price,
-            description: description,
-            discount: discount,
-            category: category,
-            subcategory: subcategory,
+console.log(subcategory)
+Product.update({
+  name,
+  price,
+  discount,
+  description,
+  category, // corrigir nome da propriedade
+  subcategory_id: subcategory // corrigir nome da propriedade
            // image: files.length > 0 ? files : product.image
 
       
@@ -165,7 +166,7 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
 
       res.redirect("/admin/products");
     } else {
-      let product = Product.findAll((product) => product.id === +req.params.id);
+      Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product, categories, subcategories]) {
 
       res.render("admin/adminProductEditForm", {
         subcategories,
@@ -174,7 +175,7 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
         errors: errors.mapped(),
         old: req.body,
         session: req.session,
-      });
+      })});
     }
   },
   destroy: (req, res) => {
