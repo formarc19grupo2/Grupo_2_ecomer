@@ -120,15 +120,20 @@ module.exports = {
     }
   },
   edit: (req, res) => {
-    const productId = Number(req.params.id);
-    const product = products.find((product) => product.id === productId);
+    const productoid = req.params.id
+    const productId = Product.findByPk(productoid);
+    const categoriesAll = Category.findAll();
+    const subcategoriesAll = Subcategory.findAll();
 
-    res.render("admin/adminProductEditForm", {
-      categories,
-      subcategories,
-      product,
-      session: req.session,
-    });
+Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product, categories, subcategories]) {
+  res.render("admin/adminProductEditForm", {
+    categories,
+    subcategories,
+    product,
+    session: req.session,
+  });
+})
+    
   },
   update: (req, res) => {
     let errors = validationResult(req);
@@ -140,24 +145,27 @@ module.exports = {
       let { name, price, discount, category, subcategory, description } =
         req.body;
 
-      products.forEach((product) => {
-        if (product.id === productId) {
-          (product.id = product.id),
-            (product.name = name),
-            (product.price = price),
-            (product.description = description),
-            (product.discount = discount),
-            (product.category = category),
-            (product.subcategory = subcategory),
-            (product.image = files.length > 0 ? files : product.image);
-        }
-      });
+      Product.update({
+            name: name,
+            price: price,
+            description: description,
+            discount: discount,
+            category: category,
+            subcategory: subcategory,
+           // image: files.length > 0 ? files : product.image
 
-      writeProductsJson(products);
+      
+        }, { 
+        where: {
+        id: req.params.id
+      }
+     });
+
+      
 
       res.redirect("/admin/products");
     } else {
-      let product = products.find((product) => product.id === +req.params.id);
+      let product = Product.findAll((product) => product.id === +req.params.id);
 
       res.render("admin/adminProductEditForm", {
         subcategories,
@@ -170,16 +178,21 @@ module.exports = {
     }
   },
   destroy: (req, res) => {
-    const productId = Number(req.params.id);
-
-    products.forEach((product) => {
-      if (product.id === productId) {
-        let productToDestroy = products.indexOf(product);
-        products.splice(productToDestroy, 1);
+   // const productId = Number(req.params.id);
+    ProductImage.destroy(
+      {where : {
+        product_id: req.params.id
       }
+      }
+    )
+    Product.destroy( {
+      where: {
+        id: req.params.id
+      }
+       
     });
 
-    writeProductsJson(products);
+    
 
     res.redirect("/admin/products");
   },
