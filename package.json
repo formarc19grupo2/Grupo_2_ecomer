@@ -1,19 +1,25 @@
 {
-  "name": "grupo_2_ecomer",
+  "name": "ecommer",
   "version": "1.0.0",
-  "description": "<h2>Sobre nosotros:</h2><div>   <p align=\"center\">\r <img width=\"257\" height=\"72\" src=\"/src/assets/to_readme/logo.png\">\r </p>\r Nuestro proyecto apunta a la compra de sandwitches a través de la página en la cual usuario va a poder armar su pedido de la forma que el quiera de manera interactiva. El pedido se podrá adquirir mediante retiro en una locación en especial y también se podrá solicitar el envio mediante delivery. La página apunta al público que quiera comer algo rápido y no tarde mucho en poder disfrutarlo.",
-  "main": "index.js",
+  "description": "",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/formarc19grupo2/Grupo_2_ecomer.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/formarc19grupo2/Grupo_2_ecomer/issues"
-  },
-  "homepage": "https://github.com/formarc19grupo2/Grupo_2_ecomer#readme"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.30.0"
+  }
 }

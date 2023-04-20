@@ -1,0 +1,92 @@
+<header class="main-header">
+    <div class="contenedor-header">
+
+        <div class="nav-hamburguesa">
+            <ul class="nav nav-tabs">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false"><i class="fa-solid fa-bars" id="menu-hamburguesa"></i>Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="products/products">Sandwich</a></li>
+                        <li><a class="dropdown-item" href="#">Infantiles</a></li>
+                        <li><a class="dropdown-item" href="#">XXL</a></li>
+                        <li><a class="dropdown-item" href="#">Guarniciones</a></li>
+                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                        <li><a class="dropdown-item" href="#">Postres</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="search-container">
+            
+       
+
+        <div class="logo-buscador-container">
+            <a class="logo" href="/"><img class="main-icon-img" src="/images/iconos/img-isologo.png" alt="Isologotipo">
+            </a>
+            <form action="/search" method="GET" class="buscador">
+                <div class="buscador-button-input">
+                <input type="text" name="keywords" class="main-icon" placeholder="¿Qué queres comer?" id="search">
+                <button class="lupa" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            </form>
+        </div> </div>
+
+        <nav>
+            <ul class="menu-usuario-carrito-burger">
+                <div class="user">
+                    <% if (typeof session.user !="undefined" ) { %>
+                        <i class="fas fa-user"></i><span class="session"></span>
+                        <div class="menu-user">
+                            <a href="/users/profile">Mis datos</a>
+                            <a href="/users/logout">Cerrar sesión</a>
+                            <% if (session.user.rol==="ADMIN" ) { %>
+                                <a href="/admin">ADMIN</a>
+                            <% } %>
+                        </div>
+                        <% } else {%>
+                            <a href="/users/login"><i class="fas fa-user"></i></a>
+                        <% } %>
+                </div>
+                <a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </ul>
+        </nav>
+    </div>
+
+    </div>
+    <nav class="main-nav">
+        <ul class="navegacion">
+            <li>
+                <a href="/products/products"><img src="/images/iconos/img-sandwich.png" alt="Sandwiches"></a>
+                Sandwich
+            </li>
+            <li>
+                <img src="/images/iconos/img-infantiles.png" alt="Infantiles">
+                Infantiles
+            </li>
+            <li>
+                <img src="/images/iconos/img-xxl.png" alt="XXL">
+                XXL
+            </li>
+            <li>
+                <img src="/images/iconos/image142.png" alt="guarnicion">
+                Guarniciones
+            </li>
+            <li>
+                <img src="/images/iconos/img-bebidas.png" alt="Bebidas">
+                Bebidas
+            </li>
+            <li>
+                <img src="/images/iconos/img-postres.png" alt="Postres">
+                Postres
+            </li>
+        </ul>
+    </nav>
+</header>
