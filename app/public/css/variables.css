@@ -1,0 +1,19 @@
+/* Variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Poppins&display=swap');
+
+
+:root {
+    /*Variables de colores*/
+    --amarillo: #FFE61B;
+    --gris-oscuro: #666;
+    --gris-claro: #ebebeb;
+    --verde: #B5FE83;
+    --azulbtn: #3483fa;
+    --naranja: darkorange;
+    /*Fuentes*/
+    --roboto: 'Roboto', sans-serif;
+    --montserrat:'Montserrat';
+    --inter: 'Inter';
+}
+

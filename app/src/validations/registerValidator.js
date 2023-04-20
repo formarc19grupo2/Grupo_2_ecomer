@@ -1,5 +1,6 @@
-const {check, body} = require("express-validator");
-const {users} = require("../database");
+const { check, body } = require("express-validator");
+//const { users } = require("../old_database");
+const { User } = require("../database/models");
 
 module.exports = [
     check("name")
@@ -18,16 +19,17 @@ module.exports = [
 
     body("email")
     .custom((value) => {
-        let user = users.find(user => user.email === value);
-
-        return user === undefined;        
-        /*if(user === undefined) {
-            return true;
-        } else {
-             return false;
-        }*/
-    })
-    .withMessage("Email ya registrado"),
+        //let user = users.find(user => user.email === value);
+        return User.findOne({
+            where: {
+                email: value
+            }
+        })
+        .then(user => {
+            if(user) return Promise.reject("Email ya registrado")
+        })
+        .catch(error => console.log(error))
+    }),
 
     check('pass1')
     .notEmpty()
@@ -35,7 +37,7 @@ module.exports = [
     .isLength({
         min: 6,
     })
-    .withMessage('La contraseña debe tener 6 caracteres'),
+    .withMessage('La contraseña debe tener como mínimo 6 caracteres'),
 
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)

@@ -1,27 +1,23 @@
-const { check, body } = require("express-validator");
-const { productsDataBase } = require("../database");
+let { check } = require('express-validator');
 
 module.exports = [
-    check("name")
-        .notEmpty().withMessage("El nombre es obligatorio").bail()
-        .isLength({ min: 3, max: 30 }).withMessage("El nombre debe tener entre 3 y 30 caracteres"),
-
-        check("price")
-        .isInt({min:1}).withMessage("Debes indicar un precio"),
-
-    check("discount")
+    check('name')
     .notEmpty()
-    .withMessage("El discuento es obligatorio"),
+    .withMessage("El campo nombre no puede ir vacío")
+    .isLength({ min: 3 })
+    .withMessage("Ingrese más de 3 caracteres"),
 
-
-   /* check('category')
+    check("category")
     .notEmpty()
-    .withMessage('Debes seleccionar una categoria')
-    ,*/
+    .withMessage("Debes elegir una categoría"),
 
-    check("description")
-        .notEmpty().withMessage("La descripción es obligatoria").bail()
-        .isLength({ min: 20}).withMessage("La descripción debe tener mínimo 20 caracteres"),
+    check('subcategory')
+    .notEmpty()
+    .withMessage('Debes elegir una subcategoría'),
 
-    
+    check('price')
+    .notEmpty()
+    .withMessage('Coloca un precio')
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números")
 ]

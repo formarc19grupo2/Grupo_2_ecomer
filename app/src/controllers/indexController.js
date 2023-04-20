@@ -1,41 +1,20 @@
-const path = require("path");
-const fs = require('fs');
-
-const productsFilePath = path.join(__dirname,"../database/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeJson = (products) => {
-	fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})
-}
-
+const { carousel } = require("../old_database");
+const { Product } = require("../database/models");
 
 module.exports = {
-
+    
     index: (req, res) => {
-        return res.render("home",{
-            products,
-            session: req.session
+        Product.findAll({
+            include: [{association: "images"}]
         })
-    },    
-
-    login: (req, res) => {
-        return res.render("users/login", {
-            session: req.session
+        .then(products => {
+            return res.render("index", {
+                carousel,
+                sliderTitle: "Productos en oferta",
+                sliderProducts: products,
+                session: req.session
+            })
         })
-    },
-
-    register: (req, res) => {
-        return res.render("users/register", {
-            session: req.session
-        })
-    },
-
-    search: (req, res) => {
-        const { keywords } = req.query
-        const results = products.filter(product => product.name == keywords)
-       // res.send(keywords)
-        res.render("products/results", {
-            keywords,
-            results,
-        })
-    },
-};
+        .catch(error => console.log(error));
+    }
+}

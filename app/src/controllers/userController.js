@@ -1,126 +1,118 @@
-const { users, writeUsersJson } = require("../database");
+//const { users, writeUsersJson } = require("../old_database");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-
-/*const path = require("path");
-const fs = require('fs');
-const usersFilePath = path.join(__dirname,"../database/userDataBase.json");
-*/
+const { User } = require("../database/models");
 
 module.exports = {
     login: (req, res) => {
-        res.render("users/login",{
-            session: req.session
-        })
+        res.render("user/login", { session: req.session })
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let user = users.find(user => user.email === req.body.email);
+            User.findOne({
+                where: {
+                    email: req.body.email,
+                }
+            })
+            .then((user)  => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    avatar: user.avatar,
+                    rol: user.rol
+                }
 
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                avatar: user.avatar,
-                rol: user.rol
-            }
+                let tiempoDeVidaCookie = new Date(Date.now() + 60000);
 
-            let cookieLife = new Date(Date.now() + 60000);
-           
-
-            if(req.body.remember){
-                res.cookie(
-                    "userEcomer",
-                    req.session.user, 
-                    {
-                        expires: cookieLife,
-                        httpOnly: true
-                    })
-            }
-
-            res.locals.users = req.session.user
-
-            res.redirect ("/");
+                if(req.body.remember) {
+                    res.cookie(
+                        "userEcomer", 
+                        req.session.user, 
+                        {
+                            expires: tiempoDeVidaCookie,
+                            httpOnly: true
+                        })
+                }
+    
+                res.locals.user = req.session.user;
+    
+                res.redirect("/");
+            })
+            .catch(error => console.log())
         } else {
-            return res.render("users/login", {
+            return res.render("user/login", {
                 errors: errors.mapped(),
                 session: req.session
             })
         }
     },
-
     register: (req, res) => {
-        res.render("users/register",{
-            session: req.session
-        })
+        res.render("user/register", {session: req.session})
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            let lastId = 0;
-
-            users.forEach(user => {
-                if (user.id > lastId) {
-                    lastId = user.id;
-                }
-            });
-
+        if(errors.isEmpty()) {
+            
             let newUser = {
-                id: lastId + 1,
-                name: req.body.name,
-                last_name: req.body.last_name,
-                email: req.body.email,
-                pass: bcrypt.hashSync(req.body.pass1, 12),
-                avatar: req.file ? req.file.filename : "default-image.png",
-                rol: "USER",
-                tel: "",
-                address: "",
-                postal_code: "",
-                province: "",
-                city: ""
+             name: req.body.name,
+             last_name: req.body.last_name,
+             email: req.body.email,
+             pass: bcrypt.hashSync(req.body.pass1, 12),
+             avatar: req.file ? req.file.filename : "default-image.png",
+             rol: 0,
+             phone: ""
             };
 
-            users.push(newUser);
-            writeUsersJson(users);
-            res.redirect("/users/login")
+            User.create(newUser)
+            .then(() => {
+               return res.redirect("/users/login");
+            })
+            .catch(error => console.log(error))
         } else {
-            res.render("./users/register", {
+            res.render("user/register", {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
             })
         }
     },
-
     logout: (req, res) => {
+
         req.session.destroy();
         if(req.cookies.userEcomer){
             res.cookie("userEcomer", "", {maxAge: -1})
         }
 
         res.redirect("/");
+
     },
     profile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
-        let userInSession = users.find(user => user.id === userInSessionId);
-
-        res.render("users/userProfile", {
-            user: userInSession,
-            session: req.session
+        User.findByPk(userInSessionId)
+        .then((user) => {
+            res.render("user/userProfile", {
+                user,
+                session: req.session
+            })
         })
+        .catch(error => console.log(error))
     },
+
     editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
-        let userInSession = users.find(user => user.id === userInSessionId);
-
-        res.render("users/userProfileEdit", {
-            user: userInSession,
+        User.findByPk(userInSessionId)
+        .then((user) => {
+            res.render("user/userProfileEdit", {
+            user,
             session: req.session
         })
+        })
+        .catch(error => console.log(error))
     },
     updateProfile: (req, res) => {
         let errors = validationResult(req);
@@ -128,7 +120,7 @@ module.exports = {
         if(errors.isEmpty()) {
 
             let userId = req.session.user.id;
-            let user = users.find(user => user.id === userId);
+          //  let user = User.findByPk(user => user.id === userId);
 
             const {
                 name,
@@ -139,42 +131,36 @@ module.exports = {
                 province,
                 city
             } = req.body;
+        User.update({
+            name,
+            last_name,
+            tel,
+            address,
+            postal_code,
+            province,
+            city,
+            avatar: req.file ? req.file.filename : User.avatar
+        }, {
+            where: {
+                id: userId
+            }
+        })
+        
 
-            user.name = name;
-            user.last_name = last_name;
-            user.tel = tel;
-            user.address = address;
-            user.postal_code = postal_code;
-            user.province = province;
-            user.city = city;
-            user.avatar = req.file ? req.file.filename : user.avatar;
+            // delete user.pass;
 
-            writeUsersJson(users)
-
-            delete user.pass;
-
-            req.session.user = user;
+           // req.session.user = user;
 
             return res.redirect("/users/profile");
         } else {
             const userInSessionId = req.session.user.id;
-            const userInSession = users.find(user => user.id === userInSessionId);
+            const userInSession = User.findByPk(user => user.id === userInSessionId);
 
-            return res.render("users/userProfileEdit", {
+            return res.render("user/userProfileEdit", {
                 user: userInSession,
                 session: req.session,
                 errors: errors.mapped(),
             })
         }
     }
-
-    /*
-        detail: (req, res) => {
-            let userId = req.params.id;
-            let user = users.find(user => user.id == userId);
-    
-            res.render("users/userDetail", {
-                
-            })
-        }  */
 }
