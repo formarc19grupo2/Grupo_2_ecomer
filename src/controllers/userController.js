@@ -120,7 +120,7 @@ module.exports = {
         if(errors.isEmpty()) {
 
             let userId = req.session.user.id;
-            let user = users.find(user => user.id === userId);
+          //  let user = User.findByPk(user => user.id === userId);
 
             const {
                 name,
@@ -131,26 +131,30 @@ module.exports = {
                 province,
                 city
             } = req.body;
+        User.update({
+            name,
+            last_name,
+            tel,
+            address,
+            postal_code,
+            province,
+            city,
+            avatar: req.file ? req.file.filename : User.avatar
+        }, {
+            where: {
+                id: userId
+            }
+        })
+        
 
-            user.name = name;
-            user.last_name = last_name;
-            user.tel = tel;
-            user.address = address;
-            user.postal_code = postal_code;
-            user.province = province;
-            user.city = city;
-            user.avatar = req.file ? req.file.filename : user.avatar;
+            // delete user.pass;
 
-            writeUsersJson(users)
-
-            delete user.pass;
-
-            req.session.user = user;
+           // req.session.user = user;
 
             return res.redirect("/users/profile");
         } else {
             const userInSessionId = req.session.user.id;
-            const userInSession = users.find(user => user.id === userInSessionId);
+            const userInSession = User.findByPk(user => user.id === userInSessionId);
 
             return res.render("user/userProfileEdit", {
                 user: userInSession,
