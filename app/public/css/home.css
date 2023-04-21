@@ -132,7 +132,7 @@ body div.btn__utiles div.link__util img:hover {
     border-radius: 10px;
 }
 
-.banner {
+/* .banner {
     background: linear-gradient(45deg, transparent, white);
     padding: 20px;
     margin: 50px 0;
@@ -141,7 +141,29 @@ body div.btn__utiles div.link__util img:hover {
 
 .banner img {
     width: 100%;
+} */
+
+div.galeria{
+    display: flex;
+    width: 600px;
+    height: 430px;
+    margin-left: -144px;
 }
+
+div.galeria img {
+    width: opx;
+    /* flex-grow: 1; */
+    object-fit: cover;
+    opacity: .8;
+    transition: .5 ease;
+}
+div.galeria img:hover{
+    cursor: crosshair;
+    width: 500px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
 
 @media screen and (min-width: 768px) {
     .categories-section {
