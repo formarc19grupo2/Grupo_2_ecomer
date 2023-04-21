@@ -179,4 +179,14 @@ div.galeria img:hover{
         width: 30%;
     }
     
+    
 }
+@media (max-width: 1600px) {
+    
+    div.galeria{
+        display: none;
+        
+    }
+    
+}
+
