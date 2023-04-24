@@ -9,7 +9,7 @@
 
 
 <h2>Sobre nosotros:</h2><div>   <p align="center">
-<img width="257" height="72" src="/src/assets/to_readme/logo.png">
+
 </p>
 e-comer es un sitio web donde puedes encontrar variedad de sandwichs, guarniciones, bebidas, postres, menúes para compartir y divertidas opciones infantiles. La particuladirad del sitio es que posee la opcion de crear tu propio sandwich, donde puedes elegir entre distintas varidades de pan, verduras, fiambres, quesos, salsas y aderezos, de manera facil e intuitiva. Ademas, el home del sitio cuenta con tres secciones: Destacados, Mas vendidos, y Ofertas.
 El sitio ofrece retiro en el local o envio
