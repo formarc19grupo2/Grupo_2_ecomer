@@ -162,5 +162,20 @@ module.exports = {
                 errors: errors.mapped(),
             })
         }
+    },
+    destroy: (req, res) => {
+            // obtengo el id del req.params
+
+            User.destroy({
+                  
+                  where: {
+                        id: req.params.id
+                  },
+            })
+                  .then(() => {
+                        return res.redirect("/");
+                  })
+                  .catch((error) => console.log(error));
+            },
     }
-}
+

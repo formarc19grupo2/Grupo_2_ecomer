@@ -44,6 +44,23 @@
     margin: 1rem 0;
 }
 
+.btnDanger{
+    background-color: #ff4136;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btnDanger:hover {
+    background-color: rgb(85, 1, 1);
+  }
+
+
 @media screen and (min-width: 768px) {
     .userProfile {
         font-size: 1.2rem;
@@ -58,4 +75,5 @@
     .userProfile_box {
         width: 47%;
     }
+    
 }

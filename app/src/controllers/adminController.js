@@ -193,8 +193,6 @@ Product.update({
        
     });
 
-    
-
     res.redirect("/admin/products");
   },
 };

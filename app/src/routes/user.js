@@ -8,7 +8,8 @@ const {
     logout,
     profile,
     editProfile,
-    updateProfile
+    updateProfile,
+    destroy
  } = require("../controllers/userController");
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
@@ -36,5 +37,8 @@ router.get("/profile", userInSessionCheck, profile);
 router.get("/profile/edit", userInSessionCheck, editProfile);
 /* PUT - Profile update */
 router.put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile);
+
+/* Delete */
+router.delete("/profile/delete/:id", destroy);
 
 module.exports = router;
