@@ -3,6 +3,10 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { User } = require("../database/models");
 
+const fs = require('fs');
+
+
+
 module.exports = {
     login: (req, res) => {
         res.render("user/login", { session: req.session })
@@ -37,11 +41,16 @@ module.exports = {
                 }
     
                 res.locals.user = req.session.user;
+               
+           let userInSessionimg = req.session.user.avatar
+           const pathArquivo = './public/images/avatar/'+userInSessionimg;
+                console.log(pathArquivo)
     
                 res.redirect("/");
             })
             .catch(error => console.log())
         } else {
+           
             return res.render("user/login", {
                 errors: errors.mapped(),
                 session: req.session
@@ -164,18 +173,34 @@ module.exports = {
         }
     },
     destroy: (req, res) => {
-            // obtengo el id del req.params
-
-            User.destroy({
-                  
-                  where: {
-                        id: req.params.id
-                  },
-            })
-                  .then(() => {
-                        return res.redirect("/");
-                  })
-                  .catch((error) => console.log(error));
-            },
+        // obtengo el id del req.params
+        let userInSessionId = req.session.user.id
+        User.destroy({
+            where: {
+                id: req.params.id,
+                id: userInSessionId
+            }
+        })
+        .then(() => {
+            let userInSessionimg = req.session.user.avatar
+            const pathArquivo = './public/images/avatar/'+userInSessionimg;
+    
+            fs.unlinkSync(pathArquivo, (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log('Arquivo apagado com sucesso!');
+            });
+    
+            req.session.destroy();
+            if(req.cookies.userEcomer){
+                res.cookie("userEcomer", "", {maxAge: -1})
+            }
+            res.redirect("/");
+        })
+        .catch((error) => console.log(error));
+    }
+    
     }
 

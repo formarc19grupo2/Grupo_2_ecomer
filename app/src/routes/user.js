@@ -41,4 +41,7 @@ router.put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, 
 /* Delete */
 router.delete("/profile/delete/:id", destroy);
 
+
+
+
 module.exports = router;
