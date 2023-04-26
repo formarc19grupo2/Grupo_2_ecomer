@@ -1,22 +1,30 @@
 <header class="main-header">
+
     <div class="contenedor-header">
+
         <div class="search-container">
             <div class="logo-buscador-container">
                 <a class="logo" href="/"><img class="main-icon-img" src="/images/iconos/img-isologo.png"
                         alt="Isologotipo">
                 </a>
-                <form action="/search" method="GET" class="buscador">
-                    <div class="buscador-button-input">
-                        <input type="text" name="keywords" class="main-icon" placeholder="¿Qué queres comer?"
-                            id="search">
-                        <button class="lupa" type="submit"><i
-                                class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
             </div>
         </div>
-        
-        <nav>
+
+        <form action="/search" method="GET" class="buscador">
+            <div class="buscador-button-input">
+                <input type="search" id="search" name="keywords" class="main-icon" placeholder="¿Qué queres comer?">
+                <button class="lupa" type="submit">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass">
+                    </i>
+                </button>
+            </div>
+        </form>
+
+        <div class="admin">
+            <a href="http://localhost:3030/admin"><i class="fa-solid fa-users-viewfinder"></i></a>
+        </div>        
+
+        <nav class="burga">            
             <i class="fa-solid fa-bars" id="menu-hamburguesa"></i>
             <ul class="menu-usuario-carrito-burger">
                 <div class="user">
@@ -36,21 +44,24 @@
                 <a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a>
             </ul>
         </nav>
+
+        
+
     </div>
 
     <nav class="main-nav">
         <ul class="navegacion">
             <li>
                 <a href="/products/category/1"><img src="/images/iconos/img-sandwich.png" alt="Sandwiches"></a>
-               <p>Sandwich</p> 
+                <p>Sandwich</p>
             </li>
             <li>
                 <a href="/products/category/2"><img src="/images/iconos/img-bebidas.png" alt="Bebidas"></a>
-                <p>Bebidas</p> 
+                <p>Bebidas</p>
             </li>
             <li>
                 <a href="/products/category/3"><img src="/images/iconos/img-postres.png" alt="Postres"></a>
-               <p>Postres</p> 
+                <p>Postres</p>
             </li>
         </ul>
     </nav>
