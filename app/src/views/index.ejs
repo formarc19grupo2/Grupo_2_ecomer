@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head")%> 
+<body>
+    <%- include("partials/header")%> 
+    <main class="home">
+        <div class="btn__utiles">
+            <div class="link__util link__pago">
+                <p>Pagá con credito o debito</p>
+                <img class="link__icon" src="/images/iconos/img-tarjeta.png" alt="Pagá con credito o debito">
+            </div>
+
+            <div class="link__util link__catalogo">
+                <p>Accede al catalogo exclusivo</p>
+                <img class="link__icon" src="images/iconos/img-catalogo.png" alt="Accede al catalogo exclusivo">
+            </div>
+
+            <div class="link__util link__delivery">
+                <p>Delivery sin cargo</p>
+                <img class="link__icon" src="/images/iconos/img-delivery.png" alt="Delivery sin cargo">
+            </div>
+        </div>
+        
+        <!-- CAROUSEL -->
+        <%- include("partials/carousel")%> 
+        <!-- END CAROUSEL -->
+        <!-- SALE -->
+        <%- include("partials/slider")%> 
+        <!-- END SALE -->
+
+       
+
+        <!-- CATEGORIES -->
+        <section class="categories-section">
+            <div class="home-categories">
+                <div class="category-card">
+                    <a href="/products/category/2"><img src="/images/iconos/img-bebidas.png" alt=""></a>
+                </div>
+                <div class="category-card">
+                    <a href="/products/category/1"> <img src="/images/iconos/img-sandwich.png" alt=""></a>
+                </div>
+                <div class="category-card">
+                    <a href="/products/category/3"> <img src="/images/iconos/img-postres.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+        <!-- END CATEGORIES -->
+       
+
+        </h1>
+       <div class="galeria">
+        <img src="/images/galeria/pexels-los-muertos-crew-8477358.jpg" alt="">
+        <img src="/images/galeria/pexels-maria-orlova-4969892.jpg" alt="">
+        <img src="/images/galeria/pexels-oliver-sjöström-1025804.jpg" alt="">
+        <img src="/images/galeria/pexels-oliver-sjöström-1059040.jpg" alt="">
+        <img src="/images/galeria/pexels-rajesh-tp-1633578.jpg" alt="">
+       </div>
+    
+    </main>
+    
+    
+    <%- include("partials/footer")%> 
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/product-slider.js"></script>
+</body>
+</html>
