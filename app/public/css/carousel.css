@@ -2,6 +2,7 @@
 .carousel-container {
     position: relative;
     margin: 20px auto 30px;
+    width: 95%;   
 }
 
 /* Esconde las imágenes por default */
@@ -11,6 +12,7 @@
 
 .slides img{
     width: 100%;
+    border-radius: 10px;
 }
 
 .dots {
@@ -22,13 +24,13 @@
 .carousel-container .prev, .carousel-container .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: var(--dark-blue);
+    color: gray;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -48,8 +50,8 @@
 /* Puntos indicadores */
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;

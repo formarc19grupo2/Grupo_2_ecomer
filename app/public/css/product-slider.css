@@ -5,7 +5,7 @@
 .productSlide {
     width: 250px;
     margin: 10px auto;
-    background-color: var(--gris-claro);
+    background-color: white;
     box-shadow: 0px 0px 10px rgba(196, 206, 56, 0.25);
     border-radius: 10px;
     padding: 20px;
