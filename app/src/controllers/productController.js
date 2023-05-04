@@ -65,7 +65,7 @@ module.exports = {
   },
 
   cart: (req, res) => {
-    return res.render("products/productCart")
+    return res.render("user/productCart")
   },
 
 };
