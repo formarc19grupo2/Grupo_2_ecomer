@@ -200,7 +200,10 @@ module.exports = {
             res.redirect("/");
         })
         .catch((error) => console.log(error));
-    }
+    },
+    cart: (req, res) => {
+        return res.render("user/productCart")
+      },
     
     }
 
