@@ -7,6 +7,6 @@ router.get('/detail/:id', detail)
 /* GET - List products for category */
 router.get("/category/:id", category); 
 
-router.get("/productCart", cart)
+
 
 module.exports = router;

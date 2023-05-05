@@ -10,7 +10,7 @@ const {
     editProfile,
     updateProfile,
     destroy,
-    cart
+    cart,
  } = require("../controllers/userController");
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
@@ -41,6 +41,8 @@ router.put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, 
 
 /* Delete */
 router.delete("/profile/delete/:id", destroy);
+
+router.get("/productCart", cart);
 
 
 
