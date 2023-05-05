@@ -1,14 +1,26 @@
+.section__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: var(--marron);
+    border: 2px solid var(--amarillo);
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
 .productSlider {
     font-family: var(--Inter);
 }
 
 .productSlide {
-    width: 250px;
+    width: 50%;
+    height: fit-content;
     margin: 10px auto;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(196, 206, 56, 0.25);
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 0px 10px 0px 10px;
+    padding: 15px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -32,7 +44,6 @@
     border-radius: 0px 10px 0px 10px;
     font-size: 15px;
 }
-
 
 .productSlide img {
     width: 100%;
