@@ -143,8 +143,7 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
       const productId = Number(req.params.id);
       const files = req.files.map((file) => file.filename);
 
-      let { name, price, discount, category, subcategory, description } =
-        req.body;
+      let { name, price, discount, category, subcategory, description } = req.body;
   console.log(subcategory)
   Product.update({
     name,
