@@ -8,7 +8,7 @@
         <div class="container" style="max-width: 700px;">
           <div class="row">
             <%- include('partials/adminSidebar') %>
-            <form class="row g-3" action="/admin/products/edit/<%= product ? product.id : '' %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="row g-3" action="/admin/products/edit/<%= product ? product.id : '' %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
                 <div class="col-12">
                     <label for="inputName" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="inputName" name="name" value="<%= locals.old ? old.name : product.name %>">
@@ -21,10 +21,8 @@
                     <select class="form-select" id="category" name="category">
                       <option value="" selected hidden>Categorias</option>
                      <% categories.forEach(category => { %>
-                        <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name %></option>
+                        <option value="<%- category.id %>" <%- locals.old && locals.old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name%></option>
                      <% }) %>                          <!--  si existe old y coinciden las categorias / selected /si no -> el id de la cat. es igual a la categoria del producto que estoy editando / selected si no null --> 
-                     
-                     
                      
                     </select>
                     <% if (locals.errors && errors.category) { %>

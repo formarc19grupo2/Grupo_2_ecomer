@@ -13,6 +13,7 @@ window.addEventListener("load",()=>{
     $priceErrors = qs('#priceErrors'),
     $discount   = qs ('#inputDiscount'),
     $discountErrors = qs ('#discountErrors'),
+    $form = qs ("#form")
     regExPrice = /^[0-9]+([,][0-9]+)?$/
     regExInt = /^\d+$/
 
@@ -89,15 +90,15 @@ window.addEventListener("load",()=>{
           });
           
 
-        //validar antes de enviar
-        let elementosConErrores = document.querySelectorAll(".is-invalid");
-        let errores = elementosConErrores.length > 0; 
+        // //validar antes de enviar
+        // let elementosConErrores = document.querySelectorAll(".is-invalid");
+        // let errores = elementosConErrores.length > 0; 
 
-        if(errores) {
-            submitErrors.innerText = "Hay errores en el formulario"
-        } else {
-            $form.submit()
-        }
+        // if(errores) {
+        //     submitErrors.innerText = "Hay errores en el formulario"
+        // } else {
+        //     $form.submit()
+        // }
      
 
 
