@@ -15,10 +15,11 @@
                     <% if (locals.errors && errors.name) { %>
                         <small class="text-danger"><%= errors.name.msg %> </small>
                     <% } %>
+                    <span class="error" id="nameErrors"></span>
                 </div>
                 <div class="col-12">
-                    <select class="form-select" id="specificSizeSelect" name="category">
-                      <option selected hidden>Categorias</option>
+                    <select class="form-select" id="category" name="category">
+                      <option value="" selected hidden>Categorias</option>
                      <% categories.forEach(category => { %>
                         <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name %></option>
                      <% }) %>                          <!--  si existe old y coinciden las categorias / selected /si no -> el id de la cat. es igual a la categoria del producto que estoy editando / selected si no null -->               
@@ -26,10 +27,11 @@
                     <% if (locals.errors && errors.category) { %>
                         <small class="text-danger"><%= errors.category.msg %> </small>
                     <% } %>
+                    <span id="categoryErrors"></span>
                 </div>
                 <div class="col-12">
-                    <select class="form-select" id="specificSizeSelect" name="subcategory">
-                      <option selected hidden>Subcategorias</option>
+                    <select class="form-select" id="subcategory" name="subcategory">
+                      <option value="" selected hidden>Subcategorias</option>
                      <% subcategories.forEach(subcategory => { %>
                         <option value="<%- subcategory.id%>" <%- locals.old && old.subcategory == subcategory.id ? "selected" : subcategory.name == product.subcategory ? `selected` : ""  %>><%- subcategory.name %></option>
                      <% }) %>
@@ -37,6 +39,7 @@
                     <% if (locals.errors && errors.subcategory) { %>
                         <small class="text-danger"><%= errors.subcategory.msg %> </small>
                     <% } %>
+                    <span id="subcategoryErrors"></span>
                 </div>
                 <div class="col-12">
                     <label for="inputPrice" class="form-label">Precio</label>
@@ -44,6 +47,7 @@
                     <% if (locals.errors && errors.price) { %>
                         <small class="text-danger"><%= errors.price.msg %> </small>
                     <% } %>
+                    <span id="priceErrors"></span>
                 </div>
                 <div class="col-12">
                     <label for="inputDiscount" class="form-label">Descuento</label>
@@ -51,6 +55,7 @@
                     <% if (locals.errors && errors.discount) { %>
                         <small class="text-danger"><%= errors.discount.msg %> </small>
                     <% } %>
+                    <span id="discountErrors"></span>
                 </div>
                 <div class="col-12">
                     <label for="inputImage" class="form-label">Imagen</label>
@@ -69,7 +74,8 @@
             </form>
           </div>
         </div>
-        <%- include('partials/adminScripts') %>
         
+        <%- include('partials/adminScripts') %>
+        <script src="/js/editProductValidation.js"></script>
         </body>
     </html>

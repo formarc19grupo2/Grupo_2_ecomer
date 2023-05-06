@@ -145,15 +145,15 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
 
       let { name, price, discount, category, subcategory, description } =
         req.body;
-console.log(subcategory)
-Product.update({
-  name,
-  price,
-  discount,
-  description,
-  category, // corrigir nome da propriedade
-  subcategory_id: subcategory // corrigir nome da propriedade
-           // image: files.length > 0 ? files : product.image
+  console.log(subcategory)
+  Product.update({
+    name,
+    price,
+    discount,
+    description,
+    category, // corrigir nome da propriedade
+    subcategory_id: subcategory // corrigir nome da propriedade
+            // image: files.length > 0 ? files : product.image
 
       
         }, { 
