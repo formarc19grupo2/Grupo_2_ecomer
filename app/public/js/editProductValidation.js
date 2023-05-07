@@ -16,8 +16,8 @@ window.addEventListener("load",()=>{
     $form = qs ("#form"),
     $submit = qs ("#submit")
     $submitErrors = ("$submitErrors")
-    regExPrice = /^[0-9]+([,][0-9]+)?$/
-    regExInt = /^\d+$/
+    regExPrice = /^[0-9]+([,][0-9]+)?$/  // expresión regular valida un número decimal en formato de punto flotante con coma decimal opcional.
+    regExInt = /^\d+$/   //expresión regular para validar numeros enteros
 
     
 
@@ -65,10 +65,6 @@ window.addEventListener("load",()=>{
                     $priceErrors.innerText = 'El precio es un campo obligatorio';
                     $price.classList.add('is-invalid')
                     break;
-                case regExPrice.test($price.value):
-                    $priceErrors.innerText = 'Debe ingresar un precio válido (ej: 200,00)';
-                    $price.classList.add('is-invalid')
-                    break
                 default:
                     $price.classList.remove('is-invalid');
                     $price.classList.add('is-valid');
@@ -93,14 +89,15 @@ window.addEventListener("load",()=>{
           
 
         // //validar antes de enviar
-        let elementosConErrores = document.querySelectorAll(".is-invalid");
-        let errores = elementosConErrores.length > 0; 
+        const form = document.querySelector('form');
 
-        if(errores) {
-            alert( "Hay errores en el formulario")
-        } else {
-            $form.submit()
-        }
+        form.addEventListener('submit', function(event) {
+          const invalidInputs = form.querySelectorAll('.is-invalid');
+          if (invalidInputs.length > 0) {
+            event.preventDefault();
+            alert('Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.');
+          }
+        });
      
 
 
