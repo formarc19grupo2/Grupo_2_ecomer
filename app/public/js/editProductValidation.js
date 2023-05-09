@@ -14,11 +14,14 @@ window.addEventListener("load",()=>{
     $discount   = qs ('#inputDiscount'),
     $discountErrors = qs ('#discountErrors'),
     $form = qs ("#form"),
-    $submit = qs ("#submit")
-    $submitErrors = ("$submitErrors")
-    regExPrice = /^[0-9]+([,][0-9]+)?$/  
-    regExInt = /^\d+$/
-
+    $submit = qs ("#submit"),
+    $submitErrors = ("#submitErrors"),
+    $file = qs("#inputImage"),
+    $fileErrors = qs('#fileErrors'),
+    $imgPreview = qs('#img-preview'),
+    regExPrice = /^[0-9]+([,][0-9]+)?$/  // expresión regular valida un número decimal en formato de punto flotante con coma decimal opcional.
+    regExInt = /^\d+$/   //expresión regular para validar numeros enteros
+  
     
 
     
@@ -87,6 +90,31 @@ window.addEventListener("load",()=>{
             }
           });
           
+          $file.addEventListener('change', () => {
+            let filePath = $file.value, //Capturo el valor del input
+                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+            if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+                $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                $file.value = '';
+                $imgPreview.innerHTML = '';
+                $file.classList.add('is-invalid')
+                return false;
+            }else{
+                // Image preview
+                console.log($file.files);
+                if($file.files && $file.files[0]){
+                    let reader = new FileReader();
+                    reader.onload = function(e){
+                        $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    };
+                    reader.readAsDataURL($file.files[0]);
+                    $fileErrors.innerHTML = '';
+                    $file.classList.remove('is-invalid')
+                }
+            }
+        })
+         
+         
 
         // //validar antes de enviar
         const form = document.querySelector('form');
