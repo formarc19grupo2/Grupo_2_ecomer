@@ -9,10 +9,11 @@
         <h3 class="userTitle">Edita tu perfil</h3>
         <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="form-ad" >
             <div class="form-ad-input">
-                <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
+                <input type="text" name="name" id="inputName" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <small class="text-danger"><%= errors.name.msg %> </small>
                 <% } %>
+                <span class="error" id="nameErrors"></span>
             </div>
             <div class="form-ad-input">
                 <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>">
@@ -27,24 +28,11 @@
                 <% } %>
             </div>
             <div class="form-ad-input">
-                <input type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= user.tel ? user.tel : "" %>">
+                <input type="text" name="phone" placeholder="Ingresá tu teléfono" value="<%= user.phone ? user.phone : "" %>">
             </div>
-            <div class="form-ad-input">
-                <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>">
-            </div>
-            <div class="form-ad-input">
-                <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.cp ? user.cp : "" %>">
-            </div>
-            <div class="form-ad-input">
-                <select name="province" id="">
-                    <option value="">Provincia</option>
-                </select>
-            </div>
-            <div class="form-ad-input">
-                <select name="city" id="">
-                    <option value="">Localidad</option>
-                </select>
-            </div>
+        
+            
+    
             <div class="input-file">
                 <p>Cambiar foto de perfil</p>
                 <input type="file" name="avatar">
@@ -57,5 +45,6 @@
         </form>
     </main>
 <%- include('../partials/footer')%>
+<script src="/js/editUserValidator.js"></script>
 </body>
 </html>

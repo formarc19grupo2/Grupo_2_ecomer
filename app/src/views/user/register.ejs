@@ -41,7 +41,11 @@
             <div class="input-file">
                 <p>Agregar foto</p>
                 <input type="file" name="avatar">
+                
             </div>
+            <% if (locals.errors && errors.avatar) { %>
+                <small class="text-danger"><%= errors.avatar.msg %> </small>
+            <% } %>
             <div class="form-ad-input_check">
                 <input type="checkbox" name="terms" id="check">
                 <label for="check">Acepto los términos y condiciones</label>

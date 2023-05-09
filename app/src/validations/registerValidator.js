@@ -5,43 +5,67 @@ const { User } = require("../database/models");
 module.exports = [
     check("name")
     .notEmpty()
-    .withMessage("El nombre es obligatorio"),
+    .withMessage("El nombre es obligatorio")
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener al menos 2 caracteres"),
 
     check("last_name")
     .notEmpty()
-    .withMessage("El apellido es obligatorio"),
+    .withMessage("El apellido es obligatorio")
+    .isLength({ min: 2 })
+    .withMessage("El apellido debe tener al menos 2 caracteres"),
 
     check("email")
     .notEmpty()
-    .withMessage("El email es obligatorio").bail()
+    .withMessage("El email es obligatorio")
     .isEmail()
-    .withMessage("Email inválido"),
-
-    body("email")
+    .withMessage("Email inválido")
     .custom((value) => {
-        //let user = users.find(user => user.email === value);
-        return User.findOne({
-            where: {
-                email: value
-            }
-        })
-        .then(user => {
-            if(user) return Promise.reject("Email ya registrado")
-        })
-        .catch(error => console.log(error))
+      return User.findOne({
+        where: {
+          email: value
+        }
+      })
+      .then(user => {
+        if(user) {
+          return Promise.reject("Email ya registrado");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        throw new Error("Email ya Registrado");
+      });
     }),
 
     check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña').bail()
     .isLength({
-        min: 6,
+        min: 8,
     })
-    .withMessage('La contraseña debe tener como mínimo 6 caracteres'),
+    .withMessage('La contraseña debe tener como mínimo 8 caracteres')
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])/)
+    .withMessage('La contraseña debe contener al menos una letra minúscula, una letra mayúscula, un número y un carácter especial'),
 
-    body('pass2')
+    check('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)
     .withMessage('Las contraseñas no coinciden'),
+
+    check('avatar')
+    .custom((value, { req }) => {
+        if (!req.file) {
+            throw new Error('Debes seleccionar una foto');
+        }
+
+        // Verificar la extensión del archivo
+        const fileExtension = path.extname(req.file.originalname).toLowerCase();
+        if (!allowedExtensions.includes(fileExtension)) {
+            throw new Error('El archivo debe tener una extensión válida (JPG, JPEG, PNG, GIF)');
+        }
+
+        return true;
+    })
+    .withMessage('Archivo invalido - El archivo debe tener una extensión válida JPG, JPEG, PNG, GIF '),
 
     check('terms')
     .isString('on')
