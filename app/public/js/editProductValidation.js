@@ -16,8 +16,8 @@ window.addEventListener("load",()=>{
     $form = qs ("#form"),
     $submit = qs ("#submit")
     $submitErrors = ("$submitErrors")
-    regExPrice = /^[0-9]+([,][0-9]+)?$/  // expresión regular valida un número decimal en formato de punto flotante con coma decimal opcional.
-    regExInt = /^\d+$/   //expresión regular para validar numeros enteros
+    regExPrice = /^[0-9]+([,][0-9]+)?$/  
+    regExInt = /^\d+$/
 
     
 
@@ -98,11 +98,5 @@ window.addEventListener("load",()=>{
             alert('Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.');
           }
         });
-     
-
-
-
-
-
 })
 
