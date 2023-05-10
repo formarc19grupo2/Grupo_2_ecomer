@@ -261,7 +261,7 @@ window.addEventListener("load",()=>{
                 $discountErrors.innerText = ''
                 break;
             }
-          });
+        });
           
           $file.addEventListener('change', () => {
             let filePath = $file.value, //Capturo el valor del input
@@ -299,12 +299,6 @@ window.addEventListener("load",()=>{
             alert('Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.');
           }
         });
-     
-
-
-
-
-
 })
 
 >>>>>>> 845a8f10e58b6830a59073f221c3e1de35684d43
