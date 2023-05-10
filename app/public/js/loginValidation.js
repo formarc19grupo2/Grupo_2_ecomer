@@ -10,9 +10,6 @@ window.addEventListener("load", () => {
         $pass = qs('#pass'),
         $passErrors = qs('#passErrors'),
 
-        $terms = qs('#check'),
-        $termsErrors = qs('#termsErrors'),
-
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
@@ -50,13 +47,6 @@ window.addEventListener("load", () => {
                 $passErrors.innerText = ''
                 break;
         }
-    })
-
-    $terms.addEventListener('click', () => {
-        $terms.value = 'on'
-        $terms.classList.toggle('is-valid');
-        $terms.classList.remove('is-invalid');
-        $termsErrors.innerHTML = ""
     })
 
     $form.addEventListener("submit", (event) => {
