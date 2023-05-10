@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head')%>
-<body>
+<body>    
+
 <%- include('../partials/header')%>
 
     <main class="usersForm-container">
        
         <h3 class="userTitle">LOGIN</h3>
-        <form action="/users/login" method="POST" class="form-ad">
+
+        <form action="/users/login" method="POST" class="form-ad" id="form">
+
             <div class="form-ad-input">
-                <input type="email" name="email" placeholder="Ingresá tu email">
+                <input type="email" name="email" placeholder="Ingresá tu email" id="email">
                 <% if (locals.errors && errors.email) { %>
                     <small class="text-danger"><%= errors.email.msg %> </small>
                 <% } %>
+
+                <span class="error" id="emailErrors"></span>
+
             </div>
+
             <div class="form-ad-input">
-                <input type="password" name="pass" placeholder="Contraseña">
+                <input type="password" name="pass" placeholder="Contraseña" id="pass">
                 <% if (locals.errors && errors.pass) { %>
                     <small class="text-danger"><%= errors.pass.msg %> </small>
                 <% } %>
+
+                <span class="error" id="passErrors"></span>
+                
             </div>
+
             <div class="form-ad-input_check">
                 <input type="checkbox" name="remember" id="check">
                 <label for="check">Mantener Logeado</label>
-            </div>
 
+                <span class="error" id="termsErrors"></span>
+
+            </div>  
             <% if (locals.errorMsg ) { %>
                     <small class="text-danger"><%= errorMsg %> </small>
             <% } %>
@@ -34,6 +47,13 @@
             <a href="/users/register" class="userLink">Aún no tengo cuenta</a>
         </form>
     </main>
+
 <%- include('../partials/footer')%>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="/js/loginValidation.js"></script>
+
+
 </body>
 </html>

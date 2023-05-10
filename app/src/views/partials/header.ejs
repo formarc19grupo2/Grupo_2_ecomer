@@ -1,7 +1,7 @@
 <header class="main-header">
 
     <div class="contenedor-header">
-
+        
         <div class="search-container">
             <div class="logo-buscador-container">
                 <a class="logo" href="/"><img class="main-icon-img" src="/images/iconos/img-isologo.png"
@@ -22,12 +22,11 @@
 
         <div class="admin">
             <a href="http://localhost:3030/admin"><i class="fa-solid fa-users-viewfinder"></i></a>
-        </div>
+        </div>        
 
-        <nav class="burga">
+        <nav class="burga">            
             <i class="fa-solid fa-bars" id="menu-hamburguesa"></i>
             <ul class="menu-usuario-carrito-burger">
-
                 <div class="user">
                     <% if (typeof session.user !="undefined" ) { %>
                         <i class="fas fa-user"></i><span class="session"></span>
@@ -41,11 +40,10 @@
                         <% } else {%>
                             <a href="/users/login"><i class="fas fa-user"></i></a>
                             <% } %>
-
                 </div>
                 <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
             </ul>
-        </nav>
+        </nav>     
     </div>
 
     <nav class="main-nav">
