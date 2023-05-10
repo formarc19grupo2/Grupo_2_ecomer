@@ -32,6 +32,10 @@ window.addEventListener("load",()=>{
                 $nameErrors.innerText = "El campo nombre es obligatorio";
                 $inputName.classList.add("is-invalid")
                 break;
+            case $inputName.value.trim().length < 5:
+                $nameErrors.innerText = "El campo nombre debe tener al menos 5 caracteres";
+                $inputName.classList.add("is-invalid")
+            break;
             default:
                 $inputName.classList.remove("is-invalid");
                     $inputName.classList.add("is-valid");
@@ -80,6 +84,10 @@ window.addEventListener("load",()=>{
             switch (true) {
               case !regExInt.test($discount.value):
                 $discountErrors.innerText = 'Debe ingresar un descuento válido (ej: 0 - 10 - 20)';
+                $discount.classList.add('is-invalid')
+                break
+            case $discount.value > 100:
+                $discountErrors.innerText = 'El descuento no puede ser mayor al 100%';
                 $discount.classList.add('is-invalid')
                 break
               default:
