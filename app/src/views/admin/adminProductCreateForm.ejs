@@ -11,14 +11,13 @@
         <form id="form" class="row g-3" action="/admin/products/create" method="POST" enctype="multipart/form-data">
             <div class="col-12">
                 <label id="name" for="inputName" class="form-label">Nombre</label>
-                <span class="error" id="nameErrors"></span>
                 <input  type="text" class="form-control" id="inputName" name="name" value="<%= locals.old && old.name %>">
                 <% if(locals.errors && errors.name) {%>
                     <small class="text-danger"><%= errors.name.msg %></small>
                 <% } %>
             </div>
             <div class="col-12">
-                <select class="form-select" id="specificSizeSelect" name="category">
+                <select class="form-select" id="category" name="category">
                   <option selected hidden value="">Categorias</option>
                  <% categories.forEach(category => { %>
                     <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
@@ -27,9 +26,10 @@
                 <% if(locals.errors && errors.category) {%>
                     <small class="text-danger"><%= errors.category.msg %></small>
                 <% } %>
+                
             </div>
             <div class="col-12">
-                <select class="form-select" id="specificSizeSelect" name="subcategory">
+                <select class="form-select" id="subcategory" name="subcategory">
                   <option selected hidden value="">Subcategorias</option>
                  <% subcategories.forEach(subcategory => { %>
                     <option value="<%- subcategory.id %>" <%= 
@@ -44,24 +44,25 @@
                 <% if(locals.errors && errors.subcategory) {%>
                     <small class="text-danger"><%= errors.subcategory.msg %></small>
                 <% } %>
+                <span id="subcategoryErrors"></span>
             </div>
             <div class="col-12">
-                <label id="precio" for="inputPrice" class="form-label">Precio</label>
-                <span id="precioErrors"></span>
-                
+                <label  for="inputPrice" class="form-label">Precio</label>
                 <input type="number" class="form-control" id="inputPrice" name="price" value="<%= locals.old && old.price %>" >
                 <% if(locals.errors && errors.price) {%>
                     <small class="text-danger"><%= errors.price.msg %></small>
                 <% } %>
+                <span id="priceErrors"></span>
             </div>
             <div class="col-12">
-                <label id="descuento" for="inputDiscount" class="form-label">Descuento</label>
-                <span id="descuentoErrors"></span>
+                <label for="inputDiscount" class="form-label">Descuento</label>
                 <input type="number" class="form-control" id="inputDiscount" name="discount" value="<%= locals.old && old.discount %>">
+                <span id="discountErrors"></span>
             </div>
             <div class="col-12">
                 <label for="inputImage" class="form-label">Imagen</label>
                 <input type="file" class="form-control" name="images" multiple aria-label="file example" id="inputImage">
+                <span id="fileErrors"></span>
             </div>
             <div class="col-12">
                 <label id="descripcion" for="validationTextarea" class="form-label">Descripción</label>

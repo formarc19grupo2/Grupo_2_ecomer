@@ -88,7 +88,7 @@ window.addEventListener("load",()=>{
                 $discountErrors.innerText = ''
                 break;
             }
-          });
+        });
           
           $file.addEventListener('change', () => {
             let filePath = $file.value, //Capturo el valor del input
