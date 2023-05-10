@@ -11,6 +11,7 @@ let qs = (element) => {
       $emailErrors = qs("#emailErrors"),
       $pass1Input = qs("#pass1"),
       $pass2Input = qs("#pass2"),
+      
       $form = qs("#form"),
       $submit = qs("#submitButton");
       
@@ -94,6 +95,8 @@ let qs = (element) => {
         $pass2Input.nextElementSibling.innerText = "";
       }
     });
+
+    
   
     // Validar antes de enviar
     $form.addEventListener("submit", function (event) {
