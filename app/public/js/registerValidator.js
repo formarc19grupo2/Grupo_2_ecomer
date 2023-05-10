@@ -11,9 +11,10 @@ window.addEventListener("load", () => {
     $emailErrors = qs("#emailErrors"),
     $pass1Input = qs("#pass1"),
     $pass2Input = qs("#pass2"),
+    
     $form = qs("#form"),
     $submit = qs("#submitButton");
-
+    
 
   // Validaciones para el campo 'Nombre'
   $inputName.addEventListener("blur", () => {
@@ -50,25 +51,25 @@ window.addEventListener("load", () => {
 
   // Validaciones para el campo 'Email'
   $email.addEventListener("blur", () => {
-    const emailValue = $email.value.trim();
-    if (!emailValue) {
-      $emailErrors.innerText = "El campo email es obligatorio";
-      $email.classList.add("is-invalid");
-    } else if (!isValidEmail(emailValue)) {
-      $emailErrors.innerText = "Por favor, ingresa un email válido";
-      $email.classList.add("is-invalid");
-    } else {
-      $emailErrors.innerText = "";
-      $email.classList.remove("is-invalid");
+      const emailValue = $email.value.trim();
+      if (!emailValue) {
+        $emailErrors.innerText = "El campo email es obligatorio";
+        $email.classList.add("is-invalid");
+      } else if (!isValidEmail(emailValue)) {
+        $emailErrors.innerText = "Por favor, ingresa un email válido";
+        $email.classList.add("is-invalid");
+      } else {
+        $emailErrors.innerText = "";
+        $email.classList.remove("is-invalid");
+      }
+    });
+    
+    function isValidEmail(email) {
+      // Expressão regular para validar o formato do email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
     }
-  });
-
-  function isValidEmail(email) {
-    // Expressão regular para validar o formato do email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
+    
 
   // Validaciones para el campo 'Contraseña'
   $pass1Input.addEventListener("blur", () => {
@@ -95,12 +96,14 @@ window.addEventListener("load", () => {
     }
   });
 
+  
+
   // Validar antes de enviar
   $form.addEventListener("submit", function (event) {
-    const invalidInputs = $form.querySelectorAll(".is-invalid");
-    if (invalidInputs.length > 0) {
-      event.preventDefault();
-      alert("Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.");
-    }
+      const invalidInputs = $form.querySelectorAll(".is-invalid");
+      if (invalidInputs.length > 0) {
+          event.preventDefault();
+          alert("Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.");
+      }
   });
 });
