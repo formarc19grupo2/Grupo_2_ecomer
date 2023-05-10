@@ -1,4 +1,5 @@
 const { validationResult } = require("express-validator");
+const fs = require("fs");
 const {
   Product,
   Category,
@@ -138,36 +139,87 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
   },
   update: (req, res) => {
     let errors = validationResult(req);
+    const productId = req.params.id;
 
     if (errors.isEmpty()) {
-      const productId = Number(req.params.id);
-      const files = req.files.map((file) => file.filename);
+     const files = req.files.map((file) => file.filename);
 
-      let { name, price, discount, category, subcategory, description } =
-        req.body;
-console.log(subcategory)
-Product.update({
-  name,
-  price,
-  discount,
-  description,
-  category, // corrigir nome da propriedade
-  subcategory_id: subcategory // corrigir nome da propriedade
-           // image: files.length > 0 ? files : product.image
-
-      
+      let { name, 
+            price, 
+            discount, 
+            category, 
+            subcategory, 
+            description } = req.body;
+ 
+      Product.update({
+        name,
+        price,
+        discount,
+        description,
+        category, // corrigir nome da propriedade
+        subcategory_id: subcategory // corrigir nome da propriedade
+                // image: files.length > 0 ? files : product.image
         }, { 
-        where: {
-        id: req.params.id
-      }
-     });
-
-      
-
-      res.redirect("/admin/products");
+            where: {
+            id: productId,
+          }
+        }).then((result) => {
+          if(result){
+            // Si no reemplaza imagen
+            if(req.files.length === 0){
+              return res.redirect("/admin/products");
+            } else {
+              // 1- Obtener todas las imagenes del producto a actualizar
+              ProductImage.findAll({
+                where : {
+                  product_id: productId
+                }
+              })
+              .then((images) => {
+                // 2- obtener el nombre de las imagenes a eliminar
+                // 3- Eliminar los archivos
+                images.forEach((productImage) => {
+                  const MATCH = fs.existsSync("./public/images/productos/", productImage.image);
+                  if(MATCH){
+                    try {
+                      fs.unlinkSync(`./public/images/productos/${productImage.image}`)
+                    } catch (error) {
+                      throw new Error(error)                    
+                    }
+                  }else{
+                    console.log("No se encontró el archivo");
+                  }
+                })
+                // 4- Eliminamos las imagenes de la DB (destroy)
+                ProductImage.destroy({
+                  where: {
+                    product_id: productId,
+                  }
+                })
+                .then(() => {
+                  // 5- Crear los registros de las nuevas imagenes
+                  const files = req.files.map((file) => {
+                    return {
+                      image: file.filename,
+                      product_id: productId,
+                    };
+                  });
+                  ProductImage.bulkCreate(files)
+                  .then(() => {
+                    return res.redirect("/admin/products");
+                  });
+                })
+              })
+            }
+          }
+        })
     } else {
-      Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product, categories, subcategories]) {
-
+      const productoid = req.params.id
+      const productId = Product.findByPk(productoid);
+      const categoriesAll = Category.findAll();
+      const subcategoriesAll = Subcategory.findAll();
+      Promise.all([productId, categoriesAll, subcategoriesAll])
+      .then(function([product, categories, subcategories]) {
       res.render("admin/adminProductEditForm", {
         subcategories,
         categories,
@@ -175,7 +227,8 @@ Product.update({
         errors: errors.mapped(),
         old: req.body,
         session: req.session,
-      })});
+      })})
+      .catch(error => console.log(error))
     }
   },
   destroy: (req, res) => {

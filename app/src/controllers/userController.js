@@ -134,43 +134,41 @@ module.exports = {
             const {
                 name,
                 last_name,
-                tel,
-                address,
-                postal_code,
-                province,
-                city
+                phone,
+               
             } = req.body;
         User.update({
             name,
             last_name,
-            tel,
-            address,
-            postal_code,
-            province,
-            city,
+            phone,
+            
             avatar: req.file ? req.file.filename : User.avatar
         }, {
             where: {
                 id: userId
             }
         })
-        
-
-            // delete user.pass;
-
-           // req.session.user = user;
 
             return res.redirect("/users/profile");
         } else {
             const userInSessionId = req.session.user.id;
-            const userInSession = User.findByPk(user => user.id === userInSessionId);
-
-            return res.render("user/userProfileEdit", {
-                user: userInSession,
-                session: req.session,
-                errors: errors.mapped(),
-            })
-        }
+            User.findByPk(userInSessionId)
+              .then(userInSession => {
+                const { name, last_name, phone } = req.body;
+          
+                return res.render("user/userProfileEdit", {
+                  user: userInSession,
+                  session: req.session,
+                  errors: errors.mapped(),
+                  formData: { name, last_name, phone }
+                });
+              })
+              .catch(error => {
+                console.error(error);
+                return res.status(500).send("Ocorreu um erro ao buscar os dados do usuário.");
+              });
+          }
+          
     },
     destroy: (req, res) => {
         // obtengo el id del req.params
