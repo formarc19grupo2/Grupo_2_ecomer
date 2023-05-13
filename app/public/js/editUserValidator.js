@@ -12,6 +12,9 @@ window.addEventListener("load", () => {
     $inputPhone = qs('#phone'),
     $phoneError = qs("#phoneError"),
     $form = qs("#form"),
+    $file = qs("#inputImage"),
+    $fileErrors = qs('#fileErrors'),
+    $imgPreview = qs('#img-preview'),
     $submit = qs("button[type='submit']");
 
   //validaciones
@@ -38,11 +41,15 @@ window.addEventListener("load", () => {
     if (!$lastName.value.trim()) {
       $lastNameErrors.innerText = "El campo apellido es obligatorio";
       $lastName.classList.add("is-invalid");
+    } else if ($lastName.value.trim().length < 2) {
+      $lastNameErrors.innerText = "El campo apellido debe tener al menos 2 caracteres";
+      $lastName.classList.add("is-invalid");
     } else {
       $lastNameErrors.innerText = "";
       $lastName.classList.remove("is-invalid");
     }
   });
+  
 
   $email.addEventListener("blur", () => {
     if (!$email.value.trim()) {
@@ -73,6 +80,30 @@ window.addEventListener("load", () => {
     }
   });
   
+
+  $file.addEventListener('change', () => {
+    let filePath = $file.value, //Capturo el valor del input
+        allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+    if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+        $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+        $file.value = '';
+        $imgPreview.innerHTML = '';
+        $file.classList.add('is-invalid')
+        return false;
+    }else{
+        // Image preview
+        console.log($file.files);
+        if($file.files && $file.files[0]){
+            let reader = new FileReader();
+            reader.onload = function(e){
+                $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+            };
+            reader.readAsDataURL($file.files[0]);
+            $fileErrors.innerHTML = '';
+            $file.classList.remove('is-invalid')
+        }
+    }
+})
 
   //validar antes de enviar
   $form.addEventListener("submit", function (event) {
