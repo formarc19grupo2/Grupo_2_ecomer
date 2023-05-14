@@ -20,10 +20,14 @@
                 <div class="col-12">
                     <select class="form-select" id="category" name="category">
                       <option value="" selected hidden>Categorias</option>
-                     <% categories.forEach(category => { %>
-                        <option value="<%- category.id %>" <%- locals.old && locals.old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name%></option>
-                     <% }) %>                          <!--  si existe old y coinciden las categorias / selected /si no -> el id de la cat. es igual a la categoria del producto que estoy editando / selected si no null --> 
-                     
+                      <% categories.forEach(category=> { %>
+                        <option value="<%- category.category_id %>" <%- locals.old &&
+                              old.category==category.category_id ? "selected" :
+                              category.category_id==product.subcategory.category.category_id ?
+                              `selected` : "" %>> 
+                              <%- category.name %>
+                        </option>
+                        <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
                         <small class="text-danger"><%= errors.category.msg %> </small>
