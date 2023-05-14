@@ -11,10 +11,11 @@ window.addEventListener("load", () => {
     $emailErrors = qs("#emailErrors"),
     $pass1Input = qs("#pass1"),
     $pass2Input = qs("#pass2"),
-    
+    $file = qs("#inputImage"),
+    $fileErrors = qs("#fileErrors"),
+    $imgPreview = qs("#img-preview"),
     $form = qs("#form"),
     $submit = qs("#submitButton");
-    
 
   // Validaciones para el campo 'Nombre'
   $inputName.addEventListener("blur", () => {
@@ -24,7 +25,8 @@ window.addEventListener("load", () => {
         $inputName.classList.add("is-invalid");
         break;
       case $inputName.value.trim().length < 2:
-        $nameErrors.innerText = "El campo nombre debe tener al menos 2 caracteres";
+        $nameErrors.innerText =
+          "El campo nombre debe tener al menos 2 caracteres";
         $inputName.classList.add("is-invalid");
         break;
       default:
@@ -41,7 +43,8 @@ window.addEventListener("load", () => {
       $lastNameErrors.innerText = "El campo apellido es obligatorio";
       $lastName.classList.add("is-invalid");
     } else if ($lastName.value.trim().length < 2) {
-      $lastNameErrors.innerText = "El campo apellido debe tener al menos 2 caracteres";
+      $lastNameErrors.innerText =
+        "El campo apellido debe tener al menos 2 caracteres";
       $lastName.classList.add("is-invalid");
     } else {
       $lastNameErrors.innerText = "";
@@ -51,31 +54,31 @@ window.addEventListener("load", () => {
 
   // Validaciones para el campo 'Email'
   $email.addEventListener("blur", () => {
-      const emailValue = $email.value.trim();
-      if (!emailValue) {
-        $emailErrors.innerText = "El campo email es obligatorio";
-        $email.classList.add("is-invalid");
-      } else if (!isValidEmail(emailValue)) {
-        $emailErrors.innerText = "Por favor, ingresa un email válido";
-        $email.classList.add("is-invalid");
-      } else {
-        $emailErrors.innerText = "";
-        $email.classList.remove("is-invalid");
-      }
-    });
-    
-    function isValidEmail(email) {
-      // Expressão regular para validar o formato do email
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
+    const emailValue = $email.value.trim();
+    if (!emailValue) {
+      $emailErrors.innerText = "El campo email es obligatorio";
+      $email.classList.add("is-invalid");
+    } else if (!isValidEmail(emailValue)) {
+      $emailErrors.innerText = "Por favor, ingresa un email válido";
+      $email.classList.add("is-invalid");
+    } else {
+      $emailErrors.innerText = "";
+      $email.classList.remove("is-invalid");
     }
-    
+  });
+
+  function isValidEmail(email) {
+    // Expressão regular para validar o formato do email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   // Validaciones para el campo 'Contraseña'
   $pass1Input.addEventListener("blur", () => {
     if ($pass1Input.value.length < 8) {
       $pass1Input.classList.add("is-invalid");
-      $pass1Input.nextElementSibling.innerText = "La contraseña debe tener al menos 8 caracteres";
+      $pass1Input.nextElementSibling.innerText =
+        "La contraseña debe tener al menos 8 caracteres";
     } else {
       $pass1Input.classList.remove("is-invalid");
       $pass1Input.nextElementSibling.innerText = "";
@@ -96,14 +99,40 @@ window.addEventListener("load", () => {
     }
   });
 
-  
+  $file.addEventListener("change", () => {
+    let filePath = $file.value, //Capturo el valor del input
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i; //Extensiones permitidas
+    if (!allowefExtensions.exec(filePath)) {
+      //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+      $fileErrors.innerHTML =
+        "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)";
+      $file.value = "";
+      $imgPreview.innerHTML = "";
+      $file.classList.add("is-invalid");
+      return false;
+    } else {
+      // Image preview
+      console.log($file.files);
+      if ($file.files && $file.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $imgPreview.innerHTML = '<img src="' + e.target.result + '"/>';
+        };
+        reader.readAsDataURL($file.files[0]);
+        $fileErrors.innerHTML = "";
+        $file.classList.remove("is-invalid");
+      }
+    }
+  });
 
   // Validar antes de enviar
   $form.addEventListener("submit", function (event) {
-      const invalidInputs = $form.querySelectorAll(".is-invalid");
-      if (invalidInputs.length > 0) {
-          event.preventDefault();
-          alert("Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.");
-      }
+    const invalidInputs = $form.querySelectorAll(".is-invalid");
+    if (invalidInputs.length > 0) {
+      event.preventDefault();
+      alert(
+        "Existen errores en el formulario. Por favor, revisa los campos marcados en rojo."
+      );
+    }
   });
 });

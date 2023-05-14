@@ -30,7 +30,7 @@
                 
             </div>
             <div class="form-ad-input">
-                <input type="text" name="phone" id="phone" placeholder="Ingresá tu teléfono" value="<%= user.phone ? user.phone : "" %>">
+                <input type="text" name="phone" id="phone" placeholder="Ingresá tu teléfono" value="<%=locals.old ? old.phone : user.phone %>">
                 
                 <% if (locals.errors && errors.phone) { %>
                     <small class="text-danger"><%= errors.phone.msg %> </small>
