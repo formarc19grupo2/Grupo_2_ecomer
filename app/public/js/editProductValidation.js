@@ -130,8 +130,8 @@ window.addEventListener("load",()=>{
                     $descriptionErrors.innerText = "El campo nombre es obligatorio";
                     $description.classList.add("is-invalid")
                     break;
-                case $description.value.trim().length < 5:
-                    $descriptionErrors.innerText = "El campo nombre debe tener al menos 5 caracteres";
+                case $description.value.trim().length < 20:
+                    $descriptionErrors.innerText = "El campo nombre debe tener al menos 20 caracteres";
                     $description.classList.add("is-invalid")
                 break;
                 default:
