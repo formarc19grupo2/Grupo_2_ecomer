@@ -19,15 +19,8 @@
                 </div>
                 <div class="col-12">
                     <select class="form-select" id="category" name="category">
-                      <option value="" selected hidden>Categorias</option>
-                      <% categories.forEach(category=> { %>
-                        <option value="<%- category.category_id %>" <%- locals.old &&
-                              old.category==category.category_id ? "selected" :
-                              category.category_id==product.subcategory.category.category_id ?
-                              `selected` : "" %>> 
-                              <%- category.name %>
+                      <option value="<%= product.subcategory.category_id %>" selected hidden><%= product.subcategory.category.name %>
                         </option>
-                        <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
                         <small class="text-danger"><%= errors.category.msg %> </small>
