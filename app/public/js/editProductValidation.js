@@ -19,6 +19,8 @@ window.addEventListener("load",()=>{
     $file = qs("#inputImage"),
     $fileErrors = qs('#fileErrors'),
     $imgPreview = qs('#img-preview'),
+    $description = qs ('#validationTextarea'),
+    $descriptionErrors = qs ('#textareaErrors')
     regExPrice = /^[0-9]+([,][0-9]+)?$/  // expresión regular valida un número decimal en formato de punto flotante con coma decimal opcional.
     regExInt = /^\d+$/   //expresión regular para validar numeros enteros
   
@@ -121,6 +123,24 @@ window.addEventListener("load",()=>{
                 }
             }
         })
+
+        $description.addEventListener("blur",()=>{
+            switch (true) {
+                case !$description.value.trim():
+                    $descriptionErrors.innerText = "El campo nombre es obligatorio";
+                    $description.classList.add("is-invalid")
+                    break;
+                case $description.value.trim().length < 5:
+                    $descriptionErrors.innerText = "El campo nombre debe tener al menos 5 caracteres";
+                    $description.classList.add("is-invalid")
+                break;
+                default:
+                    $description.classList.remove("is-invalid");
+                        $description.classList.add("is-valid");
+                        $descriptionErrors.innerText = "";
+                        break;
+            }
+            })
          
          
 
