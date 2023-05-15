@@ -81,6 +81,7 @@ module.exports = {
         subcategory_id: subcategory,
       };
 console.log(subcategory)
+
       Product.create(newProduct)
         .then((product) => {
           if (req.files.length === 0) {
