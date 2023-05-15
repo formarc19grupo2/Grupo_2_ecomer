@@ -43,7 +43,12 @@
             <div class="input-file">
                 <p>Cambiar foto de perfil</p>
                 <input type="file" name="avatar">
+                
             </div>
+            <% if (locals.errors && errors.avatar) { %>
+                <small class="text-danger"><%= errors.avatar.msg %> </small>
+            <% } %>
+            <span class="error" id="avatarError"></span>
           
             <button type="submit" id="submit" class="btn btn-ad-primary">
                 GUARDAR

@@ -18,6 +18,23 @@ module.exports = [
     .notEmpty()
     .withMessage("El email es obligatorio")
     .isEmail()
-    .withMessage("Email inválido")
+    .withMessage("Email inválido"),
+
+    check('avatar')
+    .custom((value, { req }) => {
+        if (!req.file) {
+            throw new Error('Debes seleccionar una foto');
+        }
+
+        // Verificar la extensión del archivo
+       const allowedExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
+        const fileExtension = path.extname(req.file.originalname).toLowerCase();
+        if (!allowedExtensions.test(fileExtension)) {
+            throw new Error('El archivo debe tener una extensión válida (JPG, JPEG, PNG, GIF)');
+        }
+
+        return true;
+    })
+    .withMessage('Archivo invalido - El archivo debe tener una extensión válida JPG, JPEG, PNG, GIF '),
     
 ]
