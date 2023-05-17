@@ -20,9 +20,13 @@
             </div>
         </form>
 
-        <div class="admin">
-            <a href="http://localhost:3030/admin"><i class="fa-solid fa-users-viewfinder"></i></a>
-        </div>        
+        <!--  <% if (typeof session.user !== "undefined" && session.user.rol == 1) { %>
+            <div class="admin">
+                <a href="http://localhost:3030/admin"><i class="fa-solid fa-users-viewfinder"></i></a>
+                
+            </div>
+            <a href="/admin">ADMIN</a>
+        <% } %>   -->
 
         <nav class="burga">            
             <i class="fa-solid fa-bars" id="menu-hamburguesa"></i>
@@ -33,9 +37,9 @@
                         <div class="menu-user">
                             <a href="/users/profile">Mis datos</a>
                             <a href="/users/logout">Cerrar sesión</a>
-                            <% if (session.user.rol==="ADMIN" ) { %>
+                            <% if (typeof session.user !== "undefined" && session.user.rol == "1") { %>
                                 <a href="/admin">ADMIN</a>
-                                <% } %>
+                            <% } %>
                         </div>
                         <% } else {%>
                             <a href="/users/login"><i class="fas fa-user"></i></a>

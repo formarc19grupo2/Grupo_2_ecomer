@@ -7,7 +7,7 @@
     <main class="usersForm-container">
        
         <h3 class="userTitle">Edita tu perfil</h3>
-        <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="form-ad" >
+        <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" id="form" class="form-ad" >
             <div class="form-ad-input">
                 <input type="text" name="name" id="inputName" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
                 <% if (locals.errors && errors.name) { %>
@@ -30,8 +30,12 @@
                 
             </div>
             <div class="form-ad-input">
-                <input type="text" name="phone" id="phone" placeholder="Ingresá tu teléfono" value="<%= user.phone ? user.phone : "" %>">
+                <input type="text" name="phone" id="phone" placeholder="Ingresá tu teléfono" value="<%=locals.old ? old.phone : user.phone %>">
                 
+                <% if (locals.errors && errors.phone) { %>
+                    <small class="text-danger"><%= errors.phone.msg %> </small>
+                <% } %>
+                <span class="error" id="phoneError"></span>
             </div>
         
             
@@ -39,9 +43,14 @@
             <div class="input-file">
                 <p>Cambiar foto de perfil</p>
                 <input type="file" name="avatar">
+                
             </div>
+            <% if (locals.errors && errors.avatar) { %>
+                <small class="text-danger"><%= errors.avatar.msg %> </small>
+            <% } %>
+            <span class="error" id="avatarError"></span>
           
-            <button type="submit" class="btn btn-ad-primary">
+            <button type="submit" id="submit" class="btn btn-ad-primary">
                 GUARDAR
             </button>
             
