@@ -61,8 +61,10 @@ tr:nth-child(even) {
 .total {
   border: 1px solid black;
   border-radius: 10px;
+  margin-bottom: 22px;
+  margin-top: 18px;
   width: 18%;
-  height: 80vh;
+  height: 79vh;
   margin-right: 40px;
 }
 
@@ -77,26 +79,48 @@ tr:nth-child(even) {
 }
 
 input[placeholder="ingrese cupon"] {
-  padding-top: 12px;
+  padding-top: 09px;
   padding-bottom: 10px;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+input[type=number]{
+  width: 70%;
+}
+
+.total button{
+  font-size: 17px;
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: -5px 5px 10px var(--gris-oscuro);
+}
+
+.total button:hover{
+  cursor: pointer;
 }
 
 .checkout button{
   border: 2px solid;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: 10vw;
+  margin-left: 42px;
 }
 
 .total button {
-  margin-top: 10px;
-  margin-left: 86px;
+  margin-top: 20px;
+  margin-left: 42px;
 }
 
 .total h2 {
-  font-size: 31px;
+  font-size: 23px;
   display: flex;
-  margin-top: 10px;
+  margin-top: 42px;
   justify-content: flex-end;
-  padding-right: 24px;
+  padding-right: 26px;
 }
 
 .total-parcial {
@@ -107,13 +131,145 @@ input[placeholder="ingrese cupon"] {
   padding-top: 15px;
 }
 
-.checkout button {
+/* .checkout button {
   display: flex;
   justify-content: center;
   width: 10vw;
   margin-left: 56px;
   padding-top: 10px;
+} */
+
+@media (min-width: 320px) and (max-width: 480px){
+  .titulo {
+    font-size: 15px;
+  }
+
+  .caja {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .caja td {
+    padding-left: 38px;
+    padding-right: 11px;
+    font-size: 15px;
+  }
+
+  .caja img {
+    width: 47px;
+    height: 53px;
+  }
+
+  table {
+    width: 67vw;
+    height: 50vh;
+    margin-left: 46px;
+  }
+
+  table th {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .total {
+    width: 90%;
+    height: 80vh;
+    margin-left: 42px;
+  }
+
+  .cupon{
+    padding-top: 10px;
+    padding-bottom: 12%;
+    padding-right: 11px;
+  }
+
+  .total button {
+    margin-top: 10px;
+    margin-left: 42px;
+  } 
+
+  .checkout button {
+    width: 49vw;
+    margin-left: 33px;
+    padding-top: 10px;
+    margin-top: 12px;
+    padding-top: 8px;
+  }
 }
+
+@media (min-width: 481px) and (max-width: 767px){
+  .titulo {
+    font-size: 15px;
+  }
+
+  .caja {
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .caja td {
+    padding-left: 38px;
+    padding-right: 11px;
+    font-size: 15px;
+  }
+
+  .caja img {
+    width: 47px;
+    height: 53px;
+  }
+
+  table {
+    width: 67vw;
+    height: 50vh;
+    margin-left: 46px;
+  }
+
+  table th {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .total {
+    width: 75%;
+    height: 87vh;
+    margin-left: 84px;
+  }
+
+  .cupon{
+    padding-top: 10px;
+    padding-bottom: 12%;
+    padding-right: 11px;
+  }
+
+  /* .total button {
+    margin-top: 10px;
+    margin-left: 86px;
+  }  */
+
+  .total button{
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    box-shadow: -5px 5px 10px var(--gris-oscuro);;
+    
+  }
+
+  .checkout button {
+    width: 79%;
+    margin-left: 50px;
+    padding-top: 10px;
+    margin-top: 18px;
+    padding-top: 0px;
+  }
+}
+
+
 
 
 /* @import url("styles.css");
