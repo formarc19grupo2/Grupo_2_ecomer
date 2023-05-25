@@ -33,40 +33,5 @@ module.exports = {
         } catch (error) {
             return res.status(500).send(error);
         }
-    },
-    store: async (req, res) => {
-        let errors = validationResult(req);
-
-        if (errors.isEmpty()) {
-            let { name, price, discount,category, subcategory, description } = req.body;
-
-            let newProduct = {
-              name,
-              price,
-              description,
-              discount,
-              category_id: category,
-              subcategory_id: subcategory,
-            };
-          
-          try {
-            const RESULT = await Product.create(newProduct);
-
-            const RESPONSE = {
-                endpoint: "/api/product",
-                data: RESULT,
-                msg: "Producto agregado correctamente",
-            }
-
-            res.status(201).json(RESPONSE);
-          } catch (error) {
-            res.status(500).send(error)
-          };
-        } else {
-          return res.status(400).json(errors.mapped());
-        }
-    },
-
-    
-
+    }
 }
