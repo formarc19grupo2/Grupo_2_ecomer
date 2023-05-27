@@ -1,5 +1,7 @@
 const { check } = require("express-validator");
 const { User } = require("../database/models");
+const path = require('path');
+
 
 module.exports = [
     check("name")

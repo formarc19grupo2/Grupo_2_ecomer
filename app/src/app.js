@@ -34,6 +34,10 @@ const adminRouter = require("./routes/admin");
 /* LLamado de rutas de la api porductos */
 const apiProducts = require("./routes/api/products")
 
+/* llamado de rutas para usuarios */ 
+
+const userRoutes = require("./routes/api/users"); 
+
 
 
 /* Routes Middlewares */
@@ -45,6 +49,9 @@ app.use("/admin", adminRouter);
 /* coleccion apis */
 app.use('/api/products', apiProducts);
 
+/* rutas de api a uruarios*/
+
+app.use(userRoutes);
 
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
