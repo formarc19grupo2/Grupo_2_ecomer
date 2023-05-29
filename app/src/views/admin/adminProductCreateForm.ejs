@@ -15,6 +15,7 @@
                 <% if(locals.errors && errors.name) {%>
                     <small class="text-danger"><%= errors.name.msg %></small>
                 <% } %>
+                <span class="error" id="nameErrors"></span>
             </div>
             <div class="col-12">
                 <select class="form-select" id="category" name="category">
@@ -26,7 +27,7 @@
                 <% if(locals.errors && errors.category) {%>
                     <small class="text-danger"><%= errors.category.msg %></small>
                 <% } %>
-                
+                <span id="categoryErrors"></span>
             </div>
             <div class="col-12">
                 <select class="form-select" id="subcategory" name="subcategory">
@@ -66,8 +67,8 @@
             </div>
             <div class="col-12">
                 <label id="descripcion" for="validationTextarea" class="form-label">Descripción</label>
-                <span id="descripcionErrors"></span>
                 <textarea class="form-control" id="validationTextarea" name="description" placeholder="Descripción"><%= locals.old && old.description %></textarea>
+                <span id="textareaErrors"></span>
             </div>
             <button type="submit" class="btn btn btn-outline-warning" id="submit">
                 CREAR
@@ -77,5 +78,7 @@
       </div>
     </div>
     <%- include('partials/adminScripts') %>
+    <script src="/js/validationAdminCreate.js"></script>
+    
     </body>
 </html>
