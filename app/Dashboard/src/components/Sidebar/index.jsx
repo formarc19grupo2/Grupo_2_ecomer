@@ -1,3 +1,5 @@
+import logo from "../../../public/img/img-isolologo.png"
+
 export const Sidebar = () => {
   return (
     <>
@@ -14,10 +16,12 @@ export const Sidebar = () => {
           <div className="sidebar-brand-icon">
             <img
               className="w-100"
-              src="assets/images/logo-DH.png"
-              alt="Digital House"
+              src={logo}
+              alt="E-commer"
             />
           </div>
+
+          
         </a>
 
         {/* <!-- Divider --> */}
@@ -27,7 +31,7 @@ export const Sidebar = () => {
         <li className="nav-item active">
           <a className="nav-link" href="/">
             <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard - DH movies</span>
+            <span>Dashboard - E commer</span>
           </a>
         </li>
 
