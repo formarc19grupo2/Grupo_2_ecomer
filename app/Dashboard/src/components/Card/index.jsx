@@ -37,3 +37,4 @@ Card.propTypes = {
     icon: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
 }
+
