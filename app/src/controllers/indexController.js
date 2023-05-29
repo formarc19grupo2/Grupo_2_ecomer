@@ -16,5 +16,15 @@ module.exports = {
             })
         })
         .catch(error => console.log(error));
-    }
+    },
+
+    leg:(req, res) =>{
+        return res.render("legales",{session: req.session,})
+    },
+    history:(req,res)=>{
+        return res.render("historia",{session: req.session})
+    },
+    contact:(req, res) =>{
+        return res.render("contactos",{session: req.session,})
+    },
 }
