@@ -8,8 +8,8 @@ module.exports = {
 
             const RESPONSE = {
                 endpoint: "/api/products",
-                data: PRODUCTS,
-                total: PRODUCTS.length,
+                PRODUCTS: PRODUCTS,
+                count: PRODUCTS.length,
             };
 
             return res.status(200).json(RESPONSE);

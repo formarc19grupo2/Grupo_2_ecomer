@@ -63,6 +63,23 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
+
+  search: (req, res) => {
+    Product.findAll({
+      where: {
+        name: {
+          [Op.like]: `%${req.query.search}%`,
+        },
+      },
+      include: [{ association: "images" }],
+    }).then((result) =>
+      res.render("searchResult", {
+        result,
+        session: req.session,
+        search: req.query.search,
+      })
+    );
+  },
   
 
   
