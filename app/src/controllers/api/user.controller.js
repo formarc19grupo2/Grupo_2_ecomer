@@ -15,11 +15,12 @@ module.exports = {
   getUsers: async (req, res) => {
     try {
       const users = await getUsers();
-      const usersResponse = users.map(({ id, name, email }) => {
+      const usersResponse = users.map(({ id, name, email, avatar }) => {
         return {
           id,
           name,
           email,
+          avatar,
           detail: `/api/users/${id}`,
         };
       });
