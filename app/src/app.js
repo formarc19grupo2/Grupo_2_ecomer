@@ -46,6 +46,11 @@ app.use(cors({
     
   }));
 
+/* LLamado de rutas de la api porductos */
+const apiProducts = require("./routes/api/products")
+
+
+
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productRoutermvc);
@@ -64,7 +69,8 @@ app.use(`/api/products`, productRouter);
 app.use(`/api/orders`, orderRouter);
 app.use(`/api/categories`, categoryRouter);
 
-
+/* coleccion apis */
+app.use('/api/products', apiProducts);
 
 /* coleccion apis */
 //app.use('/api/products', apiProducts);

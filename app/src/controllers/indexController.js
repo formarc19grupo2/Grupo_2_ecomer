@@ -16,5 +16,18 @@ module.exports = {
             })
         })
         .catch(error => console.log(error));
-    }
+    },
+
+    leg:(req, res) =>{
+        return res.render("footer/legales",{session: req.session,})
+    },
+    history:(req,res)=>{
+        return res.render("footer/historia",{session: req.session})
+    },
+    contact:(req, res) =>{
+        return res.render("footer/contactos",{session: req.session,})
+    },
+    tarjetas:(req, res) =>{
+        return res.render("tarjetas",{session: req.session,})
+    },
 }
