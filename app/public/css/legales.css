@@ -1,0 +1,64 @@
+
+.container-legal h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .container-legal h2 {
+    color: #555;
+    margin-top: 30px;
+    text-align: center;
+    
+  }
+  .container-legal h3 {
+    color: #555;
+    margin-top: 30px;
+    text-align:justify
+  }
+  .container-legal p {
+    color: #777;
+    line-height: 1.5;
+    text-align:justify;
+    font-size: 20px;
+  }
+
+  .container-legal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+ 
+
+  .container-legal .card {
+    width: 290px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    display: inline-block;
+    
+  }
+  .container-legal  .card img {
+    width: 100%;
+    border-radius: 40px;
+    margin-bottom: 8px;
+  }
+  .container-legal  .card h3 {
+    margin: 0;
+  }
+  .container-legal .card p {
+    margin: 6px 0;
+    
+  }
+  .container-legal .card p a {
+    display: block;
+    color: rgb(49, 134, 214);
+    text-decoration:dashed;
+  }
+
+  .container-legal .card p a:hover {
+    color: black;
+  }
