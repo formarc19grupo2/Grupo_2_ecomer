@@ -224,7 +224,7 @@ nav.main-nav ul.navegacion li p {
 
 @media (min-width: 768px) {
     .lupa{
-        width: 90px;
+        width: 30px;
         font-size: 12px;
         font-weight: 600;
     } 
