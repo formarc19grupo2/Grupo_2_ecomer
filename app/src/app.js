@@ -31,6 +31,7 @@ const indexRouter = require("./routes");
 const productRoutermvc = require("./routes/product");
 const userRoutermvc = require("./routes/user");
 const adminRouter = require("./routes/admin");
+const adminUsuariosRouter = require("./routes/adminUsuarios") 
 
 const [ 
   userRouter, 
@@ -56,6 +57,7 @@ app.use("/", indexRouter);
 app.use("/products", productRoutermvc);
 app.use("/users", userRoutermvc);
 app.use("/admin", adminRouter);
+app.use("/admin/usuarios", adminUsuariosRouter);
 
 /* LLamado de rutas de la api porductos */
 //const apiProducts = require("./routes/api/products")
