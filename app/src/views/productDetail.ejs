@@ -37,6 +37,11 @@
                <button>
                 <a href="/users/productCart">Agregar al carrito</a>
                </button>
+               <% if (session.user !== undefined) { %>
+                <div class="btn btn-ad-primary" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
+                <% } else { %>
+                <div class="btn btn-ad-primary" id="btnAddToCartNotLogin">Agregar al carrito Sin log</div>
+                <% } %>
                
             </div>
         </section>
@@ -58,6 +63,7 @@
       
     <!-- JavaScript -->
     <script src="/js/productDetail.js"></script>
+    <script src="/js/carrito.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 </html>
