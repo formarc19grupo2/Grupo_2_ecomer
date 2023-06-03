@@ -51,6 +51,8 @@
             <% if (locals.errors && errors.avatar) { %>
                 <small class="text-danger"><%= errors.avatar.msg %> </small>
             <% } %>
+            <span class="error" id="fileErrors"></span>
+
             <div class="form-ad-input_check">
                 <input type="checkbox" name="terms" id="check">
                 <label for="check">Acepto los términos y condiciones</label>

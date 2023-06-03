@@ -1,84 +1,81 @@
-let qs = (element)=>{
-    return document.querySelector(element);
-}
+let qs = (element) => {
+  return document.querySelector(element);
+};
 
-window.addEventListener("load",()=>{
-    let $inputName = qs('#inputName'),
-    $nameErrors = qs('#nameErrors'),
-    $category = qs('#category'),
-    $categoryErrors = qs('#categoryErrors'),
-    $subcategory = qs('#subcategory'),
-    $subcategoryErrors = qs('#subcategoryErrors'),
-    $price = qs ('#inputPrice'),
-    $priceErrors = qs('#priceErrors'),
-    $discount   = qs ('#inputDiscount'),
-    $discountErrors = qs ('#discountErrors'),
-    $form = qs ("#form"),
-    $submit = qs ("#submit"),
-    $submitErrors = ("#submitErrors"),
+window.addEventListener("load", () => {
+  let $inputName = qs("#inputName"),
+    $nameErrors = qs("#nameErrors"),
+    $category = qs("#category"),
+    $categoryErrors = qs("#categoryErrors"),
+    $subcategory = qs("#subcategory"),
+    $subcategoryErrors = qs("#subcategoryErrors"),
+    $price = qs("#inputPrice"),
+    $priceErrors = qs("#priceErrors"),
+    $discount = qs("#inputDiscount"),
+    $discountErrors = qs("#discountErrors"),
+    $form = qs("#form"),
+    $submit = qs("#submit"),
+    $submitErrors = "#submitErrors",
     $file = qs("#inputImage"),
     $fileErrors = qs('#fileErrors'),
     $imgPreview = qs('#img-preview'),
+    $description = qs ('#validationTextarea'),
+    $descriptionErrors = qs ('#textareaErrors')
     regExPrice = /^[0-9]+([,][0-9]+)?$/  // expresión regular valida un número decimal en formato de punto flotante con coma decimal opcional.
     regExInt = /^\d+$/   //expresión regular para validar numeros enteros
   
     
 
-    
-        //validaciones
-        $inputName.addEventListener("blur",()=>{
-        switch (true) {
-            case !$inputName.value.trim():
-                $nameErrors.innerText = "El campo nombre es obligatorio";
-                $inputName.classList.add("is-invalid")
-                break;
-            case $inputName.value.trim().length < 5:
-                $nameErrors.innerText = "El campo nombre debe tener al menos 5 caracteres";
-                $inputName.classList.add("is-invalid")
-            break;
-            default:
-                $inputName.classList.remove("is-invalid");
-                    $inputName.classList.add("is-valid");
-                    $nameErrors.innerText = "";
-                    break;
-        }
-        })
+  //validaciones
+  $inputName.addEventListener("blur", () => {
+    switch (true) {
+      case !$inputName.value.trim():
+        $nameErrors.innerText = "El campo nombre es obligatorio";
+        $inputName.classList.add("is-invalid");
+        break;
+      default:
+        $inputName.classList.remove("is-invalid");
+        $inputName.classList.add("is-valid");
+        $nameErrors.innerText = "";
+        break;
+    }
+  });
 
-        $category.addEventListener('blur',()=>{
-            if (!$category.value.trim()) {
-                $categoryErrors.innerHTML = 'Campo requerido';
-                $category.classList.add('is-invalid');
-            }else {
-                $category.classList.remove('is-invalid');
-                $category.classList.add('is-valid');
-                $categoryErrors.innerHTML = '';
-            }   
-        })
+  $category.addEventListener("blur", () => {
+    if (!$category.value.trim()) {
+      $categoryErrors.innerHTML = "Campo requerido";
+      $category.classList.add("is-invalid");
+    } else {
+      $category.classList.remove("is-invalid");
+      $category.classList.add("is-valid");
+      $categoryErrors.innerHTML = "";
+    }
+  });
 
-        $subcategory.addEventListener('blur',()=>{
-            if (!$subcategory.value.trim()) {
-                $subcategoryErrors.innerHTML = 'Campo requerido';
-                $subcategory.classList.add('is-invalid');
-            }else {
-                $subcategory.classList.remove('is-invalid');
-                $subcategory.classList.add('is-valid');
-                $subcategoryErrors.innerHTML = '';
-            }
-        })
+  $subcategory.addEventListener("blur", () => {
+    if (!$subcategory.value.trim()) {
+      $subcategoryErrors.innerHTML = "Campo requerido";
+      $subcategory.classList.add("is-invalid");
+    } else {
+      $subcategory.classList.remove("is-invalid");
+      $subcategory.classList.add("is-valid");
+      $subcategoryErrors.innerHTML = "";
+    }
+  });
 
-        $price.addEventListener('blur', () => {
-            switch (true) {
-                case !$price.value.trim():
-                    $priceErrors.innerText = 'El precio es un campo obligatorio';
-                    $price.classList.add('is-invalid')
-                    break;
-                default:
-                    $price.classList.remove('is-invalid');
-                    $price.classList.add('is-valid');
-                    $priceErrors.innerText = ''
-                    break;
-            }
-        })
+  $price.addEventListener("blur", () => {
+    switch (true) {
+      case !$price.value.trim():
+        $priceErrors.innerText = "El precio es un campo obligatorio";
+        $price.classList.add("is-invalid");
+        break;
+      default:
+        $price.classList.remove("is-invalid");
+        $price.classList.add("is-valid");
+        $priceErrors.innerText = "";
+        break;
+    }
+  });
 
         $discount.addEventListener('blur', () => {
             switch (true) {
@@ -121,18 +118,63 @@ window.addEventListener("load",()=>{
                 }
             }
         })
+
+        $description.addEventListener("blur",()=>{
+            switch (true) {
+                case !$description.value.trim():
+                    $descriptionErrors.innerText = "El campo nombre es obligatorio";
+                    $description.classList.add("is-invalid")
+                    break;
+                case $description.value.trim().length < 20:
+                    $descriptionErrors.innerText = "El campo nombre debe tener al menos 20 caracteres";
+                    $description.classList.add("is-invalid")
+                break;
+                default:
+                    $description.classList.remove("is-invalid");
+                        $description.classList.add("is-valid");
+                        $descriptionErrors.innerText = "";
+                        break;
+            }
+            })
          
          
 
-        // //validar antes de enviar
-        const form = document.querySelector('form');
+  $file.addEventListener("change", () => {
+    let filePath = $file.value, //Capturo el valor del input
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i; //Extensiones permitidas
+    if (!allowefExtensions.exec(filePath)) {
+      //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+      $fileErrors.innerHTML =
+        "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)";
+      $file.value = "";
+      $imgPreview.innerHTML = "";
+      $file.classList.add("is-invalid");
+      return false;
+    } else {
+      // Image preview
+      console.log($file.files);
+      if ($file.files && $file.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $imgPreview.innerHTML = '<img src="' + e.target.result + '"/>';
+        };
+        reader.readAsDataURL($file.files[0]);
+        $fileErrors.innerHTML = "";
+        $file.classList.remove("is-invalid");
+      }
+    }
+  });
 
-        form.addEventListener('submit', function(event) {
-          const invalidInputs = form.querySelectorAll('.is-invalid');
-          if (invalidInputs.length > 0) {
-            event.preventDefault();
-            alert('Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.');
-          }
-        });
-})
+  // //validar antes de enviar
+  const form = document.querySelector("form");
 
+  form.addEventListener("submit", function (event) {
+    const invalidInputs = form.querySelectorAll(".is-invalid");
+    if (invalidInputs.length > 0) {
+      event.preventDefault();
+      alert(
+        "Existen errores en el formulario. Por favor, revisa los campos marcados en rojo."
+      );
+    }
+  });
+});

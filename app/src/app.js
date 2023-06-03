@@ -32,6 +32,11 @@ const userRouter = require("./routes/user");
 const adminRouter = require("./routes/admin");
 
 
+/* LLamado de rutas de la api porductos */
+const apiProducts = require("./routes/api/products")
+
+
+
 /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/products", productRouter);
@@ -39,7 +44,8 @@ app.use("/users", userRouter);
 app.use("/admin", adminRouter);
 
 
-
+/* coleccion apis */
+app.use('/api/products', apiProducts);
 
 
 

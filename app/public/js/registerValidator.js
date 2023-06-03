@@ -11,9 +11,11 @@ window.addEventListener("load", () => {
     $emailErrors = qs("#emailErrors"),
     $pass1Input = qs("#pass1"),
     $pass2Input = qs("#pass2"),
+    $file = qs("#inputImage"),
+    $fileErrors = qs("#fileErrors"),
+    $imgPreview = qs("#img-preview"),
     $form = qs("#form"),
     $submit = qs("#submitButton");
-
 
   // Validaciones para el campo 'Nombre'
   $inputName.addEventListener("blur", () => {
@@ -23,7 +25,8 @@ window.addEventListener("load", () => {
         $inputName.classList.add("is-invalid");
         break;
       case $inputName.value.trim().length < 2:
-        $nameErrors.innerText = "El campo nombre debe tener al menos 2 caracteres";
+        $nameErrors.innerText =
+          "El campo nombre debe tener al menos 2 caracteres";
         $inputName.classList.add("is-invalid");
         break;
       default:
@@ -40,7 +43,8 @@ window.addEventListener("load", () => {
       $lastNameErrors.innerText = "El campo apellido es obligatorio";
       $lastName.classList.add("is-invalid");
     } else if ($lastName.value.trim().length < 2) {
-      $lastNameErrors.innerText = "El campo apellido debe tener al menos 2 caracteres";
+      $lastNameErrors.innerText =
+        "El campo apellido debe tener al menos 2 caracteres";
       $lastName.classList.add("is-invalid");
     } else {
       $lastNameErrors.innerText = "";
@@ -69,12 +73,12 @@ window.addEventListener("load", () => {
     return emailRegex.test(email);
   }
 
-
   // Validaciones para el campo 'Contraseña'
   $pass1Input.addEventListener("blur", () => {
     if ($pass1Input.value.length < 8) {
       $pass1Input.classList.add("is-invalid");
-      $pass1Input.nextElementSibling.innerText = "La contraseña debe tener al menos 8 caracteres";
+      $pass1Input.nextElementSibling.innerText =
+        "La contraseña debe tener al menos 8 caracteres";
     } else {
       $pass1Input.classList.remove("is-invalid");
       $pass1Input.nextElementSibling.innerText = "";
@@ -95,12 +99,15 @@ window.addEventListener("load", () => {
     }
   });
 
+
   // Validar antes de enviar
   $form.addEventListener("submit", function (event) {
     const invalidInputs = $form.querySelectorAll(".is-invalid");
     if (invalidInputs.length > 0) {
       event.preventDefault();
-      alert("Existen errores en el formulario. Por favor, revisa los campos marcados en rojo.");
+      alert(
+        "Existen errores en el formulario. Por favor, revisa los campos marcados en rojo."
+      );
     }
   });
 });

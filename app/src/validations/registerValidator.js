@@ -1,6 +1,7 @@
 const { check, body } = require("express-validator");
 //const { users } = require("../old_database");
 const { User } = require("../database/models");
+const path = require('path');
 
 module.exports = [
     check("name")
@@ -58,8 +59,9 @@ module.exports = [
         }
 
         // Verificar la extensión del archivo
+       const allowedExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
         const fileExtension = path.extname(req.file.originalname).toLowerCase();
-        if (!allowedExtensions.includes(fileExtension)) {
+        if (!allowedExtensions.test(fileExtension)) {
             throw new Error('El archivo debe tener una extensión válida (JPG, JPEG, PNG, GIF)');
         }
 

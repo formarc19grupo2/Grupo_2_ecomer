@@ -71,13 +71,14 @@ module.exports = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let { name, price, discount, subcategory, description } = req.body;
+      let { name, price, discount,category, subcategory, description } = req.body;
 
       let newProduct = {
         name,
         price,
         description,
         discount,
+        category_id: category,
         subcategory_id: subcategory,
       };
 console.log(subcategory)
@@ -124,9 +125,15 @@ console.log(subcategory)
   },
   edit: (req, res) => {
     const productoid = req.params.id
-    const productId = Product.findByPk(productoid);
-    const categoriesAll = Category.findAll();
-    const subcategoriesAll = Subcategory.findAll();
+    const productId = Product.findByPk(productoid,{
+      include: [{ association: "subcategory", include: [{ association: "category" }] }]
+    });
+    const categoriesAll = Category.findAll({
+      include: [{ association: "subcategories" }],
+    });
+    const subcategoriesAll = Subcategory.findAll({
+      include: [{ association: "products" }, { association: "category" }],
+    });
 
 Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product, categories, subcategories]) {
   res.render("admin/adminProductEditForm", {
@@ -216,9 +223,15 @@ Promise.all([productId, categoriesAll, subcategoriesAll]).then(function([product
         })
     } else {
       const productoid = req.params.id
-      const productId = Product.findByPk(productoid);
-      const categoriesAll = Category.findAll();
-      const subcategoriesAll = Subcategory.findAll();
+      const productId = Product.findByPk(productoid,{
+        include: [{ association: "subcategory", include: [{ association: "category" }] }]
+      });
+      const categoriesAll = Category.findAll({
+        include: [{ association: "subcategories" }],
+      });
+      const subcategoriesAll = Subcategory.findAll({
+        include: [{ association: "products" }, { association: "category" }],
+      });
       Promise.all([productId, categoriesAll, subcategoriesAll])
       .then(function([product, categories, subcategories]) {
       res.render("admin/adminProductEditForm", {

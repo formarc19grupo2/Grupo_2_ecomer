@@ -9,6 +9,7 @@
 @import url('categories.css');
 @import url('usersForms.css');
 @import url('userProfile.css');
+@import url('legales.css');
 
 body { 
     background-color: var(--amarillo);

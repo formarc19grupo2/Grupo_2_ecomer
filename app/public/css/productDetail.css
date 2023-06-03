@@ -43,6 +43,22 @@
     height: 100%;
     object-fit: contain;
 }
+.subcategories_menu-desktop{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px 20px 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 400px;
+}
+
+.subcategories_menu-desktop a{
+   /* Color del texto en blanco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px rgb(12, 12, 12);
+    color: rgb(230, 224, 224);
+}
 
 .productDetail .productData-container {
     width: 100%;
