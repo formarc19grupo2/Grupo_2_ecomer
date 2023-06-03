@@ -12,7 +12,7 @@
     width: 45px;
     font-size: 8px;
     height: 30px;
-    background: lightblue;
+    background: rgb(224, 185, 139);
     border-radius: 10px;
     border: solid 1px rgb(62, 83, 69);
     font-weight: 600;
@@ -67,14 +67,12 @@
 .main-icon {
     width: 100px;
     border: solid 2px rgb(112, 119, 113);
-    border-radius: 10px;
+    border-radius: 5px;
     height: 30px;
-
+    padding: 10px;
 }
 
-.main-icon:hover {
-    border: 1px solid black;
-}
+
 
 .main-icon::placeholder {
     font-size: 0.7rem;
@@ -224,9 +222,10 @@ nav.main-nav ul.navegacion li p {
 
 @media (min-width: 768px) {
     .lupa{
-        width: 90px;
+        width: 30px;
         font-size: 12px;
         font-weight: 600;
+        
     } 
      .main-icon {
         width: 400px;
