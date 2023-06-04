@@ -7,6 +7,21 @@
     background-color: var(--amarillo);
 }
 
+.burga{
+    display: none;
+}
+
+.navigation-bar {
+    display: none;
+    order: 4;
+    padding: 15px;
+    margin: -20px;
+}
+
+.burguer-menu-icon{
+    font-size: 24px;
+    order: 0;
+}
 
 .lupa{
     width: 45px;
@@ -18,6 +33,16 @@
     font-weight: 600;
 
 }
+.navigation-bar .user-icons-mobile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation-bar .user-icons-mobile i{
+    font-size: 24px;
+    margin-left: 10px;
+}
+
 .contenedor-header {
     display: flex;
     justify-content: space-evenly;
@@ -42,12 +67,7 @@
     cursor: pointer;
 }
 
-.user {
-    display: flex;
-    /* text-align: center; */
-    align-items: center;
-    flex-direction: column;
-}
+
 
 .menu-user a {
     display: inline-block;
@@ -72,6 +92,10 @@
     padding: 10px;
 }
 
+.subcategory_menu.active {
+    display: block;
+    background-color: white;
+}
 
 
 .main-icon::placeholder {
@@ -174,14 +198,23 @@ nav.main-nav ul.navegacion li p {
     top: -10px;
     right: 0px;
 }
+@media (max-width: 760px){
+    .lupa{
+        display: none;
+    }
+   
 
+} 
+@media (min-width: 480px){
+        .main-icon{
+            width: 150px;
+        }
+    }
 @media (min-width: 426px) {
     .main-icon-img {
         margin: 1rem;
     }
-    .fa-bars {
-        display: none;
-    }
+   
 
     ul.menu-usuario-carrito-burger,
     .admin {
@@ -210,15 +243,7 @@ nav.main-nav ul.navegacion li p {
     }
 }
 
-@media (max-width: 878px) {
-    .menu-user {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-size: 12px;
-        
-    }
-}
+
 
 @media (min-width: 768px) {
     .lupa{
@@ -231,4 +256,56 @@ nav.main-nav ul.navegacion li p {
         width: 400px;
         border-radius: 10px;
     } 
+
+    
+}
+
+@media screen and (min-width: 992px) {
+    .fa-bars {
+        display: none;
+    }
+    .burga {
+        display: flex;
+        font-size: 24px;
+        order: 4;
+    }
+    
+    .burga i {
+        margin-left: 10px;
+    }
+    .burguer-menu-icon{
+        display: none;
+    }
+    .navigation-bar { 
+        display: inherit;
+        order: 1;
+        width: 40%;
+    }
+
+    .navigation-bar#navigation-bar-mobile {
+        display: none;
+    }
+
+    .main-header .navigation-bar .user-icons-mobile {
+        display: none;
+    }
+
+    .user {
+        position: relative;
+    }
+
+    .menu-user{
+        display: none;
+        position: absolute;
+        font-size: 1rem;
+        width: 9rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: .5rem;
+        margin-left: -3rem;
+    }
+
+    .user:hover .menu-user{
+        display: block;
+     }
 }
