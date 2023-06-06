@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3030/api";
+const API_BASE_URL = "http://localhost:3030/api/products";
 const token = localStorage.getItem("token");
 
 const getData = async (url, token) => {

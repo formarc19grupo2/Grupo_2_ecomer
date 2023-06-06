@@ -63,7 +63,32 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
-  
+  cart: (req, res) => {
+    let userId = req.session.user.id;
+    Order.findOne({
+      where: {
+        userId: userId
+      },
+      include: [{association: "orderItems", include: [{association: "product", include: [{association: "images"}]}]}]
+    })
+      .then((order) => {
+        let products = order?.orderItems.map((item) => {
+          return {
+            product: item.product,
+            quantity: item.quantity,
+            id: item.id
+          };
+        });
+
+        res.render("productCart", {
+          session: req.session,
+          order,
+          products: products !== undefined ? products : [],
+          user: req.session.user?.id || null,
+        });
+      })
+      .catch((error) => console.log(error));
+  },
 
   
 
