@@ -42,7 +42,7 @@ router.put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, 
 /* Delete */
 router.delete("/profile/delete/:id", destroy);
 
-router.get("/productCart", cart);
+router.get("/productCart",userInSessionCheck, cart);
 
 
 

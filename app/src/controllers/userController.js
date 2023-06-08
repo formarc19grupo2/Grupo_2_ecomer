@@ -1,7 +1,7 @@
 //const { users, writeUsersJson } = require("../old_database");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-const { User } = require("../database/models");
+const { User, Order } = require("../database/models");
 
 const fs = require('fs');
 
@@ -200,9 +200,37 @@ module.exports = {
         .catch((error) => console.log(error));
     },
 
-    cart: (req, res) => {
-        return res.render("user/productCart", { session: req.session })
+    // cart: (req, res) => {
+    //     return res.render("user/productCart", { session: req.session })
+    //   },
+
+      cart: (req, res) => {
+        let userId = req.session.user.id;
+        Order.findOne({
+          where: {
+            userId: userId
+          },
+          include: [{association: "orderItems", include: [{association: "product", include: [{association: "images"}]}]}]
+        })
+          .then((order) => {
+            let products = order?.orderItems.map((item) => {
+              return {
+                product: item.product,
+                quantity: item.quantity,
+                id: item.id
+              };
+            });
+    
+            res.render("user/productCart", {
+              session: req.session,
+              order,
+              products: products !== undefined ? products : [],
+              user: req.session.user?.id || null,
+            });
+          })
+          .catch((error) => console.log(error));
       },
+    
     
 
 
