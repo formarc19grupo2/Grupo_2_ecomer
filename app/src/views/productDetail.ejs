@@ -34,9 +34,7 @@
                     
                 </div>
                 
-               <button>
-                <a href="/users/productCart">Agregar al carrito</a>
-               </button>
+               
                <% if (session.user !== undefined) { %>
                 <div class="btn btn-ad-primary" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
                 <% } else { %>
