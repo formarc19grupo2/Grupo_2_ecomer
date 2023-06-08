@@ -34,11 +34,12 @@
                    
                 </div>
                 
-                <div class="button-addToCart">
-                    <div class="btn-ad btn-ad-primary">
-                        Agregar al carrito
-                    </div>
-                </div>
+                <% if (session.user !== undefined) { %>
+                    <div class="btn btn-ad-primary" id="btnAddToCart" >Agregar al carrito</div>
+                    <% } else { %>
+                    <div class="btn btn-ad-primary" id="btnAddToCartNotLogin">Agregar al carrito Sin log</div>
+                    <% } %>
+                  </div>
                
             </div>
         </section>
