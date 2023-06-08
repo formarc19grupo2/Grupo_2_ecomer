@@ -204,7 +204,7 @@ module.exports = {
     //     return res.render("user/productCart", { session: req.session })
     //   },
 
-      cart: (req, res) => {
+    cart: (req, res) => {
         let userId = req.session.user.id;
         Order.findOne({
           where: {
@@ -228,8 +228,8 @@ module.exports = {
               user: req.session.user?.id || null,
             });
           })
-          .catch((error) => console.log(error));
-      },
+        .catch((error) => console.log(error));
+    },
     
     
 

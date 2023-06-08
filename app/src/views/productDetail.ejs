@@ -16,12 +16,12 @@
                  <img src="/images/productos/<%= productoimage.image %>" alt="Imagen de producto2" id="expandedImg"> 
                 </div>
             </div>
-            <div class="productData-container">
+            <div action="/user/productCart" class="productData-container">
                 <h3 class="productName"><%= product.name %> </h3>
                 <div class="productPrice">$<%= product.price %> </div>
                 <div class="productNumber">
                     <label for="cantidad">Cantidad</label>
-                    <div class="counter">
+                    <div class="counter" id="quantity">
                         <button type="button" class="btn-subtract" onclick="subtract();">
                             -
                         </button>
