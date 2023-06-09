@@ -22,7 +22,35 @@
     font-size: 24px;
     
 }
-
+h2{
+    margin-top: 20px;
+}
+#borde::after {
+    content: "";
+    background-image: url(/images/galeria/mask-white-bottom.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    height: 21px;
+    margin-top: -10px;
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    margin-bottom: 10px;
+   
+}
+#bordeF::before {
+    content: "";
+    background-image: url(/images/galeria/mask-white-bottom2.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    height: 23px;
+    margin-top: -10px;
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    margin-bottom: 10px;
+   
+}
 .navigation-bar {
     
     order: 4;
@@ -176,11 +204,14 @@ header div .buscador button .lupa i {
 ul.menu-usuario-carrito-burger {
     display: none;
 }
-
+.main-nav{
+height: 15vh;
+}
 nav.main-nav ul.navegacion {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 nav.main-nav ul.navegacion li {
