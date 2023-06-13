@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: var(--amarillo);
+    background-color: var(--amarillo);  
 }
 .fa-user .fa-shopping-cart{
     display: flex;
@@ -227,6 +227,12 @@ nav.main-nav ul.navegacion li p {
     .lupa{
         display: none;
     }
+
+    #menu-icon{
+        display: block;
+    }
+
+   
    
 
 } 

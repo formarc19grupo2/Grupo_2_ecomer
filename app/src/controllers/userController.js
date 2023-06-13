@@ -1,9 +1,15 @@
 //const { users, writeUsersJson } = require("../old_database");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-const { User, Order } = require("../database/models");
+const { User, Order, sequelize, Product } = require("../database/models");
+const {Op} = sequelize;
+const {getOderByUser, getOrderByUser, insertOrder } = require('../services/order.service')
+const {getOrderItemsByProduct, updateOrderItem, insertOrderItem } =  require('../services/orderItems.service')
 
 const fs = require('fs');
+const { create } = require("domain");
+
+
 
 
 
@@ -200,39 +206,104 @@ module.exports = {
         .catch((error) => console.log(error));
     },
 
-    // cart: (req, res) => {
-    //     return res.render("user/productCart", { session: req.session })
+ cart: (req, res) => {
+        return res.render("user/productCart", { session: req.session })
+      },
+
+    // cart: async (req, res) => {
+    //    try{
+    //         const idUser = req.session.user.id;
+    //         const order = getOderByUser(idUser)
+
+    //         res.render("products/carrito", {Order, session: req.session});
+    //    } catch(error){
+    //         return res.status(500).json({Error: `Error en el servidor ${error}`})
+    //    }
+    // },
+    // addOrder: async (req, res) => {
+    //     try {
+    //         const idUser = req.session.user.id;
+    //         const order = await getOderByUser(idUser)
+    //         const idProduct = req.params.idProduct;
+    //         const quantity = req.body.quantity;
+    //         if(order){
+    //             let dataItem;
+
+    //             const idOrder = order.orderId;
+    //             const item = await getOrderItemsByProduct(idProduct);
+    //             if(item){
+    //                 dataItem = {
+    //                     idOrder,
+    //                     idProduct,
+    //                     quantity: item.quantity + quantity,
+    //                 };
+
+    //                 const updateOrder = await updateOrderItem(dataItem, item.orderId);
+    //                 return res.status(200).json("producto incrementado");
+    //             }else{
+    //                 dataItem = {
+    //                     idOrder,
+    //                     idProduct,
+    //                     quantity,
+
+    //                 };
+    //                 const createOrder = await insertOrderItem(dataItem);
+    //                 const idUser = req.session.user.id;
+    //                 const order = await getOrderByUser(idUser);
+    //                 return res.render('products/carrito', {order, session: req.session});
+
+
+    //             }
+    //         } else{
+    //             const data = {
+    //                 idUser,
+    //                 state: "Pending",
+    //             };
+    //             const createOrder = await insertOrder(data);
+    //             if(createOrder){
+    //                 let dataItem = {
+    //                     idOrder: createOrder.idOrder,
+    //                     idProduct,
+    //                     quantity,
+    //                 };
+    //                 const createOrderItem = await insertOrderItem(dataItem);
+    //                 const idUser = req.session.user.id;
+    //                 const order = await getOderByUser(idUser);
+    //                 return res.render("products/carrito", {order, session: req.session});
+
+    //             }
+    //             return res.status(400).json(`El usuario con el ID: ${idUser} no tiene ordenes`)
+    //         } 
+    //     } catch (error) {
+    //         return res.status(500).json({ Error: `Error del servidor ${error}`})
+    //     }
+    // },
+    
+    
+    // let userId = req.session.user.id;
+    // Order.findOne({
+    //   where: {
+    //     userId: userId
     //   },
+    //   include: [{association: "orderItems", include: [{association: "product", include: [{association: "images"}]}]}]
+    // })
+    //   .then((order) => {
+    //     let products = order?.orderItems.map((item) => {
+    //       return {
+    //         product: item.product,
+    //         quantity: item.quantity,
+    //         id: item.id
+    //       };
+    //     });
 
-    cart: (req, res) => {
-        let userId = req.session.user.id;
-        Order.findOne({
-          where: {
-            userId: userId
-          },
-          include: [{association: "orderItems", include: [{association: "product", include: [{association: "images"}]}]}]
-        })
-          .then((order) => {
-            let products = order?.orderItems.map((item) => {
-              return {
-                product: item.product,
-                quantity: item.quantity,
-                id: item.id
-              };
-            });
-    
-            res.render("user/productCart", {
-              session: req.session,
-              order,
-              products: products !== undefined ? products : [],
-              user: req.session.user?.id || null,
-            });
-          })
-        .catch((error) => console.log(error));
-    },
-    
-    
-
+    //     res.render("user/productCart", {
+    //       session: req.session,
+    //       order,
+    //       products: products !== undefined ? products : [],
+    //       user: req.session.user?.id || null,
+    //     });
+    //   })
+    // .catch((error) => console.log(error));
 
 }
 

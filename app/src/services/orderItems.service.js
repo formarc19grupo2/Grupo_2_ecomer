@@ -11,7 +11,9 @@ const getOrdersItems = async () => {
 
 const getOrderItemById = async (id) => {
   try {
-    return await OrderItem.findByPk(id);
+    return await OrderItem.findByPk(id,{
+      include: [{ association: "order"}]
+    });
   } catch (error) {
     console.error("Error while fetching order item:", error);
     throw new Error("Error fetching order item");
@@ -31,6 +33,20 @@ const getOrderItemsByOrder = async (orderId) => {
     throw new Error("Error fetching order item");
   }
 };
+
+const getOrderItemsByProduct = async (orderId) => {
+  try {
+    return await OrderItem.findOne({
+      where: {
+        productId,
+      },
+      include: [{association: 'products'}],
+    })
+  } catch (error) {
+    console.log('Error while fetching oreer item:', error);
+    throw new Error('Error fetching order item')
+  }
+}
 
 const insertOrderItem = async (data) => {
   try {
@@ -84,6 +100,7 @@ module.exports = {
   getOrdersItems,
   getOrderItemById,
   getOrderItemsByOrder,
+  getOrderItemsByProduct,
   insertOrderItem,
   updateOrderItem,
   deleteOrderItem,

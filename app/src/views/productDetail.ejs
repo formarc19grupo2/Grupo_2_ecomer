@@ -7,11 +7,11 @@
     <main class="productDetail-container">
         <section class="productDetail">
             <div class="images-container">
-                <div class="thumbnailImages">
+                <!-- <div class="thumbnailImages">
                     <% product.images.forEach(image => { %>
                         <img src="/images/productos/<%- productoimage.image%>" alt="Imagen de producto1" onclick="myFunction(this);">
                     <% }) %>
-                </div>
+                </div> -->
                 <div class="mainImage">
                  <img src="/images/productos/<%= productoimage.image %>" alt="Imagen de producto2" id="expandedImg"> 
                 </div>
@@ -20,7 +20,7 @@
                 <h3 class="productName"><%= product.name %> </h3>
                 <div class="productPrice">$<%= product.price %> </div>
                 <div class="productNumber">
-                    <label for="cantidad">Cantidad</label>
+                    
                     <div class="counter" id="quantity">
                         <button type="button" class="btn-subtract" onclick="subtract();">
                             -
