@@ -10,13 +10,10 @@
             </div>
         </div>
 
-        <form action="/search" method="GET" class="buscador">
-            <div class="buscador-button-input">
-                <input type="text" id="search" name="keywords" class="main-icon" placeholder="¿Qué queres comer?">
-                <button class="lupa" type="submit">
-                    <i class="fa-sharp fa-solid fa-magnifying-glass">
-                    </i>
-                </button>
+        <form action="/products/search" class="search-form-desktop">
+            <div class="search-bar">
+                <input type="search" name="search" id="" class="main-icon" placeholder="BUSCAR PRODUCTOS">
+            <button type="submit" class="lupa"><i class="fas fa-search"></i></button>
             </div>
         </form>
 
@@ -27,10 +24,18 @@
             </div>
             <a href="/admin">ADMIN</a>
         <% } %>   -->
+        <!-- <i class="fa-solid fa-bars" id="menu-hamburguesa" onclick="dropMenu()"></i>
 
-        <nav class="burga">            
-            <i class="fa-solid fa-bars" id="menu-hamburguesa"></i>
-            <ul class="menu-usuario-carrito-burger">
+        <nav class="navigation-bar" id="navigation-bar-mobile">
+            
+            <div class="user-icons-mobile">
+                <a href="/users/login"><i class="fas fa-user"></i></a>
+                <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
+            </div>    
+        </nav> -->
+        
+        <div class="burga">            
+            
                 <div class="user">
                     <% if (typeof session.user !="undefined" ) { %>
                         <i class="fas fa-user"></i><span class="session"></span>
@@ -44,10 +49,10 @@
                         <% } else {%>
                             <a href="/users/login"><i class="fas fa-user"></i></a>
                             <% } %>
-                </div>
+                     </div>
                 <a href="/users/productCart"><i class="fas fa-shopping-cart"></i></a>
-            </ul>
-        </nav>     
+
+        </div>     
     </div>
 
     <nav class="main-nav">

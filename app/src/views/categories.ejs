@@ -20,7 +20,7 @@
         <div class="container products-container">
             <aside class="subcategories_menu-desktop">
                 <% subcategories.forEach(subCategory => { %>
-                    <a href="#"><%- subCategory.name %></a>
+                    <a href="/products/subcategory/<%- subCategory.id %>"><%- subCategory.name %></a>
                 <% }) %>   
             </aside>
             <section class="products">

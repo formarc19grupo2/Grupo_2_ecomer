@@ -1,5 +1,5 @@
 //const { products, categories } = require("../old_database");
-const { Product, Category, Sequelize, ProductImage } = require("../database/models");
+const { Product, Category, Subcategory, Sequelize, ProductImage } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
@@ -63,7 +63,51 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
+  subcategory: async (req,res) => {
+    Subcategory.findByPk(req.params.id, {
+      include: [
+        {
+          association: "products",
+          include: [
+            {
+              association: "images",
+            },
+          ],
+        },
+      ],
+    })
+      .then((subcategory) => {
+        Category.findByPk(subcategory.category_id, {
+          include: [{ association: "subcategories" }],
+        }).then((category) =>
+          res.render("subcategory", {
+            category,
+            products: subcategory.products,
+            session: req.session,
+            user: req.session.user?.id || null, 
+          })
+        );
+      })
+      .catch((err) => console.log(err));
+  },
 
+  search: (req, res) => {
+    Product.findAll({
+      where: {
+        name: {
+          [Op.like]: `%${req.query.search}%`,
+        },
+      },
+      include: [{ association: "images" }],
+    }).then((result) =>
+      res.render("searchResult", {
+        result,
+        session: req.session,
+        search: req.query.search,
+      })
+    );
+  },
+  
 
   
 

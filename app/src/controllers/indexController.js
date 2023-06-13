@@ -19,12 +19,15 @@ module.exports = {
     },
 
     leg:(req, res) =>{
-        return res.render("legales",{session: req.session,})
+        return res.render("footer/legales",{session: req.session,})
     },
     history:(req,res)=>{
-        return res.render("historia",{session: req.session})
+        return res.render("footer/historia",{session: req.session})
     },
     contact:(req, res) =>{
-        return res.render("contactos",{session: req.session,})
+        return res.render("footer/contactos",{session: req.session,})
+    },
+    tarjetas:(req, res) =>{
+        return res.render("tarjetas",{session: req.session,})
     },
 }

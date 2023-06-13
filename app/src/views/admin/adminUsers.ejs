@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>    
+<body>
+    <main class="container-fluid">
+      <%- include('../admin/partials/headerAdmin.ejs') %>
+      <br>
+      <form class="d-flex" action="/admin/usuarios/search" method="GET">
+        <select name="search" id="">
+          <option value="0">User</option>
+          <option value="1">Admin</option>
+        </select>
+<!--         <input class="form-control me-2" type="search" placeholder="Ingrese rol o nombre de usuario" name="search" aria-label="Search">
+ -->        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <section class="row">
+        <article class="col-12" >
+        <table class="table">
+          
+            <tbody>
+
+                
+              <% usuarios.forEach(({id, name, last_name, email, rol, avatar}) => { %>
+                
+              <tr id="<%= id %>">
+                <tr>
+                  <td>
+                    <div>
+                      <img src="<%= "http://localhost:3030/images/avatar/" + avatar %>" alt="foto de perfil" style="width: 100px; height: 100px;">
+                    </div>
+                  </td>
+                </tr>
+                <tr><td>ID : <%= id %></td> </tr>
+                <tr><td>Name : <%= name %> </td></tr>
+                <tr><td>Apellido : <%= last_name %></td></tr>
+                <tr><td>Email : <%= email %> </td></tr>
+                
+                <tr><form action="/admin/usuarios/<%= id %>?_method=PUT" method="POST">
+                  <td>
+                    <select  name="rol">
+                      <option selected hidden value="<%= rol %>"><%= rol %></option>
+                      <option value="0">user</option>
+                      <option value="1">admin</option>
+                    </select>
+                    <button type="submit" style="border: none; background: none;">Editar rol : <ion-icon name="pencil-outline"></ion-icon></td>
+                      </td>
+                </form></tr>
+
+                <tr><form action="/admin/usuarios/<%= id %>?_method=DELETE" method="POST">
+                  <td><button type="submit" style="border: none; background: none;">Borrar Usuario: <ion-icon name="trash-outline"></ion-icon></td>
+                    
+                </form></tr>
+              </tr>
+            
+              <% }); %>
+            
+            </tbody>
+          
+        </article>       
+      </section>
+      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    </main>
+    <%- include('../partials/scripts.ejs')  %> 
+  </body>
+</html>

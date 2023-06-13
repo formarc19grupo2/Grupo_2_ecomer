@@ -10,6 +10,7 @@
 @import url('usersForms.css');
 @import url('userProfile.css');
 @import url('legales.css');
+@import url('tarjetas.css');
 
 body { 
     background-color: var(--amarillo);

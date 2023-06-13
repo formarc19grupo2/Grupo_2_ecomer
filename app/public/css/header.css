@@ -6,6 +6,54 @@
     z-index: 999;
     background-color: var(--amarillo);
 }
+.fa-user .fa-shopping-cart{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        padding: 5px;
+        background-color: var(--marron);
+        border-radius: 5px;
+        box-shadow: -2.5px 2.5px 2px rgba(0, 0, 0, 0.5);
+        margin: 3px;
+}
+.burga{
+    display: flex;
+    font-size: 24px;
+    
+}
+
+.navigation-bar {
+    
+    order: 4;
+    padding: 15px;
+    margin: -20px;
+}
+
+.burguer-menu-icon{
+    font-size: 24px;
+    order: 0;
+}
+
+.lupa{
+    width: 45px;
+    font-size: 8px;
+    height: 30px;
+    background: rgb(224, 185, 139);
+    border-radius: 10px;
+    border: solid 1px rgb(62, 83, 69);
+    font-weight: 600;
+
+}
+.navigation-bar .user-icons-mobile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation-bar .user-icons-mobile i{
+    font-size: 24px;
+    margin-left: 10px;
+}
 
 .contenedor-header {
     display: flex;
@@ -31,12 +79,20 @@
     cursor: pointer;
 }
 
-.user {
-    display: flex;
-    /* text-align: center; */
-    align-items: center;
-    flex-direction: column;
+.menu-user{
+    display: none;
+    position: absolute;
+    font-size: 1rem;
+    width: 9rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-left: -3rem;
 }
+
+.user:hover .menu-user{
+    display: block;
+ }
 
 .menu-user a {
     display: inline-block;
@@ -54,15 +110,18 @@
   }
 
 .main-icon {
-    width: 30vw;
-    border: 0px;
+    width: 100px;
+    border: solid 2px rgb(112, 119, 113);
     border-radius: 5px;
-    height: 25px;
+    height: 30px;
+    padding: 10px;
 }
 
-.main-icon:hover {
-    border: 1px solid black;
+.subcategory_menu.active {
+    display: block;
+    background-color: white;
 }
+
 
 .main-icon::placeholder {
     font-size: 0.7rem;
@@ -71,7 +130,7 @@
 
 .buscador-button-input {
     display: flex;
-    box-shadow: -2.5px 2.5px 2px rgba(0, 0, 0, 0.5);
+    
 }
 
 header div .buscador button .lupa i {
@@ -164,14 +223,23 @@ nav.main-nav ul.navegacion li p {
     top: -10px;
     right: 0px;
 }
+@media (max-width: 760px){
+    .lupa{
+        display: none;
+    }
+   
 
+} 
+@media (min-width: 480px){
+        .main-icon{
+            width: 150px;
+        }
+    }
 @media (min-width: 426px) {
     .main-icon-img {
         margin: 1rem;
     }
-    .fa-bars {
-        display: none;
-    }
+   
 
     ul.menu-usuario-carrito-burger,
     .admin {
@@ -200,14 +268,69 @@ nav.main-nav ul.navegacion li p {
     }
 }
 
-@media (max-width: 878px) {
-    .menu-user {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+
+
+@media (min-width: 768px) {
+    .lupa{
+        width: 30px;
         font-size: 12px;
+        font-weight: 600;
         
-    }
+    } 
+     .main-icon {
+        width: 400px;
+        border-radius: 10px;
+    } 
+
+    
 }
 
-@media (min-width: 1024px) {}
+@media screen and (min-width: 992px) {
+    .fa-bars {
+        display: none;
+    }
+    .burga {
+        display: flex;
+        font-size: 24px;
+        order: 4;
+    }
+    
+    .burga i {
+        margin-left: 10px;
+    }
+    .burguer-menu-icon{
+        display: none;
+    }
+    .navigation-bar { 
+        display: inherit;
+        order: 1;
+        width: 40%;
+    }
+
+    .navigation-bar#navigation-bar-mobile {
+        display: none;
+    }
+
+    .main-header .navigation-bar .user-icons-mobile {
+        display: none;
+    }
+
+    .user {
+        position: relative;
+    }
+
+    .menu-user{
+        display: none;
+        position: absolute;
+        font-size: 1rem;
+        width: 9rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: .5rem;
+        margin-left: -3rem;
+    }
+
+    .user:hover .menu-user{
+        display: block;
+     }
+}
